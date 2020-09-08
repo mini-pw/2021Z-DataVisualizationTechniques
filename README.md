@@ -4,7 +4,7 @@ Winter Semester 2020/2021
 ## Lectures
 
 - 05.10.2020 - Review of tools for data visualization
-- 12.10.2020 - [Graphics Grammar](http://biecek.pl/Eseje/indexGramatyka.html)
+- 12.10.2020 - [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
 - 19.10.2020 - [Plot types](https://www.r-graph-gallery.com/)
 - 26.10.2020 - [Colors](http://www.biecek.pl/Eseje/indexKolory.html) i [Skale pomiarowe](http://www.biecek.pl/Eseje/indexDane.html)
 - 02.11.2020 - [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html) 
