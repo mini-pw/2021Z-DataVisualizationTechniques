@@ -35,7 +35,7 @@ Semestr zimowy 2020/2021
 - 14.12.2020 - R: interaktywność - plotly
 - 21.12.2020 - Choinki
 - 11.01.2021 - R: Shiny - wstęp
-- 18.01.2020 - R: Shiny - średnio-zaawansowany
+- 18.01.2020 - R: [Shiny - średnio-zaawansowany](https://mastering-shiny.org/)
 - 25.02.2020 - 
 
 
@@ -52,26 +52,22 @@ Wizualizacja danych COVID.
 
 ### Projekt III
 
+Interaktywna wizualizacja danych.
 
 ## Zasady zaliczenia
 
-Zaliczenie składa się z trzech części:
+Zaliczenie składa się z dwóch części:
 - Projekty (3 x 15 pkt.)
 - Prace domowe (11 x 5 pkt.)
 
 Łącznie do zdobycia jest 100 punktów.
-Warunkiem zaliczenia predmiotu jest uzyskanie co najmniej 51 punktów oraz uzyskanie więcej niż połowy punktów z dwóch projektów.
+Warunkiem zaliczenia predmiotu jest uzyskanie co najmniej 51 punktów oraz przepołowienia conajmniej dwóch projektów.
 
 Progi ocen:
-Oceny:
-- 3 - 51 - 60 pkt
-- 3+ - 61 - 70 pkt
-- 4 - 71 - 80 pkt
-- 4+ - 81 - 90 pkt
-- 5 - 91 - 100 pkt
 
-
-
+| Ocena |  | 3 | 3.5 | 4 | 4.5 | 5 |
+|:---:| :---: |:---:|:---:|:---:|:---:|:---:|
+| Punkty |  | (50, 60] | (60, 70] | (70, 80] | (80, 90] | (90, ∞) |
 
 
 
