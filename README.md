@@ -46,6 +46,10 @@ Winter Semester 2020/2021
 
 Informative poster/[cheatsheet](https://rstudio.com/resources/cheatsheets/)/graph related to data visualization.
 
+Form: 2-minute video presenting a static graphics.
+
+Deadline: 16.11.2020, displaying the video at the lecture.
+
 [Examplary topics: good visualization practices, which plot to choose?](https://medium.com/@mrbriit/20-free-visualization-cheat-sheets-for-every-data-scientist-to-download-ceee741ba3ca)
 
 ### Project II
