@@ -6,7 +6,7 @@ Winter Semester 2020/2021
 - 05.10.2020 - Review of tools for data visualization
 - 12.10.2020 - [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
 - 19.10.2020 - [Plot types](https://www.r-graph-gallery.com/)
-- 26.10.2020 - [Colors](http://www.biecek.pl/Eseje/indexKolory.html) i [Skale pomiarowe](http://www.biecek.pl/Eseje/indexDane.html)
+- 26.10.2020 - [Colors](http://www.biecek.pl/Eseje/indexKolory.html) i [Scales](http://www.biecek.pl/Eseje/indexDane.html)
 - 02.11.2020 - [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html) 
 - 09.11.2020 - [The International Business Communication Standards](https://www.ibcs.com/standards/)
 - 16.11.2020 - Presentation of project I
@@ -24,7 +24,7 @@ Winter Semester 2020/2021
 
 - 05.10.2020 - R: dplyr, tidyr - introduction
 - 12.10.2020 - R: [ggplot2 - introduction & grammar](https://rkabacoff.github.io/datavis/)
-- 19.10.2020 - R: ggplot2 - plot modification, aesthetics, theme, facets
+- 19.10.2020 - R: ggplot2 - plot modification, theme, facets
 - 26.10.2020 - R: ggplot2 - advanced, extensions: patchwork, ggstatsplot, ggmap
 - 02.11.2020 - [Fix the plot: NSP](https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
 - 09.11.2020 - Python: pandas - introduction
