@@ -1,0 +1,320 @@
+---
+title: "Gramatyka Grafiki"
+author: "Alicja Gosiewska"
+date: "12-10-2020"
+output: 
+  ioslides_presentation:
+    theme: "simplex"
+---
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+slides > slide {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+</style>
+
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(patchwork)
+library(ggthemes)
+opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knit_hooks$set(webgl = hook_webgl)
+data("midwest", package = "ggplot2")
+options(scipen=999)  # turn-off scientific notation like 1e+48
+theme_set(theme_bw())  # pre-set the bw theme.
+```
+
+
+
+# Gramatyka grafiki
+
+## Gramatyka grafiki
+
+Gramatyka grafiki (grammar of graphics): ustrukturyzowany opis wizualizacji danych.
+
+Wilkinson, L. (2005). The Grammar of Graphics (New York: Springer-Verlag).
+
+## Gramatyka grafiki
+
+<img src="https://blog.gtwang.org/wp-content/uploads/2016/07/ggplot-grammar-of-graphics-stack-1.png" width="600px" class="center">
+
+Źródło: https://blog.gtwang.org/
+
+## Dane
+
+```{r}
+head(iris)
+```
+
+
+## Atrybuty wizualne 
+
+Atrybuty wizualne (aesthetics): mapowanie danych do osi, kolorów, kształtów.
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(size = 4)
+```
+
+## Atrybuty wizualne 
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(size = 4)
+```
+
+**Oś X:** Sepal.Length.
+**Oś Y:** Sepal.Width.
+
+## Atrybuty wizualne 
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 4)
+```
+
+**Oś X:** Sepal.Length.
+**Oś Y:** Sepal.Width.
+**Kolor:** Species.
+
+## Atrybuty wizualne 
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
+  geom_point(size = 4)
+```
+
+**Oś X:** Sepal.Length.
+**Oś Y:** Sepal.Width.
+**Kolor:** Sepal.Length
+
+## Atrybuty wizualne 
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
+  geom_point(size = 4)
+```
+
+**Oś X:** Sepal.Length.
+**Oś Y:** Petal.Length.
+**Kształt:** Species.
+
+## Atrybuty wizualne 
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4)
+```
+
+**Oś X:** Sepal.Length.
+**Oś Y:** Petal.Length.
+**Kształt:** Species.
+**Kolor:** Species.
+
+## Geometrie
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  stat_summary(fun.y = "mean", geom = "point")
+```
+
+Geometrie: obiekty reprezentujące dane.
+
+## Geometrie
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  stat_summary(fun.y = "mean", geom = "bar")
+```
+
+## Geometrie
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = 1, y = Sepal.Length, fill = Species)) +
+  stat_summary(fun.y = "mean", geom = "bar", position = "dodge") +
+  scale_x_continuous("") +
+  theme(axis.text.x = element_blank())
+```
+
+Orientacja obiektów geometrycznych wzgledem siebie też jest istotna.
+
+## Geometrie
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = 1, y = Sepal.Length, fill = Species)) +
+  stat_summary(fun.y = "mean", geom = "bar", position = "stack") +
+  scale_x_continuous("") +
+  theme(axis.text.x = element_blank())
+```
+
+## Fasety
+
+```{r, echo=FALSE,warning=FALSE}
+mutate(iris, 
+       Petal.Length = cut(Petal.Length, 
+                          breaks = c(min(Petal.Length), median(Petal.Length), max(Petal.Length)), 
+                          include.lowest = TRUE)) %>% 
+  ggplot(aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  facet_wrap(~ Petal.Length, labeller = label_both)
+```
+
+Dzielenie wykresu na podwykresy w zależności od poziomu zmiennej dyskretnej. 
+
+## Fasety
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_density() +
+  facet_wrap(~ Species)
+```
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_density() +
+  facet_wrap(~ Species)
+```
+
+Transformacje danych w celu przypisania ich do atrybutów wizualnych.
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  geom_boxplot()
+```
+
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  geom_violin()
+```
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  geom_violin() +
+  geom_boxplot()
+```
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+library(ggbeeswarm)
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  geom_quasirandom(method = "smiley")
+```
+
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4)
+```
+
+## Statystyki
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)) +
+  stat_density2d(aes(alpha = ..level..), geom = "polygon", color = "black")
+```
+
+## Koordynaty
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species)) +
+  geom_bar() 
+```
+
+## Koordynaty
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Species)) +
+  geom_bar() +
+  coord_flip()
+```
+
+## Koordynaty
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = 1, fill = Species)) +
+  geom_bar() +
+  coord_polar("y", start = 0)
+```
+
+## Motyw
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) 
+```
+
+## Motyw
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_economist() +
+  ggtitle("Theme: economist")
+```
+
+## Motyw
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_tufte() +
+  ggtitle("Theme: Tufte")
+```
+
+## Motyw
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_wsj() +
+  ggtitle("Theme: WSJ")
+```
+
+## Motyw
+
+```{r, echo=FALSE,warning=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_excel() +
+  ggtitle("Theme: Excel")
+```
+
+## Gramatyka grafiki
+
+| Nazwa                          | Przykłady                                              |
+|--------------------------------|--------------------------------------------------------|
+| Dane (data)                    |                                                        |
+| Atrybuty wizualne (aesthetics) | Osie, kolory, kształty, typy linii                     |
+| Geometrie (geometries)         | Linie, słupki, punkty                                  |
+| Fasety (facets)                | Podrysunki tworzone na podstawie dyskretnych zmiennych |
+| Statystyki (statistics)        | Średnie, mediany, kwantyle.                            |
+| Koordynaty (coordinates)       | Kartezjański, polarny                                  |
+| Motyw (theme)                  | Wygląd rysunku                                         |
