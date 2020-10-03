@@ -54,21 +54,39 @@ Alicja Gosiewska
 
 Kontakt: a.gosiewska@mini.pw.edu.pl
 
+# Cel Przedmiotu
+
+## Cel Przedmiotu I
+
+<img src="https://miro.medium.com/max/800/0*EK_5Qv_RryUeVRmf.png" width="600px" class="center">
+
+Źródło: https://medium.com/@ODSC/3-things-your-boss-wont-care-about-in-your-data-visualizations-479b8541534a
+
+## Cel Przedmiotu II
+
+<img src="https://about.infogr.am/wp-content/uploads/2018/08/dothisnotthat-bar-chart-1-1.png" width="600px" class="center">
+
+Źródło: https://infogram.com/blog/do-this-not-that-data-visualization-before-and-after-examples/
 
 
 
 ## Sprawy organizacyjne
 
 Repozytorium przedmiotu:
-[https://github.com/mini-pw/2021Z-DataVisualizationTechniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques)
+[https://github.com/mini-pw/2021Z-DataVisualizationTechniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques) <- KLIK
 
 Wykłady:
+
 - "Teoria" i finalne prezentacje projektów,
 
 Laboratoria:
+
 - Praktyka: poznawanie narzędzi, tworzenie poprawnych wizualizacji,
 
+- Prace Domowe
+
 Projekty:
+
 - Konsultacje, prezentacje, zadania i dyskusje.
 
 
@@ -93,24 +111,6 @@ Projekty:
 - Programy graficzne (Inkscape),
 - Programy dedykowane do wizualizacji danych (Tableau).
 
-
-## Języki Wizualizacji Danych
-
-```{r,message=FALSE}
-library(ggplot2)
-library(plotly)
-ggplot(cbind(expand.grid(x = c("Imperatywne\n", "Deklaratywne\n"),
-                         y = c("Proste do użycia", "Wszechstronne")), 
-             software = c("Seaborn", "Bokeh\nR (ggplot2)\nLeaflet\nVega-Lite",  "Matplotlib\nR (base, grid)", "BQPlot\nD3\nPlotly\nVega")),
-       aes(x = x, y = y, label = software)) +
-  geom_tile(fill = NA, color = "black") +
-  geom_text()  +
-  theme_void() +
-  theme(axis.text = element_text(color = "black"))
-```
-
-# Narzędzia
-
 ## Podział narzędzi
 
 **Deklaratywne:**
@@ -130,6 +130,47 @@ ggplot(cbind(expand.grid(x = c("Imperatywne\n", "Deklaratywne\n"),
 
 - jeśli warunki jakie musi spełniać wizualizacja zmienią się nawet odrobinę, instrukcja tworzenia może się zmienić znacząco.
 
+## Języki Wizualizacji Danych
+
+```{r,message=FALSE}
+library(ggplot2)
+library(plotly)
+ggplot(cbind(expand.grid(x = c("Imperatywne\n", "Deklaratywne\n"),
+                         y = c("Proste do użycia", "Wszechstronne")), 
+             software = c("Seaborn", "Bokeh\nR (ggplot2)\nLeaflet\nVega-Lite",  "Matplotlib\nR (base, grid)", "BQPlot\nD3\nPlotly\nVega")),
+       aes(x = x, y = y, label = software)) +
+  geom_tile(fill = NA, color = "black") +
+  geom_text()  +
+  theme_void() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+## ggplot (R)
+
+[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+
+<img src="https://ggplot2.tidyverse.org/reference/figures/README-example-1.png" width="600px" class="center">
+
+
+
+## matplotlib (Python)
+
+[https://matplotlib.org/](https://matplotlib.org/)
+
+Rozszerzenia:
+[https://mpld3.github.io/](https://mpld3.github.io/)
+
+<img src="https://matplotlib.org/_images/sphx_glr_categorical_variables_001.png" width="600px" class="center">
+
+
+## seaborn (Python)
+
+Oparte na matplotlib
+
+Świetne szablony wizualizacji!
+[https://seaborn.pydata.org/](https://seaborn.pydata.org/)
+
+<img src="https://seaborn.pydata.org/_images/errorband_lineplots.png" width="500px" class="center">
 
 
 ## Altair (Python)
@@ -140,54 +181,18 @@ Brian Granger, uzasadniając stworzenie Altaira: </br>
 *I love Python, but do my visualisations using R/ggplot2.*
 
 Przykłady: </br>
-[https://altair viz.github.io/gallery/simple_bar_chart.html](https://altair viz.github.io/gallery/simple_bar_chart.html)
-[https://altair viz.github.io/gallery/scatter_tooltips.html](https://altair viz.github.io/gallery/scatter_tooltips.html)
-[https://altair viz.github.io/gallery/line_with_ci.html](https://altair viz.github.io/gallery/line_with_ci.html)
+[https://altair-viz.github.io/gallery/scatter_tooltips.html](https://altair-viz.github.io/gallery/scatter_tooltips.html)
+[https://altair-viz.github.io/gallery/line_with_ci.html](https://altair-viz.github.io/gallery/line_with_ci.html)
 
-Małe wsparcie dla typowo statycznych wizualizacji
 
 Pakiet R:
 [https://github.com/vegawidget/altair](https://github.com/vegawidget/altair) (używa reticulate)
 
-
-
-
-## bokeh
-
-Python jako API do BokehJS
-
-Praca głownie w Pythonie, JSowy silnik mało dostępny i źle udokumentowany,
-
-Całe dashboardy: [https://demo.bokeh.org/movies](https://demo.bokeh.org/movies)
-
-Pakiet w R:
-https://github.com/bokeh/rbokeh
-ostatni commit : 26.04.2017
-
-
-## matplotlib (Python)
-
-[https://matplotlib.org/](https://matplotlib.org/)
-
-Trudne zarządzanie czasem na osiach.
-
-Niesatysfakcjonujące mapowanie do kształtów.
-
-Rozszerzenia:
-[https://mpld3.github.io/](https://mpld3.github.io/)
-
-
-## seaborn (Python)
-
-Oparte na matplotlib
-
-Świetne szablony wizualizacji!
-[https://seaborn.pydata.org/](https://seaborn.pydata.org/)
-
 ## plot.ly
 
 Interaktywne wizualizacjie w Javascript z interfejsem w Python i R.
-[https://plotly.com/python/line and scatter/](https://plotly.com/python/line and scatter/)
+
+[https://plotly.com/python/line-and-scatter/](https://plotly.com/python/line-and-scatter/)
 
 plotly.js: [https://github.com/plotly/plotly.js](https://github.com/plotly/plotly.js)
 
@@ -195,48 +200,12 @@ plotly.py: [https://github.com/plotly/plotly.py](https://github.com/plotly/plotl
 
 plotly.R: [https://github.com/ropensci/plotly](https://github.com/ropensci/plotly)
 
-
-## Vega
-
-Deklaratywny język do tworzenia interaktywnych wizualizacji.
-
-JSONowa specyfikacja wizualizacji.
-
-Lyra (nie zniechęcać się) [http://vega.github.io/lyra/](http://vega.github.io/lyra/)
-
-Lyra 1.0 jest online i działa satysfakcjonująco:
-[http://idl.cs.washington.edu/projects/lyra/](http://idl.cs.washington.edu/projects/lyra/)
-
-
-
-## Vega Lite
-
-Wygodniejsza i prostsza wersja Vegi.
-
-Pakiety w R:
-
-- [https://github.com/hrbrmstr/vegalite](https://github.com/hrbrmstr/vegalite)
-
-- [https://github.com/vegawidget/vegawidget](https://github.com/vegawidget/vegawidget)
-
-
-
-## Leaflet
-
-- [Leaflet.js](https://leafletjs.com/) : interaktywne mapy
-
-- W R: [https://rstudio.github.io/leaflet/](https://rstudio.github.io/leaflet/)
-
-- W Pythonie: [https://github.com/python/visualization/folium](https://github.com/python/visualization/folium)
-
-
-
 ## Inkscape
 
-Darmowy i otwarty edytor grafiki.
+[https://inkscape.org/](https://inkscape.org/)
 
-- [Oficjalny tutorial](https://inkscape.org/doc/basic/tutorial-basic.pl.html)
+Darmowe narzędzie do edycji grafik wektorowych.
 
-- [Inkscape w praktyce](https://pl.wikibooks.org/wiki/Inkscape_w_praktyce)
+<img src="https://media.inkscape.org/media/release/media/Peek_2020-08-24_23-46.gif" width="500px" class="center">
 
-
+## Dyskusja i pytania

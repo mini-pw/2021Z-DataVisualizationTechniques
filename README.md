@@ -3,20 +3,20 @@ Winter Semester 2020/2021
 
 ## Lectures
 
-- 05.10.2020 - Review of tools for data visualization
-- 12.10.2020 - [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
-- 19.10.2020 - [Plot types](https://www.r-graph-gallery.com/)
-- 26.10.2020 - [Colors](http://www.biecek.pl/Eseje/indexKolory.html) i [Scales](http://www.biecek.pl/Eseje/indexDane.html)
-- 02.11.2020 - [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html) 
-- 09.11.2020 - [The International Business Communication Standards](https://www.ibcs.com/standards/)
-- 16.11.2020 - Presentation of project I
-- 23.11.2020 - [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
-- 30.11.2020 - Edward Tufte
-- 07.12.2020 - Scrollytelling
-- 14.12.2020 - Presentation of project II
-- 21.12.2020 - Dashboards
-- 11.01.2021 - Hans Rosling
-- 18.01.2020 - Presentation of project III
+- 05.10.2020 - W1: Review of tools for data visualization
+- 12.10.2020 - W2: [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
+- 19.10.2020 - W3: [Colors](http://www.biecek.pl/Eseje/indexKolory.html) and [Scales](http://www.biecek.pl/Eseje/indexDane.html)
+- 26.10.2020 - W4: [The International Business Communication Standards](https://www.ibcs.com/standards/)
+- 02.11.2020 - W5: [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html)
+- 09.11.2020 - W6: [Other Plot types](https://www.r-graph-gallery.com/)
+- 16.11.2020 - W7: Presentation of project I
+- 23.11.2020 - W8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
+- 30.11.2020 - W9: Edward Tufte
+- 07.12.2020 - W10: Scrollytelling
+- 14.12.2020 - W11: Presentation of project II
+- 21.12.2020 - W12: Dashboards
+- 11.01.2021 - W13: Hans Rosling
+- 18.01.2020 - W14: Presentation of project III
 - 25.01.2020 - 
 
 

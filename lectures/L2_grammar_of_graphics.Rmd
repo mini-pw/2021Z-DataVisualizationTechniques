@@ -75,57 +75,38 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 ## Atrybuty wizualne 
 
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point(size = 4)
+
+p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 4)
+
+p3 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
+  geom_point(size = 4)
+
+p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
+  geom_point(size = 4)
+
+(p1 + p2) / (p3 + p4)
 ```
 
-**Oś X:** Sepal.Length.
-**Oś Y:** Sepal.Width.
+## Atrybuty wizualne - kod
 
-## Atrybuty wizualne 
+```{r, echo=TRUE, warning=FALSE, eval=FALSE}
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(size = 3)
 
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
-  geom_point(size = 4)
+p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3)
+
+p3 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
+  geom_point(size = 3)
+
+p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
+  geom_point(size = 3)
+
+(p1 + p2) / (p3 + p4)
 ```
-
-**Oś X:** Sepal.Length.
-**Oś Y:** Sepal.Width.
-**Kolor:** Species.
-
-## Atrybuty wizualne 
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
-  geom_point(size = 4)
-```
-
-**Oś X:** Sepal.Length.
-**Oś Y:** Sepal.Width.
-**Kolor:** Sepal.Length
-
-## Atrybuty wizualne 
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
-  geom_point(size = 4)
-```
-
-**Oś X:** Sepal.Length.
-**Oś Y:** Petal.Length.
-**Kształt:** Species.
-
-## Atrybuty wizualne 
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
-  geom_point(size = 4)
-```
-
-**Oś X:** Sepal.Length.
-**Oś Y:** Petal.Length.
-**Kształt:** Species.
-**Kolor:** Species.
 
 ## Geometrie
 
