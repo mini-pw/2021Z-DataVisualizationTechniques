@@ -23,8 +23,11 @@ head(serialeIMDB)
 # pipe %>%
 
 
+# Zadanie 0 
+# Obejrzec: https://www.youtube.com/watch?v=LRU5TxFD394&feature=youtu.be&ab_channel=StatisticsGlobe
+
 # Zadanie 1
-# wykonać zadanie z biblioteki proton
+# Wykonać zadanie z biblioteki proton
 library(proton)
 
 
