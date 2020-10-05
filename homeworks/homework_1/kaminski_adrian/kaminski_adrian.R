@@ -3,6 +3,9 @@
 
 library(proton)
 library(dplyr)
+library(stringi)
+
+### 1
 
 proton()
 
@@ -10,15 +13,27 @@ employees %>%
   filter(name == "John", surname == "Insecure") %>%
   select(login) -> john_login
 
+### 2
+
 proton(action = "login", login=john_login)
 
 
-sapply(
-  top1000passwords,
-       function(x) proton(action = "login",
-                          login = john_login,
-                          password=x)
-       )
+# sapply(
+#   top1000passwords,
+#        function(x) proton(action = "login",
+#                           login = john_login,
+#                           password=x)
+#        ) # tez dziala tylko sprawdza wszystkie hasla
+
+for (password in top1000passwords) {
+  if (proton(action ="login", login=john_login, password=password) == "Success! User is logged in!") {
+    break() 
+  }
+}
+
+### 3
+
+# proton(action ="login", login=john_login, password=password) # wykonuje sie już w if (warunek)
 
 employees %>%
   filter(surname == "Pietraszko") %>%
@@ -30,17 +45,18 @@ logs %>%
   count(host, name = "liczba") %>% 
   arrange(-liczba) %>%
   head(1) %>%
-  select(host) -> host_celu
+  .$host %>%
+  as.character() -> host_celu
 
-proton(action = "server", host="194.29.178.16")
+### 4
 
-library(stringi)
+proton(action = "server", host=host_celu)
 
 unique(
   bash_history[!stri_detect_fixed(bash_history, " ")]
   ) -> mozliwe_hasla
 
-stri_sort(mozliwe_hasla) -> hasla_posortowane
+stri_sort(mozliwe_hasla) -> hasla_posortowane # przydatne w przypadku wiekszej ilosci mozliwych hasel
 haslo_celu <- hasla_posortowane[1]
 
 proton(action = "login", login=login_celu, password=haslo_celu)
