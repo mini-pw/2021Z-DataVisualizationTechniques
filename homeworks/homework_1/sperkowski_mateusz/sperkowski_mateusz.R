@@ -23,3 +23,5 @@ proton(action = "server", host="194.29.178.16")
 pass <- bash_history[!str_detect(bash_history, " ")]
 
 pass %>% data.frame() %>% distinct()
+
+proton(action = "login", login="slap", password = "DHbb7QXppuHnaXGN")
