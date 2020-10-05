@@ -173,21 +173,6 @@ Oparte na matplotlib
 <img src="https://seaborn.pydata.org/_images/errorband_lineplots.png" width="500px" class="center">
 
 
-## Altair (Python)
-
-Pythonowe API dla Vega Lite.
-
-Brian Granger, uzasadniając stworzenie Altaira: </br>
-*I love Python, but do my visualisations using R/ggplot2.*
-
-Przykłady: </br>
-[https://altair-viz.github.io/gallery/scatter_tooltips.html](https://altair-viz.github.io/gallery/scatter_tooltips.html)
-[https://altair-viz.github.io/gallery/line_with_ci.html](https://altair-viz.github.io/gallery/line_with_ci.html)
-
-
-Pakiet R:
-[https://github.com/vegawidget/altair](https://github.com/vegawidget/altair) (używa reticulate)
-
 ## plot.ly
 
 Interaktywne wizualizacjie w Javascript z interfejsem w Python i R.

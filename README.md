@@ -30,9 +30,9 @@ Winter Semester 2020/2021
 - 09.11.2020 - Python: pandas - introduction
 - 16.11.2020 - Python: matplotlib seaborn - introduction
 - 23.11.2020 - Python: matplotlib [seaborn](https://seaborn.pydata.org/index.html) 
-- 30.11.2020 - Python: [altair - basic interactivie plots](https://altair-viz.github.io/)
-- 07.12.2020 - Python: altair - advanced interactive visualizations
-- 14.12.2020 - R & Python: [plotly](https://plotly.com/graphing-libraries/)
+- 30.11.2020 - Python: plotly - basic interactivie plots 
+- 07.12.2020 - Python: plotly - advanced interactive visualizations 
+- 14.12.2020 - R: plotly & ggplot2 integration
 - 21.12.2020 - Xmas trees
 - 11.01.2021 - R: shiny - introduction
 - 18.01.2020 - R: [shiny - mastering](https://mastering-shiny.org/)
