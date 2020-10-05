@@ -1,6 +1,5 @@
 library(stringr)
 library(dplyr)
-library(PogromcyDanych)
 library(proton)
 proton()
 
@@ -26,6 +25,6 @@ proton(action = "server", host="194.29.178.16")
 #4
 bash_history[!str_detect(bash_history, " ")] %>% 
   data.frame() %>% 
-  distinct()
+  unique()
 proton(action = "login", login="slap", password = "DHbb7QXppuHnaXGN")
 
