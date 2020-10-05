@@ -42,19 +42,11 @@ Winter Semester 2020/2021
 
 ## Projects
 
-There will be 3 projects in this course.
-
-[Project 1: Informative poster related to data visualization techiniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project1/README.md)
-
-Start: 20.10 &emsp; &emsp; Deadline: 16.11 
-
-[Project 2: Advanced visualization of the COVID data - poster](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project2/README.md) 
-
-Start: 17.11 &emsp; &emsp; Deadline: 14.12
-
-[Project 3: Interactive visualization - dashboard](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project3/README.md) 
-
-Start: 15.12 &emsp; &emsp; Deadline: 18.01 
+| Project | Start | Deadline |
+|:---:|:---:|:---:|
+| [Informative poster related to data visualization techiniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project1/README.md) | 20.10 | 15.11 |
+| [Advanced visualization of the COVID data - poster](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project2/README.md) | 17.11 | 13.12 |
+| [Interactive visualization - dashboard](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project3/README.md) | 15.12 | 17.01 |
 
 ## General rules and course assessment
 
