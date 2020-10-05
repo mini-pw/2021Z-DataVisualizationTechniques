@@ -2,39 +2,39 @@
 
 ## Temat
 
-Celem projektu jest przygotowanie plakatu w formacie pdf, kt髍y poruszy jeden z podanych temat體:
+Celem projektu jest przygotowanie plakatu w formacie pdf, kt贸ry poruszy jeden z podanych temat贸w:
 
-1. Dobre i zle praktyki wizualizacji danych.
-2. Jaki typ wizualizacji wybrac w danej sytuacji?
+1. Dobre i z艂e praktyki wizualizacji danych.
+2. Jaki typ wizualizacji wybra膰 w danej sytuacji?
 
 
-## Szczeg髄y
+## Szczeg贸ly
 
-Powyzsze tematy warto uszczeg髄owic wedlug wlasnego pomyslu. Projekt ten realizowany jest w zespolach 3 osobowych.
-Co tydzien na zajeciach jedna osoba z zespolu prezentuje postepy prac (2 minuty, forma dowolna). Plakat mozna zlozyc
-w dowolnym narzedziu. Wynik projektu prezentowany jest na ostatnim wykladzie (2 minuty, zaleca sie wykorzystanie wczesniej nagranego video).
+Powy偶sze tematy warto uszczeg贸艂owi膰 wed艂ug w艂asnego pomys艂u. Projekt ten realizowany jest w zespo艂ach 3 osobowych.
+Co tydzie艅 na zaj臋ciach jedna osoba z zespo艂u prezentuje post臋py prac na forum grupy (2 minuty, forma dowolna). Plakat mo偶na z艂o偶y膰
+w dowolnym narz臋dziu. Wynik projektu prezentowany jest na ostatnim wyk艂adzie (2 minuty, zaleca sie wykorzystanie wcze艣niej nagranego video).
 
-Na plakacie powinna znajdowac sie informacja identyfikujaca autor體. Mozna, ale nie trzeba umieszczac imiona i nazwiska.
+Na plakacie powinna znajdowa膰 sie informacja identyfikujaca autor贸w. Mo偶na umieszcza膰 imiona i nazwiska.
 
-Plik pdf plakatu nalezy umiescic na GitHubie do 15.11, a potencjalny link do video (lub plik video) zamiescic na GitHubie lub wyslac prowadzacemu projekt do 16.11.
+Plik pdf plakatu nale偶y umie艣ci膰 na GitHubie do 15.11, a potencjalny link do video (lub plik video) zamie艣ci膰 na GitHubie lub wys艂a膰 prowadz膮cemu projekt do 16.11.
 
 ## Daty
 
-- 20.10 zglaszane sa zespoly i tematy
+- 20.10 zg艂aszane s膮 zespo艂y i tematy
 - 27.10 weekly 1
 - 03.11 weekly 2
 - 10.11 weekly 3
-- 16.11 (wyklad) prezentacja projektu 
+- 16.11 (wyk艂ad) prezentacja projektu 
 
 
 ## Ocena
 
-Za ten projekt mozna otrzymac od 0 do 15 punkt體, z czego:
-- do 2 punkt體 uzyskuje sie za przedstawienie prac na danym weekly (3x)
-- do 9 punkt體 uzyskuje sie za plakat i prezentacje na wykladzie (ocena koncowa projektu)
+Za ten projekt mo偶na otrzyma膰 od 0 do 15 punkt贸w, z czego:
+- do 2 punkt贸w uzyskuje si臋 za przedstawienie prac na danym weekly (3x)
+- do 9 punkt贸w uzyskuje si臋 za plakat i prezentacje na wyk艂adzie (ocena ko艅cowa projektu)
 
-Na zajeciach oceniana jest gl體nie aktywnosc, podczas gdy ocena koncowa dotyczy trzech aspekt體:
+Na zaj臋ciach oceniana jest g艂贸wnie aktywno艣膰, podczas gdy ocena ko艅cowa dotyczy trzech aspekt贸w:
 
-- pomysl i kreatywne podejscie do tematu
+- pomys艂 i kreatywne podej艣cie do tematu
 - wykonanie i estetyka plakatu
-- forma i tresc prezentacji
+- forma i tre艣膰 prezentacji
