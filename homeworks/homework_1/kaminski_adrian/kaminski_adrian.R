@@ -18,7 +18,7 @@ sapply(
        function(x) proton(action = "login",
                           login = john_login,
                           password=x)
-       ) # lepsze od petli
+       )
 
 employees %>%
   filter(surname == "Pietraszko") %>%
@@ -32,8 +32,7 @@ logs %>%
   head(1) %>%
   select(host) -> host_celu
 
-proton(action = "server", host="194.29.178.16") # wpisane recznie bo (typeof) 
-                                                # host_celu wyszedl factor i nie moge sobie z nim poradzic
+proton(action = "server", host="194.29.178.16")
 
 library(stringi)
 
@@ -41,8 +40,9 @@ unique(
   bash_history[!stri_detect_fixed(bash_history, " ")]
   ) -> mozliwe_hasla
 
-stri_sort(mozliwe_hasla) -> hasla_posortowane # nie konieczne ale moglo byc wiecej i wtedy moze ulatwic znalezienie
+stri_sort(mozliwe_hasla) -> hasla_posortowane
 haslo_celu <- hasla_posortowane[1]
 
 proton(action = "login", login=login_celu, password=haslo_celu)
 
+rm(list = ls())
