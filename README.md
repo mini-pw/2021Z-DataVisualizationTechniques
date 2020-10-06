@@ -42,23 +42,11 @@ Winter Semester 2020/2021
 
 ## Projects
 
-### Project I
-
-Informative poster/[cheatsheet](https://rstudio.com/resources/cheatsheets/)/graph related to data visualization.
-
-Form: 2-minute video presenting a static graphics.
-
-Deadline: 16.11.2020, displaying the video at the lecture.
-
-[Examplary topics: good visualization practices, which plot to choose?](https://medium.com/@mrbriit/20-free-visualization-cheat-sheets-for-every-data-scientist-to-download-ceee741ba3ca)
-
-### Project II
-
-Advanced visualization of the COVID data.
-
-### Project III
-
-Interactive visualization.
+| Project | Start | Deadline |
+|:---:|:---:|:---:|
+| [Informative poster related to data visualization techiniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project1/README.md) | 20.10 | 15.11 |
+| [Advanced visualization of the COVID data - poster](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project2/README.md) | 17.11 | 13.12 |
+| [Interactive visualization - dashboard](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project3/README.md) | 15.12 | 17.01 |
 
 ## General rules and course assessment
 
