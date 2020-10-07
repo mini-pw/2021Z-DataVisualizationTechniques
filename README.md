@@ -38,7 +38,7 @@ Winter Semester 2020/2021
 - 18.01.2020 - R: [shiny - mastering](https://mastering-shiny.org/)
 - 25.02.2020 - 
 
-[shiny in Python](https://plotly.com/dash/)
+[shiny in Python](https://dash.plotly.com/)
 
 ## Projects
 
