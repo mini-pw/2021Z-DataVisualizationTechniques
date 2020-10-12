@@ -106,9 +106,11 @@ head(maturaExam)
 matura <- maturaExam %>%
   filter(przedmiot == "j. polski", rok == 2013)
 ggplot(matura, aes(x = punkty)) +
-  geom_histogram(binwidth=1)
+  geom_histogram(aes(color = factor(punkty)), binwidth=1)
 
-
+maturaExam2013 <- maturaExa
+ggplot(maturaExam, aes(x = rok , y= punkty, fill = przedmiot)) +
+  geom_bar(position="dodge", stat = "identity")
 
 
 # Zadanie 1
@@ -123,6 +125,10 @@ head(maturaExam)
 
 data("maturaExam")
 head(maturaExam)
+
+maturaExam %>%
+  group_by(rok, przedmiot) %>%
+  summarise(mean = mean(punkty))
 
 
 # Zadanie 3
