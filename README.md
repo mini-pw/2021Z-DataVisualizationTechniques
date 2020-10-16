@@ -16,8 +16,8 @@ Winter Semester 2020/2021
 - 14.12.2020 - W11: Presentation of project II
 - 21.12.2020 - W12: Dashboards
 - 11.01.2021 - W13: Hans Rosling
-- 18.01.2020 - W14: Presentation of project III
-- 25.01.2020 - 
+- 18.01.2021 - W14: Presentation of project III
+- 25.01.2021 - 
 
 
 ## Labs
@@ -35,8 +35,8 @@ Winter Semester 2020/2021
 - 14.12.2020 - R: plotly & ggplot2 integration
 - 21.12.2020 - Xmas trees
 - 11.01.2021 - R: shiny - introduction
-- 18.01.2020 - R: [shiny - mastering](https://mastering-shiny.org/)
-- 25.02.2020 - 
+- 18.01.2021 - R: [shiny - mastering](https://mastering-shiny.org/)
+- 25.02.2021 - 
 
 [shiny in Python](https://dash.plotly.com/)
 
