@@ -16,8 +16,8 @@ Winter Semester 2020/2021
 - 14.12.2020 - W11: Presentation of project II
 - 21.12.2020 - W12: Dashboards
 - 11.01.2021 - W13: Hans Rosling
-- 18.01.2020 - W14: Presentation of project III
-- 25.01.2020 - 
+- 18.01.2021 - W14: Presentation of project III
+- 25.01.2021 - 
 
 
 ## Labs
@@ -35,30 +35,18 @@ Winter Semester 2020/2021
 - 14.12.2020 - R: plotly & ggplot2 integration
 - 21.12.2020 - Xmas trees
 - 11.01.2021 - R: shiny - introduction
-- 18.01.2020 - R: [shiny - mastering](https://mastering-shiny.org/)
-- 25.02.2020 - 
+- 18.01.2021 - R: [shiny - mastering](https://mastering-shiny.org/)
+- 25.02.2021 - 
 
-[shiny in Python](https://plotly.com/dash/)
+[shiny in Python](https://dash.plotly.com/)
 
 ## Projects
 
-### Project I
-
-Informative poster/[cheatsheet](https://rstudio.com/resources/cheatsheets/)/graph related to data visualization.
-
-Form: 2-minute video presenting a static graphics.
-
-Deadline: 16.11.2020, displaying the video at the lecture.
-
-[Examplary topics: good visualization practices, which plot to choose?](https://medium.com/@mrbriit/20-free-visualization-cheat-sheets-for-every-data-scientist-to-download-ceee741ba3ca)
-
-### Project II
-
-Advanced visualization of the COVID data.
-
-### Project III
-
-Interactive visualization.
+| Project | Start | Deadline |
+|:---:|:---:|:---:|
+| [Informative poster related to data visualization techiniques](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project1/README.md) | 20.10 | 15.11 |
+| [Advanced visualization of the COVID data - poster](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project2/README.md) | 17.11 | 13.12 |
+| [Interactive visualization - dashboard](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/blob/master/projects/project3/README.md) | 15.12 | 17.01 |
 
 ## General rules and course assessment
 
