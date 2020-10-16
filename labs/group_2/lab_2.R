@@ -158,15 +158,13 @@ ggplot(mat2013, aes(x = punkty)) +
 data("maturaExam")
 head(maturaExam)
 
-<<<<<<< HEAD
 maturaExam %>% 
   group_by(rok,przedmiot) %>% 
   summarise(srednia = mean(punkty)) %>%
   ggplot(aes(x = as.numeric(as.character(rok)), y = srednia, color = przedmiot)) +
   geom_smooth() + 
   geom_point(size = 2)
-=======
->>>>>>> 07cea6cbddd1c4be0fdb709aff85e26519a0b426
+
 
 # Zadanie 3
 # Narysować zależność prebiegu od roku produkcji. Ilu różnych wykresów da się użyć do tego celu?
@@ -175,7 +173,7 @@ data("auta2012")
 head(auta2012)
 
 
-<<<<<<< HEAD
+HEAD
 auta2012$Rok.produkcji <- factor(auta2012$Rok.produkcji)
 auta2012 %>%
   group_by(Rok.produkcji)%>%
@@ -220,8 +218,7 @@ auta2012 %>%
   ggplot(aes(y = sredni_przebieg, x = Rok.produkcji))+
   geom_rug()
 
-=======
->>>>>>> 07cea6cbddd1c4be0fdb709aff85e26519a0b426
+
 # Zadanie 4
 # Narysować zależność ceny od Marki. Ile róznych wykresów da się narysować?
 
