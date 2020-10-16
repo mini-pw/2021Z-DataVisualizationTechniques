@@ -1,5 +1,5 @@
 ---
-title: "Praca domowa nr 1"
+title: "Praca domowa nr 2"
 author: "Paweł Niewiadowski"
 date: "16 10 2020"
 output: pdf_document
