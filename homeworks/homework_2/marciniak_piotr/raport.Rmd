@@ -7,7 +7,7 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-pdf.options(encoding='ISOLatin2')
+pdf.options(encoding='ISOLatin2.enc')
 ```
 
 # Wykres źródłowy
@@ -20,21 +20,41 @@ Jest to wykres ze strony [link](https://fakty.tvn24.pl/fakty-po-poludniu,96/koro
 source("kodzik.R")
 library(ggplot2)
 library(gridExtra)
-
+library(scales)
 
 GraphConfirmed <- ggplot(Poland, aes(x = date, y = daily_confirmed)) +
   geom_line(color = "Orange", size = 1) +
+  ggtitle("COVID19 w okresie od 1 września do 16 października") +
   xlab("") +
-  ylab("Liczba nowych\npotwierdzonych\nprzypadków\nzakażenia") +
+  ylab("Dzienny\nprzyrost\nprzypadków\nzakażenia") +
+  scale_y_continuous(position = "right") +
+  scale_x_date(labels = date_format("%d.%m"), breaks = breaks_width("week")) +
   theme_minimal() +
-  theme(axis.title.y = element_text(angle = 0, hjust = 0.5, vjust = 0.5))
+  theme(axis.title.y.right = element_text(hjust = 0, vjust = 0.5,
+                                    angle = 0,
+                                    margin = margin(0, 0, 0, 6)),
+        plot.title = element_text(hjust = 0.55))
+
 GraphDeaths <- ggplot(Poland, aes(x = date, y = daily_deaths)) +
   geom_line(color = "Orange", size = 1) +
   theme_minimal() +
   xlab("") +
-  ylab("Liczba nowych\npotwierdzonych\nprzypadków\nśmiertelnych") +
-  theme(axis.title.y = element_text(angle = 0, hjust = 0.5, vjust = 0.5))
-# grid.arrange(GraphConfirmed, GraphDeaths, nrow = 1)
-GraphConfirmed
-GraphDeaths
+  ylab("Dzienny\nprzyrost\nprzypadków\nśmiertlelnych") +
+  scale_x_date(labels = date_format("%d.%m"), breaks = breaks_width("week")) +
+  scale_y_continuous(position = "right") +
+  theme(axis.title.y.right = element_text(hjust = 0, vjust = 0.5,
+                                    angle = 0,
+                                    margin = margin(0, 0, 0, 6)))
+
+grid.arrange(GraphConfirmed, GraphDeaths, ncol = 1)
 ```
+
+# Uzasadnienie
+
+Uważam, że ta wizualizacja jest lepsza, ponieważ moim zdaniem
+
+* wykres liniowy jest lepszy do przedstawienia danych, które są ciągłe w czasie niż wykres słupkowy,
+* rozbicie danych na dwa wykresy zapewniło nam czytelność, jeśli chodzi o liczbę nowych przypadków śmiertelnych COVID-19, możemy w końcu zobaczyć jakąś tendencję, na orginalnym wykresie dopiero po spojrzeniu na legendę zorientowałem się, o istnieniu drugiego słupka opisujacego tą wielkość,
+* dzięki rozbiciu mogłem zastosować jednolitą kolorystykę, co nie odciąga uwagi odbiorcy, a skupia go na danych,
+* tytuł orginialnego wykresu wspomina tylko o liczbie nowych zakażeń, a nie wspomina nic o liczbie przypadków śmiertelnych, mój tytuł jest bardziej ogólny,
+* interwał na osi x w orginalnym wykresie wynosi dwa dni, ilość tych dat moim zdaniem może być przytłaczająca dla odbiorcy, dlatego zastosowałem interwał tygodniowy.
