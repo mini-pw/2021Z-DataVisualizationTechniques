@@ -1,0 +1,40 @@
+---
+title: "Druga praca domowa"
+author: "Marciniak Piotr"
+date: "16.10.2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pdf.options(encoding='ISOLatin2')
+```
+
+# Wykres źródłowy
+Jest to wykres ze strony [link](https://fakty.tvn24.pl/fakty-po-poludniu,96/koronawirus-w-polsce-stanislaw-karczewski-poleca-jablka,1034098.html), chociaż pojawia się także pod innymi artykułami na tej domenie. Jako, że wykres aktualizuje się codziennie, postanowiłem wybrać go z dnia 16.10.2020r, ponieważ tego dnia robiłem tą pracę domową.  
+![]("wykres_zrodlowy")  
+
+# Moja propozycja  
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, verbose=FALSE}
+source("kodzik.R")
+library(ggplot2)
+library(gridExtra)
+
+
+GraphConfirmed <- ggplot(Poland, aes(x = date, y = daily_confirmed)) +
+  geom_line(color = "Orange", size = 1) +
+  xlab("") +
+  ylab("Liczba nowych\npotwierdzonych\nprzypadków\nzakażenia") +
+  theme_minimal() +
+  theme(axis.title.y = element_text(angle = 0, hjust = 0.5, vjust = 0.5))
+GraphDeaths <- ggplot(Poland, aes(x = date, y = daily_deaths)) +
+  geom_line(color = "Orange", size = 1) +
+  theme_minimal() +
+  xlab("") +
+  ylab("Liczba nowych\npotwierdzonych\nprzypadków\nśmiertelnych") +
+  theme(axis.title.y = element_text(angle = 0, hjust = 0.5, vjust = 0.5))
+# grid.arrange(GraphConfirmed, GraphDeaths, nrow = 1)
+GraphConfirmed
+GraphDeaths
+```
