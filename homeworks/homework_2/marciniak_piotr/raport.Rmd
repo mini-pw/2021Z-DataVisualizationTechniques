@@ -14,10 +14,13 @@ pdf.options(encoding='ISOLatin2.enc')
 Jest to wykres ze strony [link](https://fakty.tvn24.pl/fakty-po-poludniu,96/koronawirus-w-polsce-stanislaw-karczewski-poleca-jablka,1034098.html), chociaż pojawia się także pod innymi artykułami na tej domenie. Jako, że wykres aktualizuje się codziennie, postanowiłem wybrać go z dnia 16.10.2020r, ponieważ tego dnia robiłem tą pracę domową.  
 ![]("wykres_zrodlowy")  
 
+\pagebreak
+
 # Moja propozycja  
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, verbose=FALSE}
-source("kodzik.R")
+## Kod
+```{r echo=TRUE, message=FALSE, warning=FALSE, verbose=FALSE}
+source("kodzik.R") #spreparowane dane
 library(ggplot2)
 library(gridExtra)
 library(scales)
