@@ -1,0 +1,61 @@
+library(proton)
+library(dplyr)
+library(stringi)
+proton()
+
+# Problem 1
+#head(employees)
+correct_login <- employees %>%
+  filter(name == "John", surname == "Insecure") %>%
+  select(login)
+
+correct_login <- unlist(correct_login)
+proton(action = "login", login = correct_login)
+
+# Problem 2
+# head(top1000passwords)
+for (i in top1000passwords) {
+  correct_password <- i
+  t <- proton(action = "login", login = correct_login, password= i)
+  if (t == "Success! User is logged in!") {
+    rm(t, i)
+    break
+   } else {
+     next }
+}
+
+proton(action = "login", login = correct_login, password = correct_password)
+
+# Problem 3
+# head(logs)
+pietraszko_login <- employees %>%
+  filter(surname == "Pietraszko") %>%
+  select(login) %>%
+  as.character()
+
+host_number <- logs %>% 
+  filter(login == pietraszko_login) %>%
+  count(host, name = "number", sort = TRUE) %>%
+  as.data.frame()  %>%
+  select(host) %>%
+  `colnames<-`(NULL) %>%
+  head(1)
+  
+
+host_number 
+proton(action = "server", host= "194.29.178.16")
+
+# Problem 4
+password <- bash_history %>%
+  strsplit(" ") %>%
+  unlist()
+
+for (i in password) {
+  correct_password <- i
+  t <- proton(action = "login", login = "slap", password= i)
+  if (t == "Success! User is logged in!") {
+    rm(t, i)
+    break
+  } else {
+    next }
+}
