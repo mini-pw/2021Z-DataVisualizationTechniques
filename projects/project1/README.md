@@ -8,7 +8,7 @@ Celem projektu jest przygotowanie plakatu w formacie pdf, który poruszy jeden z
 2. Jaki typ wizualizacji wybrać w danej sytuacji?
 
 
-## Szczególy
+## Szczegóły
 
 Powyższe tematy warto uszczegółowić według własnego pomysłu. Projekt ten realizowany jest w zespołach 3 osobowych.
 Co tydzień na zajęciach jedna osoba z zespołu prezentuje postępy prac na forum grupy (2 minuty, forma dowolna). Plakat można złożyć
