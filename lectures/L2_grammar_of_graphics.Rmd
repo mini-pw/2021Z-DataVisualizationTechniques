@@ -42,39 +42,108 @@ theme_set(theme_bw())  # pre-set the bw theme.
 
 
 
-# Gramatyka grafiki
+# Gramatyka grafiki: ustrukturyzowany opis wizualizacji danych.
+
+
 
 ## Gramatyka grafiki
 
-Gramatyka grafiki (grammar of graphics): ustrukturyzowany opis wizualizacji danych.
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
 
-Wilkinson, L. (2005). The Grammar of Graphics (New York: Springer-Verlag).
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
 
-## Gramatyka grafiki
 
-<img src="https://blog.gtwang.org/wp-content/uploads/2016/07/ggplot-grammar-of-graphics-stack-1.png" width="600px" class="center">
+## Układ współrzędnych
 
-Źródło: https://blog.gtwang.org/
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Układ współrzędnych
+
+Układ współrzędnych (coord): ramy, w których osadzona jest historia.
+
+
+```{r, echo=FALSE,warning=FALSE}
+df = data.frame(x = c(0,1,2), y = c(5,6,7))
+p1 <- ggplot(df, aes(x=x, y=y)) +
+  xlab("") +
+  ylab("")
+p2 <- ggplot(df, aes(x=x, y=y)) +
+  xlab("") +
+  ylab("") +
+  coord_flip()
+p1 + p2
+```
+
+## Układ współrzędnych
+
+```{r, eval=FALSE,echo = TRUE, warning=FALSE}
+df = data.frame(x = c(0,1,2), y = c(5,6,7))
+p1 <- ggplot(df, aes(x=x, y=y)) +
+  xlab("") +
+  ylab("")
+p2 <- ggplot(df, aes(x=x, y=y)) +
+  xlab("") +
+  ylab("") +
+  coord_flip()
+p1 + p2
+```
+
+
+## Warstwy
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+
 
 ## Dane
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+
+## Dane
+
+Dane (data): tabela, w której obserwacje opisane są przez wektor chech.
 
 ```{r}
 head(iris)
 ```
 
 
-## Atrybuty wizualne 
+## Mapowania
 
-Atrybuty wizualne (aesthetics): mapowanie danych do osi, kolorów, kształtów.
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Mapowania
+
+Mapowania (aes): pary cech obserwacji i atrybutów wykresu.
+
 
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
-  geom_point(size = 4)
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point()
+
+p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + 
+  geom_point()
+
+p3 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, size = Species)) + 
+  geom_point()
+
+(p1 + p2) / p3
+
 ```
 
-## Atrybuty wizualne 
+## Mapowania
 
-```{r, echo=FALSE,warning=FALSE}
+
+```{r, eval=FALSE,echo = TRUE, warning=FALSE}
 p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point(size = 4)
 
@@ -90,169 +159,207 @@ p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
 (p1 + p2) / (p3 + p4)
 ```
 
-## Atrybuty wizualne - kod
 
-```{r, echo=TRUE, warning=FALSE, eval=FALSE}
-p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
-  geom_point(size = 3)
 
-p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
-  geom_point(size = 3)
+## Formy
 
-p3 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
-  geom_point(size = 3)
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
 
-p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) +
-  geom_point(size = 3)
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Formy
+
+Formy (geom): graficzna reprezentacja wartości liczbowych.
+
+```{r, echo=FALSE,warning=FALSE}
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 4)
+
+
+p2 <- data.frame(label = c("A","A","A","B","B","C","C")) %>%
+  ggplot(aes(x = label)) +
+ geom_bar()
+
+p3 <- data.frame(a = c(1,2,3,4,5), b =c(2,4,7,8,10)) %>%
+  ggplot(aes(x = a, y = b)) +
+  geom_line()
+
+p4 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot()
+
 
 (p1 + p2) / (p3 + p4)
+
 ```
 
-## Geometrie
+## Formy
 
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
-  stat_summary(fun.y = "mean", geom = "point")
-```
+Formy (geom): graficzna reprezentacja wartości liczbowych.
 
-Geometrie: obiekty reprezentujące dane.
+```{r, echo=TRUE, eval = FALSE, warning=FALSE}
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 4)
 
-## Geometrie
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+p2 <- ggplot(iris, aes(x = Species, y = Sepal.Length)) +
   stat_summary(fun.y = "mean", geom = "bar")
-```
 
-## Geometrie
+p3 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_line()
 
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = 1, y = Sepal.Length, fill = Species)) +
-  stat_summary(fun.y = "mean", geom = "bar", position = "dodge") +
-  scale_x_continuous("") +
-  theme(axis.text.x = element_blank())
-```
-
-Orientacja obiektów geometrycznych wzgledem siebie też jest istotna.
-
-## Geometrie
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = 1, y = Sepal.Length, fill = Species)) +
-  stat_summary(fun.y = "mean", geom = "bar", position = "stack") +
-  scale_x_continuous("") +
-  theme(axis.text.x = element_blank())
-```
-
-## Fasety
-
-```{r, echo=FALSE,warning=FALSE}
-mutate(iris, 
-       Petal.Length = cut(Petal.Length, 
-                          breaks = c(min(Petal.Length), median(Petal.Length), max(Petal.Length)), 
-                          include.lowest = TRUE)) %>% 
-  ggplot(aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
-  geom_point(size = 4) +
-  facet_wrap(~ Petal.Length, labeller = label_both)
-```
-
-Dzielenie wykresu na podwykresy w zależności od poziomu zmiennej dyskretnej. 
-
-## Fasety
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length)) +
-  geom_density() +
-  facet_wrap(~ Species)
-```
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length)) +
-  geom_density() +
-  facet_wrap(~ Species)
-```
-
-Transformacje danych w celu przypisania ich do atrybutów wizualnych.
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+p4 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
   geom_boxplot()
+
+
+(p1 + p2) / (p3 + p4)
+
 ```
+
 
 
 ## Statystyki
 
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+
+## Statystyki
+
+Statystyki (stat): agregaty danych
+
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+p1 <- ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
+  geom_density(alpha = 0.5)
+p2 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot()
+p3 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
   geom_violin()
-```
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
-  geom_violin() +
-  geom_boxplot()
-```
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-library(ggbeeswarm)
-ggplot(iris, aes(x = Species, y = Sepal.Length)) +
-  geom_quasirandom(method = "smiley")
-```
-
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
-  geom_point(size = 4)
-```
-
-## Statystyki
-
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)) +
+p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)) +
   stat_density2d(aes(alpha = ..level..), geom = "polygon", color = "black")
+
+
+(p1 + p2) / (p3 + p4)
 ```
 
-## Koordynaty
+
+## Statystyki
+
+Statystyki (stat): agregaty danych
+
+```{r, echo=TRUE,warning=FALSE, eval = FALSE}
+p1 <- ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
+  geom_density(alpha = 0.5)
+p2 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot()
+p3 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_violin()
+p4 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)) +
+  stat_density2d(aes(alpha = ..level..), geom = "polygon", color = "black")
+
+
+(p1 + p2) / (p3 + p4)
+```
+
+## Przesunięcia
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Przesunięcia
+
+Przesunięcia (position): modyfikatory położenia.
 
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species)) +
-  geom_bar() 
+p1 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_jitter(position = "identity")
+p2 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_jitter(position = "jitter")
+
+(p1 + p2)
 ```
 
-## Koordynaty
+## Przesunięcia
+
+Przesunięcia (position): modyfikatory położenia.
+
+```{r, echo=TRUE,warning=FALSE, eval = FALSE}
+p1 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_jitter(position = "identity")+
+  theme(legend.position = "bottom")
+p2 <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_jitter(position = "jitter") +
+  theme(legend.position = "bottom")
+
+(p1 + p2)
+```
+
+
+
+## Panele
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Panele
+
+Panele (facets): fragmenty historii o teh samej strukturze dla podzbiorów danych.
 
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Species)) +
-  geom_bar() +
-  coord_flip()
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_density() +
+  facet_wrap(~ Species)
 ```
 
-## Koordynaty
+
+
+
+## Skale 
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Skale 
+
+Skale (scale): transformacja cech obserwacji na atrybuty wykresu.
+
 
 ```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = 1, fill = Species)) +
-  geom_bar() +
-  coord_polar("y", start = 0)
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() 
+
+p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +
+  scale_x_reverse()
+
+p1 + p2
 ```
 
-## Motyw
+## Skale
 
-```{r, echo=FALSE,warning=FALSE}
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
-  geom_point(size = 4) 
+
+```{r, eval=FALSE,echo = TRUE, warning=FALSE}
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() 
+
+p2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +
+  scale_x_reverse()
+
+p1 + p2
 ```
 
-## Motyw
+## Dekoracje
+
+<img src="./figs/mapaMysliGramatyka3.png" width="600px" class="center">
+
+Źródło: http://www.biecek.pl/Eseje/indexGramatyka.html
+
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
 
 ```{r, echo=FALSE,warning=FALSE}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
@@ -261,7 +368,20 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Spe
   ggtitle("Theme: economist")
 ```
 
-## Motyw
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
+
+```{r, echo=TRUE,warning=FALSE, eval = FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_economist() +
+  ggtitle("Theme: economist")
+```
+
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
 
 ```{r, echo=FALSE,warning=FALSE}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
@@ -270,16 +390,22 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Spe
   ggtitle("Theme: Tufte")
 ```
 
-## Motyw
 
-```{r, echo=FALSE,warning=FALSE}
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
+
+```{r, echo=TRUE,warning=FALSE, eval=FALSE}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
   geom_point(size = 4) +
-  theme_wsj() +
-  ggtitle("Theme: WSJ")
+  theme_tufte() +
+  ggtitle("Theme: Tufte")
 ```
 
-## Motyw
+
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
 
 ```{r, echo=FALSE,warning=FALSE}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
@@ -288,14 +414,22 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Spe
   ggtitle("Theme: Excel")
 ```
 
-## Gramatyka grafiki
 
-| Nazwa                          | Przykłady                                              |
-|--------------------------------|--------------------------------------------------------|
-| Dane (data)                    |                                                        |
-| Atrybuty wizualne (aesthetics) | Osie, kolory, kształty, typy linii                     |
-| Geometrie (geometries)         | Linie, słupki, punkty                                  |
-| Fasety (facets)                | Podrysunki tworzone na podstawie dyskretnych zmiennych |
-| Statystyki (statistics)        | Średnie, mediany, kwantyle.                            |
-| Koordynaty (coordinates)       | Kartezjański, polarny                                  |
-| Motyw (theme)                  | Wygląd rysunku                                         |
+## Dekoracje
+
+Dekoracje (theme): styl wizualny.
+
+```{r, echo=TRUE,warning=FALSE, eval=FALSE}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species, shape = Species)) +
+  geom_point(size = 4) +
+  theme_excel() +
+  ggtitle("Theme: Excel")
+```
+
+
+
+
+## Do poczytania
+
+
+[Esej o gramatyce](http://www.biecek.pl/Eseje/indexGramatyka.html)
