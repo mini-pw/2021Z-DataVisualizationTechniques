@@ -1,0 +1,62 @@
+---
+title: "Praca domowa 2"
+author: "Jan Gąska"
+date: "16.10.2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pdf.options(encoding='ISOLatin2.enc')
+```
+
+# Omawiany wykres
+Źródło wykresu: https://wysokienapiecie.pl/321-dziury-w-energetycznych-planach-polski/
+
+![](Wykres.jpg)
+
+Wykres przedstawia strukturę wytwarzania energii elektrycznej w Polsce w 2030 roku, wedle danych z zamieszczonej strony.
+
+# Moja poprawa wykresu
+
+```{r}
+library(ggplot2)
+
+data_frame <- data.frame(
+  "Typ_energii" =  c("Węgiel kamienny", "Węgiel brunatny","Gaz ziemny",
+                     "Olej opałowy","Paliwo jądrowe","Biomasa","Biogaz",
+                     "Energia wodna","Energia wiatru","Energia słoneczna"),
+  "Procent" = c(30,23,7,1,19,5,1,1,12,1))
+
+data_frame$Typ_energii <- factor(data_frame$Typ_energii,
+                          levels = data_frame$Typ_energii[order(data_frame$Procent)])
+
+ggplot(data_frame, aes(x = Procent,y = Typ_energii,fill = Typ_energii)) +
+      geom_col() +
+      scale_color_brewer(palette="Dark2") +
+      labs(title = "                  Struktura wytwarzania energii
+           elektrycznej w Polsce w 2030 roku", x = "Procent",y = "Typ energii")+
+      scale_x_continuous(labels = paste(seq(from = 0, to = 30, by = 5),"%"),
+                         breaks = seq(from = 0, to = 30, by = 5))+
+      geom_text(aes(label = paste(factor(Procent),"%")),nudge_x = 1.2) +
+      theme_bw()+
+      theme(legend.position = "none") 
+
+```
+\newpage
+
+# Dokonane poprawki
+Oryginalny graf zawierał kilka rażących błedów, które poprawiłem na nowym typie wykresu.
+Należy zacząć od tego, iż nie zawierał nawet głównego tytułu opisującego wykres, który dołączyłem.
+Użycie wykresu kołowego w formie 3D zmniejsza czytelność i zniekształca proporcje. Taki wykres jest
+wysoce nieczytelny dla użytkownika. Zasąpiłem go normalnym wykresem słupkowym, i przy okazji zmieniłem
+palete kolorów.
+Jednym z ostatnich zasadniczych występków oryginalnego wykresu było przrdstawienie udziału typu energii
+na wykresie w sposób losowy, dane nie były w żaden sposób uporządkowane. Fakt ten zastąpiłem porządkując
+wykres wedle udziału procentowego malejąco.
+Ostatnią łatką jest czytelniejsze przyporządkowanie etykiet do ich wartości, gdyż po prostu w oryginale
+nie starczyło miejsca na opis każdej etykiety na wykresie, co nie jest błędem rażącym, lecz zmniejsza estetykę.
+
+
+
+
