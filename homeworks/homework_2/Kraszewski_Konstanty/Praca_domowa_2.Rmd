@@ -23,9 +23,16 @@ Wybrałem wykres pochodzący ze strony onet.pl (https://wiadomosci.onet.pl/kraj/
 ```{r}
 ggplot(dane, aes(x = daty, y = liczby_respiratorow)) +
   geom_col(fill = "#956D1B", width = 0.7) +
-  labs(x = "wybrane dni od czerwca do października", title = "LICZBA ZAJĘTYCH RESPIRATORÓW w ciągu ostatnich miesięcy", subtitle = "Źródło: Ministerstwo Zdrowia") +
+  labs(
+    x = "wybrane dni od czerwca do października",
+    title = "LICZBA ZAJĘTYCH RESPIRATORÓW w ciągu ostatnich miesięcy",
+    subtitle = "Źródło: Ministerstwo Zdrowia") +
   geom_text(aes(label = liczby_respiratorow), vjust=-0.3, size=3.5) +
-  scale_y_continuous(name = NULL, breaks = seq(0, 500, 50), limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  scale_y_continuous(
+    name = NULL,
+    breaks = seq(0, 500, 50),
+    limits = c(0, NA),
+    expand = expansion(mult = c(0, 0.05))) +
   theme(
     axis.line.y = element_blank(),
     axis.line.x = element_line(size = 0.5, linetype = "solid", colour = "black"),
