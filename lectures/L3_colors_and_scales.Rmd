@@ -221,6 +221,14 @@ Na bazie The Visual Decoding of Quantitative Information on Statistical Graphs [
 Źródło: http://www.biecek.pl/Eseje/indexObraz.html
 
 
+## Badania nad percepcją
+
+<img src="./figs/W3-2010MTurk.png" width="850px"class="center">
+
+Średni względny błąd percepcji wielkości prezentowanych za pomocą różnych charakterystyk. T1 – wysokości sąsiednich pasków, T2 – pola prostokątów o wspólnej podstawie, T3 – wysokości odległych pasków, T4, T5 – pola prostokątów bez wspólnej podstawy, T6 – pola wycinków koła, T7 – pola kół, T8, T9 – pola niewyrównanych prostokątów.
+
+Źródło: http://www.biecek.pl/Eseje/indexObraz.html
+
 # Percepcja kolorów
 
 ## Percepcja kolorów
