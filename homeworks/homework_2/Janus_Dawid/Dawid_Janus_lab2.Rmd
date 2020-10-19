@@ -1,0 +1,51 @@
+---
+title: "Praca Domowa nr 2 "
+author: "Dawid Janus 305742"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+
+Java_IDE = c('Eclipse','Intellij Idea', 'Netbeans', 'Jdeveloper', 'BlueJ')
+Rating = c(4.8,4.3,4.1,4.1,4)
+
+info <- data.frame(Java_IDE,Rating)
+
+
+x=c('Eclipse','Intellij Idea', 'Netbeans', 'Jdeveloper', 'BlueJ')
+
+wykres<-ggplot(info, aes(x=factor(Java_IDE, levels = x),y = Rating )) +
+  geom_bar(stat="identity", fill = "cornflowerblue", width = 0.3) + 
+  ggtitle("Java IDE Rating") +
+  xlab("Java IDE")+
+  ylab("Rating")+
+  theme_bw() +
+  theme(
+    plot.title = element_text(color="black", size=20, face="bold", hjust=0.5),
+    axis.title.x = element_text(color="black", size=17, face="bold", vjust = 0.1),
+    axis.title.y = element_text(color="black", size=17, face="bold",vjust=1),
+    axis.text = element_text(size=10)
+  ) 
+
+```
+## Wersja oryginalna
+
+[Link do oryginalu]("https://www.softwaretestinghelp.com/best-java-ide-and-online-compilers/")
+
+![Wykres oryginalny](oryginalny.JPG)
+
+\newpage
+## Wersja poprawiona
+
+```{r echo=FALSE}
+wykres
+```
+
+## Komentarz
+
+Oryginalny wykres przedstawia najbardziej popularne środowiska programistyczne w języku Java, a przynajmniej na to wskazuje tytuł. Patrząc na wykres, możemy zauważyć, że osie nie są podpisane. W przypadku osi OX nie mamy większego problemu z domyśleniem się, o czym nas informuje, jednakże sytuacja na osi OY jest dużo bardziej skomplikowana. Widoczne są na niej cyfry, które nie wiadomo, co tak naprawde znaczą ani co przedstawiają. Pod wykresem znajduje się legenda dotycząca jego koloru, która oznajmia, iż kolor niebieski znaczy to samo co tytuł, co moim zdaniem jest kompletnie niepotrzebne.
+Podczas przeglądania innych stron poświęconych popularności środowisk programistycznych Javy zauważyłem, że tamte dane znacznie różnią się od przedstawione na powyższym wykresie. Z pozostałych źródeł wynika, iż pierwsze dwa środowiska stanowią ponad 50% popularności, tego nie można wywnioskować z omawianego wykresu.
+Moim zdaniem autor prawdopodobnie chciał pokazać oceny poszczególnych środowisk, gdyż wskazują na to liczby na osi OY. Jednak nie jestem tego pewien, ponieważ oceny niektórych środowisk na wykresie nie zgadzają się z informacjami umieszczonymi na stronie pod wykresem. Nie bedąc do końca pewnien, co autor miał na myśli, przepisałem informacje z tabelki ze strony i stworzyłem czytelny wykres z odpowiednio opisanymi osiami.
+
