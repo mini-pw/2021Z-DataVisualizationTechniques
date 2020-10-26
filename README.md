@@ -5,7 +5,7 @@ Winter Semester 2020/2021
 
 - 05.10.2020 - W1: Review of tools for data visualization
 - 12.10.2020 - W2: [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
-- 19.10.2020 - W3: [Colors](http://www.biecek.pl/Eseje/indexKolory.html) and [Scales](http://www.biecek.pl/Eseje/indexDane.html)
+- 19.10.2020 - W3: [Colors](http://www.biecek.pl/Eseje/indexKolory.html) and [Scales](http://www.biecek.pl/Eseje/indexObraz.html)
 - 26.10.2020 - W4: [The International Business Communication Standards](https://www.ibcs.com/standards/)
 - 02.11.2020 - W5: [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html)
 - 09.11.2020 - W6: [Other Plot types](https://www.r-graph-gallery.com/)
