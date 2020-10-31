@@ -1,0 +1,35 @@
+---
+title: "Hubert Ruczyński - PD2"
+author: "Hubert Ruczyński"
+date: "18/10/2020"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wykres źródłowy
+
+Wykres, który do poprawy znalazłem na grupie Facebookowej o nazwie "Wykresawka", jednak jego orginalnym źródłem jest prawdopodobnie zrzut ekranu  z programu TVN 24. Ostatnie dane obejmują 08.10, więc najpewniej powstał on 08.10 bądź 09.10.
+
+![](wykres_tvp24_pd_1.jpg)
+
+## Co jest nie tak z wykresem i jak należałoby go poprawić?
+
+Przede wszystkim wartości na wykresie nie zgadzają się z opisem osi Y (Wyjątkiem jest ostatni słupek, który zgadza się z osią). Można to zauważyć już przy pierwszym słupku gdzie wartość powinna być bliska 2500, wynosi zaś 1967. Przez ten błąd sensu nie ma też rysowanie krzywej łączącej wierzchołki słupków, gdyż trend jest wtedy wyraźnie spłaszczony co nie obrazuje rzeczywistego wzrostu liczby zakażeń.
+Istnieje spore prawdopodobieństwo, że niedopasowanie osi Y jest celowym błędem, który miał właśnie złagodzić tę krzywą trendu, aby uspokoić (a przy tym okłamać) społeczeństwo.
+
+## Wykres poprawiony
+
+```{r pressure, echo=FALSE}
+library(ggplot2)
+data<-data.frame(date= c("01.10", "02.10", "03.10", "04.10", "05.10", "06.10", "07.10", "08.10"), cases=c(1967, 2292, 2367, 1934, 2006, 2236, 3003, 4280))
+
+ggplot(data,aes(x=date, y=cases))+
+  geom_bar(stat="identity", fill="orange", width = 0.5) +
+  geom_line(aes(x=as.numeric(date),y=cases), size=1.5, color="red") +
+  geom_point(size=2, color="red")+
+  geom_text(aes(label=cases), position=position_dodge(width=0.5), vjust=-0.25) +
+  ggtitle("Liczba nowych przypadkow zakazenia koronawirusem w Polsce") +
+  labs(y= "Liczba przypadkow", x="Dzien") +
+  theme_minimal()
