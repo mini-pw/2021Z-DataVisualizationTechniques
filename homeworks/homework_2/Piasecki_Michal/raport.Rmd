@@ -1,0 +1,46 @@
+---
+title: "Praca domowa"
+author: "Michał Piasecki"
+date: "18/10/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# dane pochodza z 
+# https://github.com/owid/covid-19-data/tree/master/public/data
+library(dplyr)
+library(ggplot2)
+options(scipen = 999)
+dane <- read.csv('owid-covid-data.csv')
+selected_countries = c("United Kingdom", "Germany", "Italy", "Portugal", "Poland", "Austria")
+data_for_chart <- dane %>%
+  filter(date == "2020-10-11") %>%
+  filter(location %in% selected_countries) %>%
+  select(location,total_tests)
+
+```
+
+## 
+
+Wykres, który postanowiłem poprawić pochodzi ze strony https://www.medonet.pl/zdrowie/zdrowie-dla-kazdego,zasieg-koronawirusa-covid-19--mapa-,artykul,43602150.html. Nie podoba mi się w nim to, że nie ma zaznaczonej drugiej osi wskazującej liczbę wykonanych testów. Ponadto uważam, że krajów jest za dużo. Dodatkowo USA z bardzo dużą ilością przypadkóW zaburza odczytywanie wykresu dla innych krajów.
+
+![wykres z onetu](onet_koncowy.png)
+
+
+
+## Moj wykres 
+```{r, plot, tidy = TRUE, echo = FALSE}
+data_for_chart$location = c("Austria", "Germany", "Italy", "Poland", "Portugal", "UK")
+data_for_chart$total_tests = data_for_chart$total_tests / 1000
+ggplot(data_for_chart, aes(x = location, y = total_tests, fill = location)) + geom_bar(stat = "identity", show.legend = FALSE) +
+  labs(title = "Overall tests in countries", x = "Country", y = "Tests (in thousands)") +
+  theme(
+    plot.title = element_text(size=13, face="bold.italic"),
+    axis.title.x = element_text(size=13, face="bold"),
+    axis.title.y = element_text(size=13, face="bold")
+  ) 
+```
+
+Zmniejszyłem ilość krajów, żeby wykres był bardziej czytelny. Dodałem oś z ilością testów w tysiącach aby było widoczne jaki kraj zrobił ile testów. Usunąłem Stany Zjednoczone, które bardzo dużym wynikiem zaburzały wykres
