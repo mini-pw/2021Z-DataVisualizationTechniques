@@ -1,0 +1,74 @@
+---
+title: "Praca domowa 2"
+author: "Jakub Kozieł"
+output: pdf_document
+---
+```{r, include=FALSE}
+source("Praca_domowa_2.R") 
+```
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## \huge Poprawiana wizualizacja
+
+![Poprawiana wizualizacja](poprawiana wizualizacja.png)
+
+*Źródło: https://www.dailymail.co.uk/news/article-8834187/Covid-19-deaths-continue-creep-321-victims-England-Wales-week.html *
+
+Wizualizacja ta umieszczona została na stronie MailOnline serwisu Daily Mail
+
+
+## \huge Moje rozwiązanie
+
+```{r}
+## kod źródłowy
+
+library(ggplot2)
+
+df <-
+  data.frame(
+    "Age" = c(
+      "Under 30",
+      "30-39",
+      "40-49",
+      "50-59",
+      "60-69",
+      "70-79",
+      "80-89",
+      "Over 90"
+    ),
+    "Number_of_deaths" = c(0, 11, 26, 67, 155, 328, 523, 272)
+  )
+df$Age <- factor(df$Age, levels = df$Age)
+
+
+
+ggplot(df, aes(x = Age, y = Number_of_deaths)) +
+  geom_bar(stat = "identity", fill = "#00aedb") +
+  ggtitle("Deaths due to COVID-19 between August 1 and October 2 in each group of age") +
+  ylab("Number of deaths") +
+  geom_text(aes(label = Number_of_deaths),
+            vjust = -0.3,
+            size = 4.5) +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 12),
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 14)
+  )
+```
+
+*Do stworzenia tego wykresu użyłem wskazane przez nich dane ze strony: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales*
+
+
+## \huge Omówienie
+
+Zaprezentowana na stronie wizualizacja zawiera szereg wad:
+
+ * użyty został trudny do odczytania wykres kołowy
+ * wartości zostały zaprezentowane w sposób nieintuicyjny i mimo prostoty problemu, konieczny jest dodatkowy opis, a odbiorca musi się domyślać znaczenia elementów
+ * prawdopodobnie chcąc ratować czytelność, zostały scalone grupy wiekowe 30-39 i 40-49, ponadto po scaleniu nie został im nadany odpowiedni priorytet, dlatego nie możemy przejść po diagramie według wieku zgodnie z ruchem wskazówek zegara
+ * można zauważyć rozbieżności co do liczby śmierci, przykładowo w grupie osób poniżej lat 30, mimo korzystania ze wskazanego przez nich źródła
