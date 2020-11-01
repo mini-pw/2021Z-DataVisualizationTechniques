@@ -1,0 +1,131 @@
+---
+title: "Eksperyment dotyczący czytelności wykresów kołowych 3D"
+author: "Bartosz Siński"
+date: "02.11.2020"
+output: pdf_document
+
+---
+```{r echo=FALSE}
+library(plotrix)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+```
+# Wstęp
+
+W moim eskeperymencie zbadałem czytelność wykresów kołowych 3D. Ekperyment opierał się na ankiecie złożonej z pięciu pytań, z których każde miało zbadać inny aspekt odczytywania wykresów. Ankietę wypełniło 25 osób. Wizualizacje wykorzystane w ankiecie i raporcie były przygotowane przeze mnie w R. Do wykresów kołowych 3D wykorzystałem bibliotekę do R `plotrix`.
+
+## Link do ankiety
+https://docs.google.com/forms/d/e/1FAIpQLSdrB6vUl5TZBgtDKyTO5br_plc4HJg1mtNh2B5VUbVxHYxjEg/viewform
+
+\pagebreak
+
+# Pytanie 1
+Ułóż części poniższego wykresu w kolejności od najmniejszej do największej.  
+
+
+```{r echo = FALSE}
+slices1 <- c(15, 20, 30, 10, 25)
+lbls1 <- c("A", "B", "C", "D", "E")
+pie3D(slices1,labels=lbls1,explode=0.05,shade = 0.6)
+```
+
+## Poprawna odpowiedź: DABEC
+
+
+## Odpowiedzi ankietowanych oraz trafność (w %) wskazania kolejności dla odpowiednich elementów:
+```{r echo = FALSE}
+
+kolejnosc <- c("DAECB","DACEB","DABCE","DACBE","DAEBC","DABEC")
+wartosci <- c(0.04,0.08,0.12,0.12,0.24,0.4)
+kolejnosc_wykres <- ggplot(data.frame(kolejnosc,wartosci), aes(x = kolejnosc, y = wartosci)) + geom_bar(stat='identity') + theme_hc() +labs(x = element_blank(),y = element_blank()) + scale_y_continuous(labels = scales::percent) 
+```
+
+```{r echo=FALSE}
+kolejnosc2 <- c("A", "B", "C", "D", "E")
+trafnosc <- c(1,0.56,0.58,1,0.52)
+kolejnosc_wykres2 <- ggplot(data.frame(kolejnosc2,trafnosc), aes(x = kolejnosc2, y = trafnosc)) + geom_bar(stat='identity') + theme_hc() +labs(x = element_blank(),y = element_blank()) + scale_y_continuous(labels = scales::percent) 
+kolejnosc_wykres / kolejnosc_wykres2
+```
+
+## Wniosek
+Ankietowani pierwsze dwa najmniejsze elementy potrafili wskazać z 100% poprawnością, dopiero przy częściach większych, które kątami zbliżały się do 90 stopni odpowiedzi bardzo się różniły.
+
+\pagebreak 
+
+# Pytanie 2
+Porównaj częsci A i B w poniższych wykresach. W odpowiedzi zaznacz część przedstawiającą większy procent.
+
+![](porownaniec.png)
+
+## Poprawna odpowiedz: A
+## Odpowiedzi ankietowanych:
+
+| Odpowiedź | Liczba ankietowanych |
+|-----------|----------------------|
+| A | 23 |
+| B | 2 | 
+
+## Wniosek
+Większość ankietowanych poprawnie porównała małe części na dwóch różnych wykresach. Jednak ta skuteczność nie wynosiła już 100% tak jak przy porównywaniu najmniejszych części  A i D w pytaniu 1, gdy były one na tym samym wykresie.
+\pagebreak
+
+# Pytanie 3
+Oszacuj w procentach jaką cześć  poniższego diagramu stanowi element X.
+
+```{r echo=FALSE}
+slices4 <- c(7,8,10,20,35,20)
+lbls4 <- c("","","X","","","")
+pie3D(slices4,labels=lbls4,explode=0.05,shade = 0.6)
+```
+
+## Poprawna Odpowiedź: 10%
+## Odpowiedzi ankietowanych (w %):
+```{r echo = FALSE , fig.width=6, fig.height=4}
+wyniki <- c(0.12,0.10,0.10,0.08,0.083,0.09,0.15,0.13,0.10,0.08,0.10,0.15,0.1750,0.15,0.20,0.12,0.15,0.167,0.10,0.10,0.15,0.08,0.12,0.12,0.10)
+ggplot(data.frame(wyniki), aes(x="",y = wyniki)) + geom_boxplot() + theme_hc() +labs(x = element_blank(),y = element_blank())  + scale_y_continuous(labels = scales::percent)
+
+```
+
+## Wniosek 
+Jak widać na powyższym boxplocie połowa osób była bardzo blisko poprwanej odpowiedźi i szacując kąt pomyliła się o nie więcej niż 8°. Jednak niepokojące jest to, że u ćwierci ankietowanych błąd szacowania kąta był większy niż 18° i sięgał nawet 36°.
+
+\pagebreak
+
+# Pytanie 4
+Oszacuj w procentach jaką cześć poniższego diagramu stanowi element X.  
+```{r echo = FALSE}
+slices5 <- c(35,10,15,20,8,12)
+lbls5 <- c("X","","","","","")
+szacowanie2 <- pie3D(slices5,labels=lbls5,explode=0.05,shade = 0.6)
+```
+
+## Poprawna odpowiedź: 35%
+## Odpowiedzi ankietowanych (w %): 
+```{r echo = FALSE , fig.width=6, fig.height=4}
+wyniki <- c(0.33,0.40,0.40,0.40,0.333,0.30,0.40,0.35,0.35,0.41,0.35,0.40,0.33,0.40,0.30,0.33,0.35,0.40,0.42,0.40,0.38,0.35,0.38,0.35,0.35)
+ggplot(data.frame(wyniki), aes(x="",y = wyniki)) + geom_boxplot() + theme_hc() +labs(x = element_blank(),y = element_blank()) + scale_y_continuous(labels = scales::percent)
+
+```
+
+## Wniosek
+Jednej czwartej osób udało się dokładnie wskazać poprawną odpowiedź. Maksymalne błedy w szacowaniu kąta były też mniejsze w porównaniu do szacowania kąta ostrego w pytaniu 3. 
+
+\pagebreak
+
+# Pytanie 5
+Która z poniżej zaprezentowanych metod wizualizacji danych jest dla ciebie bardziej czytelna? 
+![](opinia.png)
+
+## Odpowiedzi ankietowanych:  
+
+| Odpowiedź | Liczba ankietowanych |
+|----------|:----------------------:|
+| Wykres kołowy 3D | 4 |
+| Wykres kolumnowy | 21 | 
+
+## Wniosek 
+Zdecydowana większość ankietowanych jako czytelniejszą metodę wizualizacji danych wybrała wykres kolumnowy. Mimo wszystko pojawiły się osoby preferujące wykres kołowy 3D. Jednak okazuje się, że preferowanie danego typu wykresu nie koreluje z poprawnym odczytywaniem go. Dwie z ankietowanych osób, które wybrały w tym pytaniu wykres kołowy 3D, w poprzednich pytaniach (3 i 4) oszacowały wartości z najmniejszą poprawnością.
+
+# Podsumowanie 
+Dla większości ankietowanych odcztytwanie danych oraz wskazywanie zależności na wykresie kołowym 3D okazało się wyzwaniem. Przy porównywaniu wielkości częsci na jednym wykresie, zaskakujące okazało się, że ankietowani mają największy problem z porównywaniem kątów bliskich 90°, w momencie gdy bez problemu porównują kąty ostre bliskie 30°, zarówno na jednym jak i na dwóch osobnych wykresach. Przy szacowaniu wartości w procentach dokładniejsze były wyniki szacowania katów rozwartych, niż katów ostrych oraz miały także mniejsze maksymalne błędy bezwględne. Dla większości ankietowanych czytelniejszą od wykresu kołowego 3D formą przedstawiania danych jest wykres kolumnowy.
