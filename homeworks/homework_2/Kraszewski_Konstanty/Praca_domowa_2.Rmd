@@ -1,0 +1,47 @@
+---
+title: "Praca domowa 2"
+author: "Konstanty Kraszewski"
+date: "18 X 2020"
+output: pdf_document
+---
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+pdf.options(encoding = 'ISOLatin2.enc')
+library("dplyr")
+library("ggplot2")
+dane <- data.frame(id = 1:11, daty = c("11/06", "30/06", "01/07", "31/07", "05/08", "31/08", "04/09", "26/09", "01/10", "08/10", "15/10"), liczby_respiratorow = c(75, 85, 78, 72, 72, 83, 75, 110, 159, 296, 508))
+dane$daty <- factor(dane$daty, levels = c("11/06", "30/06", "01/07", "31/07", "05/08", "31/08", "04/09", "26/09", "01/10", "08/10", "15/10"))
+```
+
+
+Wybrałem wykres pochodzący ze strony onet.pl (https://wiadomosci.onet.pl/kraj/koronawirus-trzy-wykresy-ukazujace-realia-pandemii-w-polsce/lkl5hm1) z artykułu z dnia 15 października.
+
+![Wybrany wykres](wykres.jpg)
+
+
+```{r}
+ggplot(dane, aes(x = daty, y = liczby_respiratorow)) +
+  geom_col(fill = "#956D1B", width = 0.7) +
+  labs(
+    x = "wybrane dni od czerwca do października",
+    title = "LICZBA ZAJĘTYCH RESPIRATORÓW w ciągu ostatnich miesięcy",
+    subtitle = "Źródło: Ministerstwo Zdrowia") +
+  geom_text(aes(label = liczby_respiratorow), vjust=-0.3, size=3.5) +
+  scale_y_continuous(
+    name = NULL,
+    breaks = seq(0, 500, 50),
+    limits = c(0, NA),
+    expand = expansion(mult = c(0, 0.05))) +
+  theme(
+    axis.line.y = element_blank(),
+    axis.line.x = element_line(size = 0.5, linetype = "solid", colour = "black"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.y = element_line(size = 0.25, linetype = "solid", colour = "gray"),
+    panel.background = element_rect(fill = "white", colour = "white")
+  )
+```
+
+
+W wykresie poprawiłem tło na jednolite, uszczegółowiłem tytuł oraz dodałem opis osi x.
