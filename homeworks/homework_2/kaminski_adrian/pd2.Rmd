@@ -1,0 +1,151 @@
+---
+title: "Techniki wizualizacji danych - praca domowa 2"
+author: "Adrian Kamiński"
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex # page style fancy, stworzenie 'klikalnego spisu tresci' na dole kazdej strony
+    keep_tex: true
+urlcolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wykres orginalny
+Wykres ten pochodzi ze strony [forsal.pl](https://forsal.pl/nieruchomosci/mieszkania/artykuly/7847560,ceny-mieszkan-drugi-kwartal-2020-dane-eurostatu-polska-unia-europejska.html) z artykułu: **Polska w unijnej czołówce pod względem wzrostu cen mieszkań [DANE EUROSTATU]**.
+
+
+
+![Źródło: [forsal.pl](https://forsal.pl/nieruchomosci/mieszkania/artykuly/7847560,ceny-mieszkan-drugi-kwartal-2020-dane-eurostatu-polska-unia-europejska.html)](original.jpg){width=650px}\label{ref1}  <!-- stworzenie odnosnika -->
+
+\newpage
+
+## Wykres poprawiony
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Wczytanie bibliotek
+library(ggplot2) 
+library(zoo) # funkcja as.yearqtr()
+library(ggthemes)
+# Stworzenie ramek danych
+df <- data.frame(dates = rep(seq(as.yearqtr("2017 Q3"), by = 0.25, length.out = 12), 3),
+                 values = c(3.7, 3.9, 6, 6.2, 6.5, 7.6, 8.1, 8.2, 9, 9.4, 11.3, 10.9,
+                            3.5, 3, 5.4, 5.4, 4.7, 6.4, 6.7, 6.7, 6.8, 6.6, 6.5, 5.3,
+                            3.8, 4.6, 6.4, 6.8, 8, 8.7, 9.3, 9.4, 10.9, 12, 15.1, 15.4), 
+                 type = rep(c("HPI zmiana r/r", "rynek pierwotny zmiana r/r", "rynek wtórny zmiana r/r"), each = 12))
+df2 <- data.frame(dates = rep(seq(as.yearqtr("2017 Q3"), by = 0.25, length.out = 12), 3),
+                 values = c(1, 1.3, 1.5, 2.3, 1.3, 2.4, 1.9, 2.3, 2.1, 2.8, 3.6, 2, 
+                            1, 1.4, 1.4, 1.5, 0.3, 3, 1.6, 1.6, 0.4, 2.8, 1.6, 0.4,
+                            1, 1.1, 1.6, 2.9, 2.1, 1.8, 2.2, 3, 3.5, 2.8, 5.1, 3.2), 
+                 type = rep(c("HPI zmiana kw/kw", "rynek pierwotny zmiana kw/kw", "rynek wtórny zmiana kw/kw"), each = 12))
+```
+
+```{r echo=F, message=FALSE, warning=FALSE, fig.height=4}
+ggplot(df, aes(x = dates, y = values)) + 
+  geom_hline(yintercept=seq(2.5, max(df$values), by=2.5), color="grey", size=0.5) +
+  geom_bar(data = df[13:36,], aes(fill = type),
+           stat="identity", position = "dodge", color = "white") + 
+  scale_fill_manual(values = c("blueviolet", "cyan4", "darkgreen")) +
+  geom_line(data = df[1:12,], aes(fill = type),
+            color = "blueviolet", size = 1.5, alpha = 0.6) + 
+  geom_point(data = df[1:12,], color = "blueviolet", size = 2) +
+  geom_hline(yintercept = 0) + 
+  scale_x_continuous(breaks = unique(df$dates),
+                     labels = format(as.yearqtr(unique(df$dates)),
+                                     format="%Y\nQ%q") ) + 
+  theme_tufte() + 
+  theme(legend.position="top", legend.justification='left',
+        legend.title=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y = element_text(size = 10, face = "bold"),
+        axis.text.x = element_text(size = 10, face = "bold.italic"),
+        legend.text = element_text(size = 10, face = "bold"))
+
+```
+\label{ref2}  <!-- stworzenie odnosnika -->
+```{r echo=F, message=FALSE, warning=FALSE, fig.height=4}
+ggplot(df2, aes(x = dates, y = values)) + 
+  geom_hline(yintercept=seq(1, max(df2$values), by=1), color="grey", size=0.5) +
+  geom_bar(data = df2[13:36,], aes(fill = type),
+           stat="identity", position = "dodge", color = "white") + 
+  scale_fill_manual(values = c("cornflowerblue", "burlywood", "brown")) +
+  geom_line(data = df2[1:12,], aes(fill = type),
+            color = "cornflowerblue", size = 1.5, alpha = 0.6) + 
+  geom_point(data = df2[1:12,], color = "cornflowerblue", size = 2) +
+  geom_hline(yintercept = 0) + 
+  scale_x_continuous(breaks = unique(df$dates), 
+                     labels = format(as.yearqtr(unique(df$dates)), 
+                                     format="%Y\nQ%q") ) + 
+  theme_tufte() + 
+  theme(legend.position="top", legend.justification='left',
+        legend.title=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y = element_text(size = 10, face = "bold"),
+        axis.text.x = element_text(size = 10, face = "bold.italic"),
+        legend.text = element_text(size = 10, face = "bold"))
+```
+
+\newpage
+
+## Różnice 
+\label{ref3} <!-- stworzenie odnosnika -->
+
+* zmiana kolorystyki szczególnie w pierwszym wykresie zdecydowanie poprawia czytelność,
+* zmienienie linii na przezroczystą, aby nie zasłaniała jakie wyniki są osiągane w słupkach,
+* zmiana numeracji na osi Y przez co nie marnujemy miesca na którym nic nie jest pokazywane,
+* zmiana przedstawienia osi X; ustalenie jednolitego poziomu, 
+* pogrubiona czcionka w legendzie - zwiększenie czytelności.
+
+## Kod wykorzystany do utworzenia tej wizualizacji
+
+```{r eval=FALSE, echo = TRUE}
+ggplot(df, aes(x = dates, y = values)) + 
+  geom_hline(yintercept=seq(2.5, max(df$values), by=2.5), color="grey", size=0.5) +
+  geom_bar(data = df[13:36,], aes(fill = type),
+           stat="identity", position = "dodge", color = "white") + 
+  scale_fill_manual(values = c("blueviolet", "cyan4", "darkgreen")) +
+  geom_line(data = df[1:12,], aes(fill = type),
+            color = "blueviolet", size = 1.5, alpha = 0.6) + 
+  geom_point(data = df[1:12,], color = "blueviolet", size = 2) +
+  geom_hline(yintercept = 0) + 
+  scale_x_continuous(breaks = unique(df$dates),
+                     labels = format(as.yearqtr(unique(df$dates)),
+                                     format="%Y\nQ%q") ) + 
+  theme_tufte() + 
+  theme(legend.position="top", legend.justification='left',
+        legend.title=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y = element_text(size = 10, face = "bold"),
+        axis.text.x = element_text(size = 10, face = "bold.italic"),
+        legend.text = element_text(size = 10, face = "bold"))
+
+ggplot(df2, aes(x = dates, y = values)) + 
+  geom_hline(yintercept=seq(1, max(df2$values), by=1), color="grey", size=0.5) +
+  geom_bar(data = df2[13:36,], aes(fill = type),
+           stat="identity", position = "dodge", color = "white") + 
+  scale_fill_manual(values = c("cornflowerblue", "burlywood", "brown")) +
+  geom_line(data = df2[1:12,], aes(fill = type),
+            color = "cornflowerblue", size = 1.5, alpha = 0.6) + 
+  geom_point(data = df2[1:12,], color = "cornflowerblue", size = 2) +
+  geom_hline(yintercept = 0) + 
+  scale_x_continuous(breaks = unique(df$dates), 
+                     labels = format(as.yearqtr(unique(df$dates)), 
+                                     format="%Y\nQ%q") ) + 
+  theme_tufte() + 
+  theme(legend.position="top", legend.justification='left',
+        legend.title=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y = element_text(size = 10, face = "bold"),
+        axis.text.x = element_text(size = 10, face = "bold.italic"),
+        legend.text = element_text(size = 10, face = "bold"))
+```
+
