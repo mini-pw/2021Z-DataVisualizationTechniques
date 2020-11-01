@@ -1,0 +1,55 @@
+---
+title: "Praca Domowa 2"
+author: "Katarzyna Solawa"
+date: "18.10.2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Oryginalny wykres
+
+
+```{r, out.width='125%', fig.align='center', fig.cap='...', echo= FALSE}
+knitr::include_graphics('https://www.ztm.poznan.pl/assets/Uploads/_resampled/ResizedImageWzYwMCwzMDFd/obrazek-pokazujacy-ze-52-proc.-ankietowanych-w-konsultacjach-trasy-tramwajowej-na-Marcelin-najlepiej-ocenia-komunikacje-tramwajowa.png')
+```
+Źrodo: https://www.poznan.pl/mim/info/news/tramwaj-na-marcelin-raport-z-konsultacji-spolecznych,154022.html
+
+# Poprawiony wykres
+
+```{r fig.width=10, fig.height=6}
+library(ggplot2)
+
+Procent <- c(52, 22, 15, 5, 4,2)
+
+pojazdy <- c("Tramwaj", "Samochod", "Rower", "Autobus",
+             "Poruszanie sie\n pieszo", "Hulajnoga\n elektryczna")
+
+dane <- data.frame(Procent, pojazdy)
+
+ggplot(dane, aes(x = reorder(pojazdy, -Procent) , y = Procent)) +
+  geom_bar(stat="identity", fill = c("blue")) +
+  ggtitle("Ktory srodek transportu ocenia Pani/Pan jako najbardziej efektywny w Poznaniu?") +
+  theme_bw() + #usuniecie tla
+  theme(text = element_text(size=15),
+        axis.title.x = element_blank(), #usuniecie nazw osi
+        axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5)) + # wysrodkowanie tytulu
+  geom_text(aes(label = paste(as.character(Procent), "%", sep="")),
+            vjust = -0.2, # pozycja
+            colour = "black", 
+            size = 5)
+  
+```
+
+
+# Komentarz
+
+#### Co zostalo poprawione:
+
+* Zamienilam widok 3D na 2D, poniewaz 3D sprawialo ze wykres byl mniej czytelny i slupki wydawaly sie lekko nieporporcjonalne.
+* Ograniczylam liczbe kolorow do jednego. Slupki sa podpisane, wiec nie potrzeba dodatkowo ich wyrozniac.
+

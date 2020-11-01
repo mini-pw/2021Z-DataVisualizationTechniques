@@ -1,0 +1,39 @@
+---
+title: "Praca Domowa 2"
+author: "Adam Frej"
+output:
+  pdf_document: default
+---
+
+# Wykres oryginalny:
+Wykres przedstawia jaki procent osób w krajach europejskich pracuje pod presją czasu.
+\newline\newline
+![""](original_plot.png)
+\newline
+Źródło: https://ec.europa.eu/eurostat/web/products-eurostat-news/-/DDN-20201006-2?inheritRedirect=true&redirect=%2Feurostat%2Fnews%2Fwhats-new)
+
+# Poprawiona wizualizacja - wykresy:
+
+## How often do you work under time pressure?
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("pd_2.R")
+```
+
+```{r, echo = FALSE}
+plot(finall_plot1)
+plot(finall_plot2)
+```
+
+## Uzasadnienie:
+Postanowiłem rodzielić wykres na cztery mniejsze. Moim zdaniem słupki ułożone jeden na drugim znacznie zmniejszają czytelność. Powodują, że trudniej jest zauważyć różnice pomiędzy poszczególnymi wynikami dla krajów. Np. ciężej jest odczytać, który kraj ma największy odsetek osób w kategorii Sometimes albo jaka jest dokładnie wartość danego słupka.
+\newline
+Moje cztery wykresy są tak samo wyskalowane dzięki czemu można łatwo odzczytać dane ze wszytkich naraz i nie są one mylące.
+\newline
+Dodatkowo postanowiłem tytuł zastąpić pytaniem co sprawia, że odzczytanie wykresu jest bardziej intuicyjne.
+\newline
+Postanowiłem też usunąć zbędny podział na kraje w Unii i spoza.
+
+## Kod źródłowy:
+
+```{r, code = readLines("pd_2.R"), warning=FALSE, message=FALSE}
+```
