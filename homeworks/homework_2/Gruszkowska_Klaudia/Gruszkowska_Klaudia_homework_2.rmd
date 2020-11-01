@@ -1,0 +1,38 @@
+---
+title: "Gruszkowska Klaudia Homework 2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wstęp
+
+Do opisu i poprawy wybrałam wykres znajdujący się na stronie https://businessinsider.com.pl/finanse/podatki-a-koszt-panstwa-dochody-i-wydatki-budzetu-w-2019-roku/5gdet4f. Wykres ma przedstawiać podział wpłaconej w ramach podatku w 2019 roku kwoty 100 zł na poszczególne sektory budżetu państwa.
+
+![Oryginalny wykres](/home/klaudiag/Pulpit/Gruszkowska_Klaudia/wykres.png)
+
+## Poprawiona wersja
+
+
+```{r pressure, echo=TRUE}
+library(ggplot2)
+data <- data.frame(
+  ilość = c(16.9,16.0,14.9,10.7,7.5,6.6,5.2,5.2,4.5,3.3,2.9,2.6,2.0,1.6),
+  opis = c("Pozostałe","Ubezpieczenia społeczne","Subwencje ogólne dla JST","Obrona narodowa","Program Rodzina 500+","Obsługa długu Skarbu Państwa","Składka do Unii Europejskiej","Nauka i szkolnictwo wyższe","Bezpieczeństwo publiczne i ochrona przeciwpożarowa","Wymiar sprawiedliwości","Transport i łączność","Ochrona zdrowia","Rolnictwo","Współfinansowanie projektów z udzialem środków z UE")
+)
+
+ggplot(data,aes(x = ilość, y = factor(opis,level=opis))) + 
+  geom_bar(stat='identity')+
+  ylab("Sektor budżetu państwa")+
+  xlab("Kwota w złotych")+
+  xlim(0,18)+
+  labs(title="Twoje 100 zł w budżecie państwa")+
+  geom_text(aes(label = ilość),vjust = 0, hjust = 0)+
+  theme_minimal()
+```
+
+## Opis
+
+Na oryginalnym wykresie dane zostały pokazana na obrazie banknotu 100 zł. Jednak takie przedstawienie nie obrazuje widocznie różnicy w wielkościach poszczególnych części np. trudno nam rozróżnić patrząc na obrazek część, która ma przedstawiać 2.9 zł od tej przedstawiającej 3.3 zł. Dlatego do przedstawienia tych danych wybrałam wykres słupkowy. Dzięki tej zmianie różnice stały się widoczniejsze.
