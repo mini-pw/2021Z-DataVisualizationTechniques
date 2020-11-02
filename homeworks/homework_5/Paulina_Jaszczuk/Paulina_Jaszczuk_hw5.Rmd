@@ -1,0 +1,35 @@
+---
+title: "Praca domowa 5"
+author: "Paulina Jaszczuk"
+date: "2.11.2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r loading_packages, include = FALSE}
+library(dplyr)
+library(ggplot2)
+library(scales)
+```
+
+```{r source, include=FALSE}
+source("Paulina_Jaszczuk_hw5.R")
+```
+
+# Wykres poprawiany
+
+![Gospodarstwa domowe z osobami przebywającymi czasowo za granicą powyżej 3 miesięcy według liczby osób przebywających za granicą w 2011 r.](bad_plot_hw5.png)
+
+
+# Wykres poprawiony
+
+```{r correct_plot}
+my_corrected_plot(data)
+```
+```{r correct_plot2}
+my_corrected_plot2(data2)
+```
+
