@@ -1,0 +1,59 @@
+---
+title: "Raport z PD3+4"
+author: "Kacper Grzymkowski"
+date: "10/30/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+source("wykresy.R")
+source("data_processing.R")
+```
+
+# Eksperyment
+Chciałem sprawdzić czy faktycznie kolor, który nic nie znaczy, może wpływać na możliwość odczytu danych. W tym celu ankietowanym pokazałem 2 wykresy - jeden czarno-biały, a drugi kolorowy. Następnie poprosiłem o odczytanie z nich danych "na pierwszy rzut oka".
+
+```{r test, echo=FALSE, fig.height=3.5}
+gridExtra::grid.arrange(czarny(), kolorowy(), nrow=1)
+```
+
+Niestety dopiero po rozesłaniu ankiety zauważyłem, że skala się automatycznie zmieniła, co mogło (i prawdopodobnie miało) wpływ na wyniki. Jednak pomimo tego wyniki są ciekawe
+
+\pagebreak
+
+# Wyniki
+Orzymałem 20 odpowiedzi i faktycznie wykres kolorowy wypdadł znacznie gorzej od czarno-białego:
+
+```{r numerki, echo=FALSE}
+ankiety_merged %>% 
+  filter(abs(Error) <= 4) %>% # usuwam odstające, aby nie psuły średniej
+  mutate_at(c("Error"), abs) %>%
+  mutate(Diagram = ifelse(stringr::str_starts(Question, "bw"), "Czarno-biały", "Kolorowy")) %>%
+  group_by(Diagram) %>% 
+  summarise(Suma_bledow = sum(Error), Sredni_blad = mean(Error))
+```
+
+Widać również na boxplotcie błędów, że odczyt danych był mniej dokładny na wykresie kolorowym. Co ciekawe, wygląda na to, że ankietowani generalnie zaniżali wartości przy odczytywaniu, a nie zawyżali. 
+
+```{r wyniki, echo=FALSE}
+ankiety_merged %>%
+  ggplot(aes(x = Question, y = Error)) +
+  geom_boxplot()
+```
+
+\pagebreak
+
+Odpowiedzi faktyczne nałożone na wykres oryginalny.
+
+```{r overlaid, echo=FALSE}
+ggplot() +
+  geom_col(data = ankiety_merged %>% select(Question, Actual) %>% unique(), mapping = aes(x = Question, y = Actual), 
+           fill = c(rep("#595959", 5), "#F9766E", "#A3A601", "#00BF7C", "#00B0F6", "#E86BF3")) +
+  geom_jitter(data = ankiety_merged, mapping = aes(x = Question, y = Answer), height = 0, alpha = 0.5) +
+  scale_x_discrete() +
+  labs(y = "", x ="") 
+
+```
+
+# Wnioski
+Faktycznie, kolory bez znaczenia sprawiają, że wykres jest mniej czytelny. Jest bardzo prawdopodobne, że niefortunna zmiana skali oraz inne czynniki, o których nie pomyślałem miały wpływ na końcowe wyniki, ale ogólny trend zgadza się z tezą.
