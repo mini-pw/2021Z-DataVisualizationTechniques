@@ -1,0 +1,45 @@
+---
+title: "Gruszkowska Klaudia Pd 5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wstęp
+
+Wykres znalazłam na stronie https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/migracje-wewnetrzne-ludnosci-nsp-2011,19,1.html . Wykres ma przedstawiać migrację ludności do roku 2011.
+
+![Oryginalny wykres](/home/klaudiag/Pulpit/PD 5/Gruszkowska_Klaudia/migracje_wykres.png)
+
+Na oryginalnym wykresie dane zostały przedstawione za pomocą wykresu kołowego z lekkim efektem 3d. Dodatkowym efektem jest rozbicie jedej części na wykresie oraz zapisanie ich za pomocą dodatkowego wykresu kolumnowego.
+
+## Poprawiona wersja
+
+
+```{r pressure, echo=TRUE,eval=FALSE}
+library(ggplot2)
+dane2 <- data.frame(
+  opis = c("Zamieszkała od urodzenia","Przybyła/ powróciła przed 2002","Przybyła/powróciła w latach 2002-2011 z kraju","Emigranci przebywający za granicą czasowo 12 miesięcy lub dłużej","Nie ustalono od kiedy mieszka","Przybyła/powróciła w latach 2002-2011 z zagranicy"),
+  ilosc = c(56.5,29.4,9.0,4.1,0.6,0.4)
+)
+
+ggplot(dane2,aes(x=ilosc,y = factor(opis,level=opis)))+
+  geom_bar(stat='identity')+
+  geom_text(aes(label = ilosc),vjust = 0, hjust = 0)+
+  theme_light()+
+  xlim(c(0,70))+
+  ylab("Okres zamieszkania")+
+  xlab("Procent ludności")+
+  ggtitle("Ludność według okresu zamieszkania w obecnej miejscowości")
+  
+  
+```
+![](/home/klaudiag/Pulpit/PD 5/Gruszkowska_Klaudia/migracje_wykres_poprawiony.png)
+
+
+## Opis poprawy
+
+Odnosząc się do wyników poprzednich prac domowych, z których wynika, że wykres słupkowy jest czytelniejszy od kołowego, postanowiłam w ten właśnie sposób go poprawić. Również dodatkowy wykres słupkowy na oryginalnym wykresie postanowiłam 
+zamienić na osobne dane, ponieważ dotyczą one innej grupy ludzi. Można je pogrupować ale według mnie staje się to mniej czytelne. Gdyby okres przed 2002 rokiem był tak samo długi jak 2002-2011 to takie pogrupowanie miałoby sens bo wtedy moglibyśmy się odnieść do ich wielkości, ale skoro tutaj ten okres nie jest jasno określony to moim zdaniem rozbicie tych danych jest uzasadnione.
