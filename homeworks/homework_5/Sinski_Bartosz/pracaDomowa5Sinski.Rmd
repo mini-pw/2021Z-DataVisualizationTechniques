@@ -1,0 +1,38 @@
+---
+title: "Praca domowa 5"
+author: "Bartosz Siński"
+date: "2 11 2020"
+output: pdf_document
+---
+
+
+## Wykres Oryginalny 
+
+![](wykres_poprawiany.jpg)
+
+## Zródło 
+
+https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/migracje-zagraniczne-ludnosci-nsp-2011,13,1.html
+
+# Wykres Poprawiony
+
+
+```{r echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+kategorie1 <- c("Ogółem","Miasta","Wieś")
+wartosci1 <- c(0.479,0.466,0.498)
+df1 <- data.frame(kategorie1,wartosci1)
+wykres_1 <- ggplot(df1,aes(x = factor(kategorie1,levels = c("Miasta","Wieś","Ogółem")), y = wartosci1)) + geom_bar(stat='identity',position = "dodge",fill = "gray18")  + labs(x = element_blank(),y = element_blank(),title = "2002") + scale_y_continuous(labels = scales::percent,limits = c(0,0.6),breaks = c(0,0.1,0.2,0.3,0.4,0.5,0.6)) + 
+  geom_text(aes(label = scales::percent(wartosci1), y = wartosci1 + 0.015),size = 5) + theme_bw() 
+kategorie2 <- c("Ogółem","Miasta","Wieś")
+wartosci2 <- c(0.535,0.548,0.512) 
+df2 <- data.frame(kategorie2,wartosci2)
+wykres_2 <- ggplot(df2,aes(x = factor(kategorie2,levels = c("Miasta","Wieś","Ogółem")), y = wartosci2)) + geom_bar(stat='identity',position = "dodge",fill = "gray18")  + labs(x = element_blank(),y = element_blank(),title = "2011") + scale_y_continuous(labels = scales::percent,limits = c(0,0.6),breaks = c(0,0.1,0.2,0.3,0.4,0.5,0.6)) + 
+  geom_text(aes(label = scales::percent(wartosci2), y = wartosci2 + 0.015),size = 5) + theme_bw() 
+wykres_3 <- wykres_1 + wykres_2  
+wykres_3 + plot_annotation(title = "Osoby niepełnosprawne w wieku 60 lat i więcej według miejsca zamiekszania \n w latach 2002-2011 (w %)")
+
+```
+

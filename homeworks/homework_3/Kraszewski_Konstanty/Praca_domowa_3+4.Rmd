@@ -1,0 +1,42 @@
+---
+title: "Praca domowa 3 + 4"
+author: "Konstanty Kraszewski"
+date: "01 11 2020"
+output: pdf_document
+---
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library("dplyr")
+library("ggplot2")
+library("SmarterPoland")
+data("countries")
+```
+
+## Wprowadzenie
+
+Przeprowadzony eksperyment miał na celu sprawdzenie zdolności postrzegania wielkości na zasadzie porównywania kół ("bąbelków") przedstawionych na zamieszczonym wykresie bąbelkowym przedstawiającym współczynniki urodzeń i umieralności w różnych krajach oraz ich populację.
+
+```{r countries, warning=FALSE, message=FALSE, echo=FALSE}
+ggplot(data = countries, aes(x = birth.rate, y = death.rate, size = population)) +
+  geom_point(alpha = 0.5, color = "#67a9cf") +
+  scale_size(range = c(.1, 35)) +
+  theme(legend.position = "none") +
+  xlab("Współczynnik urodzeń") +
+  ylab("Współczynnik umieralności")
+```
+
+Badanie zostało przeprowadzone w formie ankiety. Uczestnicy mieli przed sobą dziesięć pytań. W każdym zaznaczone były dwa koła o podobnej wielkości, a zadaniem było wybranie większego z pary.
+
+
+## Wyniki
+
+Zebranych zostało osiemnaście ankiet. Respondenci zaznaczali poprawną odpowiedź średnio w siedmiu pytaniach na dziesięć, przy czym wszystkie wyniki zawierały się w przedziale od sześciu do ośmiu. W dwóch pytaniach przeważały niepoprawne odpowiedzi, a w siedmiu poprawne.
+
+
+## Wnioski
+
+Ankietowani udzielali większości poprawnych odpowiedzi. Nie zauważono wpływu wielkości ani ocenianych "bąbelków", ani różnic pomiędzy "bąbelkami" w poszczególnych parach na poprawność oceny. Pytanie z największą ilością nieprawidłowych odpowiedzi może być uznane za sprzyjające zachodzeniu złudzenia Ebbinghausa, co mogłoby tłumaczyć uzyskany wynik, jednak podobne warunki w innych przypadkach wydają się nie wywoływać takiego efektu.
+
+
+
+
