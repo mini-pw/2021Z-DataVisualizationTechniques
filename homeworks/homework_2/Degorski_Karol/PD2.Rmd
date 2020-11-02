@@ -1,0 +1,47 @@
+---
+title: "Praca domowa nr 2 "
+author: "Karol Degórski"
+date: "10/18/2020"
+geometry: margin = 2cm
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pdf.options(encoding='ISOLatin2.enc')
+```
+
+## Poprawiana wizualizacja
+
+Poprawiana wizualizajca pochodzi z programu Biznes dla Ludzi emitowanego w dniu 11 października na kanale TVN24.
+
+![](previous_plot.png)
+
+## Poprawiony wykres
+
+```{r plot, echo=TRUE}
+library(ggplot2)
+procent <- c(66, 20, 7, 6, 1)
+Metoda_płatności <- c("Karta", "Gotówka",
+                      "Telefon, zegarek", "Bankowość internetowa", "Inne")
+dane <- data.frame(procent, Metoda_płatności)
+
+
+dane$Metoda_płatności <- factor(dane$Metoda_płatności, 
+                                levels = c("Karta", "Gotówka", "Telefon, zegarek",
+                                           "Bankowość internetowa", "Inne"))
+ggplot(dane, aes(x = Metoda_płatności, y = procent, fill = procent)) + 
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) +
+  geom_col() + ggtitle("Czym najchętniej płacimy") + 
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  labs(y = NULL, x = "Metoda płatności") + 
+  geom_text(aes(label=paste(procent, '%')),
+            position=position_dodge(width=0.9), vjust=-0.25) + 
+  scale_fill_continuous(low="#1aff1a", high="#00b300") + guides(fill=FALSE)
+  
+```
+
+## Dokonane zmiany
+
+Zmieniłem typ wykresu na wykres słupkowy, który w lepszy sposób prezentuje zebrane dane. Dodałem słupek "Inne", który odpowiada 1% zebranych danych, a który pominięto na pierwotnym wykresie. Dzięki temu wszystkie słupki sumują się do 100%.
+
