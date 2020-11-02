@@ -1,0 +1,31 @@
+---
+title: "Praca Domowa 3+4"
+author: "Yevhenii Vinichenko"
+date: "30.10.2020"
+output: pdf_document
+urlcolor: blue
+---
+
+# Eksperyment
+
+W celu sprawdzenia jak kształt i kolory wykresu wpływają na rozumienie danych, które ma przedstawiać, przeprowadziłem ankietę, w której zestwiane były dwa wykresy: kołowy 3D(nr. 1) z niezbyt dobrym doborem kolorów oraz słupkowy 2D(nr. 2) z, moim zdaniem, bardziej trafnym pokolorowaniem.
+
+![Wykres 1]("3dChart.png"){width=250px}
+
+![Wykres 2]("barplot.png"){width=350px}
+
+Ankietowani mieli po kolei spojrzeć szybko na oba wykresy i odpowiedzieć czy rozumieją co jest na nich pokazane. Było także pytanie kontrolne, polegające na odpowiedzeniu co wynosi więcej: Ham czy Ribs(są równe). Ogółem udało się uzyskać 57 odpowiedzi, na podstawie których doszedłem następujących wniosków.
+
+# Wnioski
+
+Większość nie miała problemów ze zrozumieniem zawartości wykresów: 89,5%(51/57) przy 1 i 94,7%(54/57) przy 2 oświadczyło, że rozumie je dobrze. Wbrew temu tylko 54,4%(31/57) dobrze odpowiedziało na pytanie kontrolne do wykresu 1, co więcej, 45%(23/51) z dobrze rozumiejących 1 wykres udzieliło niepoprawnej odpowiedzi. Sytuacja z pytaniem kontrolnym do wykresu 2 wygląda lepiej: dobrze odpowiedziało 93%(53/57). Stąd widać, że porównywanie pól może stanowić problem, zwłaszcza jeśli są te pola nieco zniekształcone poprzez reprezentacje ich w 3D. Z porównywaniem długości idzie większości zdecydowanie łatwiej. Także lepszy dobór kolorów w 2 wykresie miał sprawić, że łatwiej się go rozumiało: 49,1%(28/57) polubiło 2 wykres, 40,4%(23/57) - 1(10.5%(6/57) odpowiedziało, że podobały się oba).
+
+# Linki
+
+1. ankieta https://docs.google.com/forms/d/e/1FAIpQLSdhMHtSXDBkp8k0q1QFXMrU0UanWi6YZKGc-sNnZKIMuJU8QA/viewform?usp=sf_link
+
+2. inspiracja eksperymentu https://stackoverflow.com/questions/33594642/beautiful-pie-charts-with-r
+
+
+
+

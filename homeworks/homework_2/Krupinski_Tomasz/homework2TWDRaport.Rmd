@@ -1,0 +1,33 @@
+---
+output: pdf_document
+---
+
+# Praca domowa nr 2 - Tomasz Krupiński
+## Wersja oryginalna wizualizacji
+![](wykresMinisterstwa.png)
+
+https://www.facebook.com/ministerstwo.edukacji/photos/a.129261330508041/2935684233199056/
+
+Jest to wykres **kołowy**, który przedstawia ilości szkół pracujących w różnych trybach, z powodu pandemii. 
+
+## Wersja poprawiona wizualizacji
+
+Kod oraz wykres:
+
+```{r, echo=TRUE}
+dane <- data.frame(
+  tryb_nauki <- c("tryb zdalny", "tryb mieszany", "tryb stacjonarny"),
+  ilosc_szkol <- c(553, 1604, 46327)
+)
+
+wykres <- ggplot2::ggplot(dane, ggplot2::aes(x = tryb_nauki, y = ilosc_szkol)) +
+  ggplot2::geom_bar(stat = "identity", color = "black", fill = "lightblue") +
+  ggplot2::geom_text(ggplot2::aes(label = ilosc_szkol), vjust = -0.3, size = 3.5) + 
+  ggplot2::scale_x_discrete(limits = c("tryb stacjonarny", "tryb mieszany", "tryb zdalny")) +
+  ggplot2::labs(title = "Podział szkół na tryby pracy",x = "", y = "ilość szkół pracujących w danym trybie") +
+  ggplot2::theme_minimal()
+
+wykres
+```
+
+Pierwszym poprawieniem wizualizacji, jest zastosowanie innego typu wykresu, a mianowicie słupkowego, jako, że są tylko 3 dane. Również, kolejnym poprawieniem, jest fakt, że tryb zdalny oraz tryb mieszany są oznaczone jednym kolorem na wykresie kołowym, więc w porawionej wizualizacji są one rozdzielone na osobne słupki.
