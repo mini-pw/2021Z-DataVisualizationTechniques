@@ -15,7 +15,9 @@ df <- data.frame(values = values,
                  fill = fill,
                  stringsAsFactors = FALSE)
 
-ggplot(df, aes(x = factor(gender, levels = c("Mężczyźni", "Kobiety")), y=values, fill=fill)) +
+ggplot(df, aes(x = factor(gender, levels = c("Mężczyźni", "Kobiety")), y=values,
+               fill=factor(fill, levels = c("przedprodukcyjny", "produkcyjny mobilny", 
+                                            "produkcyjny niemobilny", "poprodukcyjny")))) +
   geom_bar(stat = "identity", position = "dodge") +
   geom_text(aes(label=values), position=position_dodge(width=0.9), vjust=-0.25, size=6) +
   scale_fill_manual(values = c('#1b9e77','#d95f02','#7570b3','#e7298a')) + 
