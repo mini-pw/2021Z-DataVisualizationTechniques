@@ -1,0 +1,14 @@
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = false,
+    linkbordercolor = {white}
+}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhf{}
+\fancyfoot[L]{\thepage}
+\fancyfoot[R]{\hyperref[ref1]{\text{Wykres oryginalny}}\quad\quad\quad\hyperref[ref2]{Wykres poprawiony}\quad\quad\quad\hyperref[ref3]{Różnice/kod}}
+\fancypagestyle{plain}{\pagestyle{fancy}}
