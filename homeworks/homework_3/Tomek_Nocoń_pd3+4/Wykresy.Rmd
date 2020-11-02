@@ -1,0 +1,301 @@
+---
+title: "PIE CHART VS BAR CHART"
+author: "Tomasz Nocoń"
+date: "1 11 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, cache=TRUE}
+
+library("ggplot2")
+library(scales)
+library(RColorBrewer)
+
+pieChart1 <- function(){
+  df <- data.frame(
+    browser = c("Chrome", "Other", "FireFox", "IE"),
+    number = c(61.2, 11.3, 15.5, 12.1))
+
+  bp<- ggplot(df, aes(x="", y=number, fill=browser))+
+    geom_bar(width = 1, stat = "identity")
+  pie <- bp + coord_polar("y", start=0)
+  blank_theme <- theme_minimal()+
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      panel.border = element_blank(),
+      panel.grid=element_blank(),
+      axis.ticks = element_blank(),
+      plot.title=element_text(size=10, face="bold")
+    )
+
+  pie + scale_fill_brewer("Browsers") + blank_theme +
+    theme(axis.text.x=element_blank()) + 
+    labs(title = "Deskopt Browser Share Market 2016")
+                                              
+}
+
+barChart1 <- function(){
+df <- data.frame(
+  browser = c("Chrome", "Other", "FireFox", "IE"),
+  number = c(61.2, 11.3, 15.5, 12.1))
+
+ggplot(data = df, aes(x = reorder(browser, -number), y = number)) +
+  geom_col(fill = "deepskyblue4") +
+  labs(title = "Deskopt Browser Share Market 2016",
+       x = "Browsers" , y = "Percentage of Share Market")
+}
+barChart1()
+
+pieChart1()
+
+
+```
+
+# Podaj jaki procent wszystkich przeglądarek stanowił IE?
+- Na pierwsze pytanie padało wiele odpowiedzie. Jak wynika z ankeity najczęsciej padał wynik $13\%$. 
+- $38\%$ osob oceniało pewność swojej odp na $8$ w sakli &10$ stopniowej.
+- Natomaist gdy osoby odpowiadały na te same pytanie na wykresie słukowym najwięcej odp było wskazywało na $12\%$ co było bliskie rzeczywistej wartosci, która wynsosiła $12,1\%$.
+- Wiecej osób było pewnych sowjej wypowiedzi. Ponad $47\%$ dało $9$ lub $10$ w skali $10$ stopniowej.
+
+# Czy przeglądarka IE miała większy udział w rynku od tych zawartych w polu Other?
+- Poprawną odpowidzałą było "TAK". Na postawie pie chartu $81\%$ badanych dało taka odpowiedź, natomiast na podstawie bar chartu $95\%$.
+
+```{r, echo=FALSE, cache=TRUE}
+library("ggplot2")
+library(scales)
+library(RColorBrewer)
+
+pieChart2 <- function(){
+  df1 <- data.frame(
+    commut = c("Drive", "Subway", "Bike", "Walk", "Carpool"),
+    number = c(56, 34, 5, 3, 2))
+
+  bp<- ggplot(df1, aes(x="", y=number, fill=commut))+
+    geom_bar(width = 1, stat = "identity")
+  pie <- bp + coord_polar("y", start=0)
+  blank_theme <- theme_minimal()+
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      panel.border = element_blank(),
+      panel.grid=element_blank(),
+      axis.ticks = element_blank(),
+      plot.title=element_text(size=10, face="bold")
+    )
+  pie + scale_fill_brewer("Means of transport") + blank_theme +
+    theme(axis.text.x=element_blank())+
+    labs(title = "Commuting Preferences")
+}
+barChart2 <- function(){
+  df1 <- data.frame(
+    commut = c("Drive", "Subway", "Bike", "Walk", "Carpool"),
+    number = c(56, 34, 5, 3, 2))
+  
+  ggplot(data = df1, aes(x = reorder(commut, -number), y = number)) +
+    geom_col(fill = "deepskyblue4") +
+    labs(title = "Commuting Preferences",
+         x = "Means of transport" , y = "Usage of Means of transport in %")
+}
+
+barChart2()
+
+pieChart2()
+
+```
+
+# Podaj ile razy więcej osób korzysta z opcji metra(Subway) od używania roweru(Bike).
+- Na podstwie pierwszego wykresu przewijały się trzy odp. To jest
+\[
+6 \text{ razy}, ~~~7 \text{ razy}, ~~~8 \text{ razy},
+\]
+gdzie poprawną odpowiezią były okolice siódemki.
+- Więcej poprawnych odpowiedzi na to pytanie padło po zobaczniu drugiego wykresu, co po raz kolejny pokazju, że wykres słupkowy jest czytelniejszy.
+
+# Czy sumarycznie liczba osób poruszający się pieszo(walk) lub korzystających z podwózki(carpool) jest większa, mniejsza lub równa liczbie osób korzystających z rowerów(bike)?
+- W tym przypadku przy obu wykresach odczytanie poprwanej wartości nie było zbyt czytelne. Jednak trochę wiecej osób $38\%$ do $28\%$ zazaczyło odp "takie samo", po zobaczeniu wykresu słupkowego.
+- Co ciekawe wykresy zaproponawne przez ankiete google raz pokazały te dane na wykresie słupkowym, a raz na kołowym.
+
+```{r, echo=FALSE,cache=TRUE}
+pieChart3 <- function(){
+  nb.cols <- 15
+  mycolors <- colorRampPalette(brewer.pal(5, "Greens"))(nb.cols)
+
+  df3 <- data.frame(
+    regions = c("CIS/Baltic States", "Taiwan", "Africa", "China", "Western Europ", "United States", "Japan",
+              "Central Europ", "Southeast Asia", "South Korea", "South America", "Mexico", "Indian Subcontinent",
+              "Canada", "Middle East"),
+    number = c(5/360, 6/360, 3/360, 102/360, 92/360, 44/360, 23/360, 16/360, 15/350, 13/360, 12/360, 10/360, 8/360,
+             5/360, 6/360))
+
+  bp<- ggplot(df3, aes(x="", y=number, fill=regions))+
+    geom_bar(width = 1, stat = "identity")
+  pie <- bp + coord_polar("y", start=0)
+  blank_theme <- theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=10, face="bold")
+  )
+  pie + scale_fill_manual(values = mycolors) + blank_theme +
+    labs(title = "World consumption of nylon resins 2015")
+}
+
+barChart3 <- function(){
+  df3 <- data.frame(
+    regions = c("CIS/Baltic States", "Taiwan", "Africa", "China", "Western Europ", "United States", "Japan",
+                "Central Europ", "Southeast Asia", "South Korea", "South America", "Mexico", "Indian Subcontinent",
+                "Canada", "Middle East"),
+    number = c(5/3.6, 6/3.60, 3/3.60, 102/3.60, 92/3.60, 44/3.60, 23/3.60, 16/3.60, 15/3.60, 13/3.60, 12/3.60, 10/3.60, 8/3.60,
+               5/3.60, 6/3.60))
+  
+  ggplot(data = df3, aes(x = reorder(regions, -number), y = number)) +
+    geom_col(fill = "deepskyblue4") +
+    labs(title = "World consumption of nylon resins 2015",
+         x = "Regions" , y = "World consumption of nylon resins in %") +
+    theme(axis.text.x  = element_text(size=7, angle=30))
+}
+barChart3()
+pieChart3()
+
+```
+
+
+# Który z regionów ma największe zużycie tworzyw sztucznych z niżej wymienionych?
+- Większosc badnach podała poprawną odpowiedź, około $62\%$. Jednak w drugim wypadku wszyscy badajacy potrafili odpowiedzieć poprawnie.
+- W tym przypadku wykres kołowy został wręcz przerysowany, a odczytywanie z niego danych jest bardzo nieczytelne.
+
+# Ile razy więcej USA zużywa tworzyw sztucznych od centralnej Europy?
+- sposób przedstawienia danych na wykresie kołowym w takiej formie bardzo utrudniał odczyt popranych wartości, przez co spektrum odpwiedzi jest bardzo szeroki
+- przykałd ten ukazuje, że przy dużej ilości danych oraz niskimi wartościami wykres słupkowy jest bardziej czytelny
+
+```{r, echo=FALSE,cache=TRUE, warning=FALSE}
+barChart4 <- function(){
+  df4 <- data.frame(
+    Firmy = c("Firma A", "Firma B", "Firma C",  "Firma D",  "Firma E", "Firma F", "Pozostałe"),
+    number = c(22,15,35,5,3,8,12))
+  
+  ggplot(data = df4, aes(x = reorder(Firmy, -number), y = number)) +
+    geom_col(fill = "deepskyblue4") +
+    labs(title = "Udział w rynku",
+         x = "Firmy" , y = "Udział w rynku w %")
+}
+pieChart4 <- function(){
+  nb.cols <- 7
+  mycolors <- colorRampPalette(brewer.pal(8, "Set2"))(nb.cols)
+
+  df4 <- data.frame(
+    Firmy = c("Firma A", "Firma B", "Firma C",  "Firma D",  "Firma E", "Firma F", "Pozostałe"),
+    number = c(22,15,35,5,3,8,12))
+
+  bp<- ggplot(df4, aes(x="", y=number, fill=Firmy))+
+    geom_bar(width = 1, stat = "identity")
+  pie <- bp + coord_polar("y", start=0)
+
+  blank_theme <- theme_minimal()+
+    theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=10, face="bold")
+    )
+  pie + blank_theme + scale_fill_manual(values = mycolors) +  
+    labs(title = "Udział w rynku")
+}
+barChart4()
+
+pieChart4()
+
+```
+
+# W wykresie kołowym, żeby oddzielić od siebie poszczególne wyniki często stosuje się kolory. Dobór nich jednak często nie ma żadnego uzasadnienia logicznego i może nawet wprowadzać w błąd. Czy zagadasz się z przytoczonym zadniem?
+- Wicej osób zgodziło się z tym stwierdzeniem $57\%$, jednak nie było ona jak wynikia z ankiety czymś na co zwraca się szczególną uwagę
+
+# Czy umiesz uzasadnić dlaczego do pokazania udziału firmy C został użyty fioletowy kolor?
+- W celu podkreślenia znaczenia tego poprzedniego zdania, zadałem pytanie o przyczynę wyjaśnienia użytego koloru. Większość odpowiedziłi skłaniała się ku temu, że nie potrafi tego wytłumaczyć. Zanalazło się jaedank kilka uzasadnień, lecz ich co do treści i logicznego uzasadnienia można się spierać
+
+# Czy zgadzasz się ze stwierdzeniem, że wykres w takiej formie jest czytelniejszy?
+- Ponadto $86\%$ badających zgodziło sie z tym, że wykres słukowy jest czytelniejszy.
+
+# Czy użycie jednego koloru sprawia, że nie zastanawiasz nie nad jego znaczniem?
+- Również i w tym przypadku większość badnaych odpowiedziało twierdząco.
+
+```{r, echo=FALSE,cache=TRUE, warning=FALSE}
+barChart5 <- function(){
+  df5 <- data.frame(
+    Firmy = c("Facebook", "Youtube", "Twitter",  "Reddit",  "Instagram", "Pinterest", "Linkedln", "Tumblr", "Yelp", "Quora"),
+    number = c(39.14,25.12,6.28,4.83,2.17,2.15,1.45,1.22,0.79,0.75))
+  
+  ggplot(data = df5, aes(x = reorder(Firmy, -number), y = number)) +
+    geom_col(fill = "deepskyblue4") +
+    labs(title = "Market share of visits to social network sites in November, 2017",
+         x = "social network sites" , y = "Market share in %")
+}
+
+barChart5()
+```
+![](badpie.png)
+
+# Czy uważasz, że zostały zachowane proporcje w podanym wykresie?
+- Prawie $91\%$ badanych stwierdziło, że proporcje nie są zgodne.
+
+# Który z fragmentów wykresu wydaję się szczególnie źle zachowywać proporcje?
+- Zdecydowana większość badanych wskazała fragment wykresu kołowego z Facebookiem. Pokazuje to, że wykres kołowy utworzony w trójwymiarze jest powodem złego odbioru dancyh z wykresu. Co istotniejsze jest to również zauważalne jak pokazuje wynik ankiety.
+
+# Czy użycie wykresu słupkowego sprawia, że dane są łatwiejsze do odczytu?
+- I tym razem większość badanych zgodziła się z powyższym stwierdzeniem $91\%$.
+- Następnie zapytałem o uzasadnienie tego stanowiska w przypadku odpowiedzi twierdzącej. Oto kilka z nich
+\[
+\text{jest zachowana proporcja}, 
+\]
+\[
+\text{widać ranking i łatwo jest odróżnić, które strony są bardziej popularne, a które mniej}, 
+\]
+\[
+\text{łatwiej zauważyć dysproporcje}, 
+\]
+\[
+\text{Bo wszystko przyrównuje się do jednej osi i lepiej widać różnice i proporcje},
+\]
+\[
+\text{Porównywanie między słupkami jest łatwiejsze niż między wycinkami koła}
+\]
+
+```{r, echo=FALSE,cache=TRUE, warning=FALSE}
+barChart6 <- function(){
+  df6 <- data.frame(
+    typ = c("Zawodowe", "Ogólnokształcące", "Zasadnicze",  "Gimnazja",  "Podstawowe"),
+    number = c(717, 733, 229, 1529, 2485))
+  
+  ggplot(data = df6, aes(x = reorder(typ, -number), y = number)) +
+    geom_col(fill = "deepskyblue4") +
+    labs(title = "Uczniowe w szkołach",
+         x = "rodzaj szkoły" , y = "liczba uczniów")
+}
+
+barChart6() 
+```
+![](8_12_wykresy_kolowy.jpg)
+
+# Czy uważasz, że wykres kołowy jest dobrym wyborem do przedstawiania danych liczbowych?
+- Znakomita większość odpowiedziała, że nie $72\%$.
+
+# Czy użyte kolory nadają sens rodzajom szkół?
+- Znowu odpowiedź na to była niegatywna.
+
+# Czy powyższy wykres słupkowy jest lepszym wyborem do przedstawienia danych liczbowych?
+- $86\%$ badanych stwierdziło, że wykres słupkowy jest lepszym rozwiązaniem do przedstawienia danych liczbowych.
+
+# Wnioski
+- W dużej liczbie przypadków badani zgadzali się z tym, że wykres słukowy przedstawia dane w czytelniejszy sposób.
+- Jednolity kolor lepiej się sprawdzał na wykresach słupkowych, zaś na wykresie kołowym źle użyty powodował kompletny brak dokładnego odczytu danych.
+- Znowu wykres kołowy wymusza użycie kolorów, jendak ich znaczenie jest bezpodstawne i w żaden sposób nie odnosi się do rzezywistości
