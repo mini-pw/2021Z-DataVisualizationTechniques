@@ -1,0 +1,59 @@
+---
+title: "Praca domowa 3"
+author: "Paulina Jaszczuk | Paweł Fijałkowski"
+date: "1.11.2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r loading_packages, include = FALSE}
+library(ggplot2)
+library(scales)
+library(dplyr)
+library(latticeExtra)
+```
+
+```{r source, include=FALSE}
+source("Jaszczuk_Paulina_Fijalkowski_Pawel_pd3.R")
+```
+
+# Wprowadzenie
+  W ramach pracy doowej postanowiliśmy przeprowadzić dwa eksperymenty sprawdzające czy określone problemy w odczytywaniu danych wciąż występują oraz czy można jakoś im zapobiec. Skupiliśmy się na błędach w odczytywaniu danych z wykresu kołowego oraz z wykresu 3D. Przygotowaliśmy wizualizacje tych samych danych (fikcyjnych) w postaci wykresu kołowego i słupkowego, a także w postaci wykresu słupkowego 3D oraz wykresu słupkowego segmentowego. Utworzyliśmy ankietę, w której zadaliśmy ankietowanym pytania dotyczące trudności odczytywania danych oraz sprawdzające ich poprawność i dokładność. W ankiecie wzięło udział 21 osób. 
+  
+  [Link do ankiety](https://forms.gle/Xe2Pr5WXeP2PaZMg9)
+
+# Wykresy 
+
+```{r pie_plot}
+pie_plot(data1)
+```
+
+```{r bar_plot}
+bar_plot(data1)
+```
+
+```{r plot_3d}
+plot_3d(data2)
+```
+
+```{r segment_plot}
+segment_plot(data2)
+```
+
+# Wyniki
+
+## Wykres kołowy vs. wykres słupkowy
+Odczytując dane z wykresu kołowego, aż 47,6% ankietowanych źle poradziło sobie ze wskazaniem najczęstszej odpowiedzi, a 28,6% niepoprawnie porównała dwie dane. 76,2% uznało, że porównanie wartości na wykresie jest trudne, 9,5%, że bardzo trudne. Zaledwie 9,6% wskazało, że porównanie to jest łatwe (w tym 4,8% - bardzo łatwe). 66,7% źle oszacowało wartość danej z wykresu, w tym 4,8% pomyliło się w oszacowaniu o 7-10%. Jednocześnie 52,4% oceniło iż oszacowanie takie jest trudne, 23,8% - bardzo trudne. Jedynie 9,6% uznało, że jest ono łatwe (w tym 4,8% - bardzo łatwe). Wszyscy ankietowani stwierdzili, że wykres słupkowy lepiej wizualizuje dane (łatwość porównania, odczytywania i szaczowania danych z wykresu).
+
+## Wykres słupkowy 3d vs. wykres słupkowy segmentowy
+61,9% ankietowanych oceniło odczytanie danych z wykresu słupkowego 3d jako bardzo trudne, 33,3% jako trudne. Pozostałe 4,8% wskazało, że jest ono neutralne. Wszyscy ankietowani zgodnie przyznali, że wykres segmentowy lepiej wizualizuje dane, jako argumenty podając: \newline
+- przejrzystość, czytelność, \newline
+- możliwość odczytania dokładnych danych, \newline
+- rozdzielenie wartości, \newline
+- łatwość w przyswajaniu i szybsza analiza.
+
+# Podsumowanie
+Wyniki ankiety jednoznacznie pokazały, że "dobre praktyki" w wizualizacji danych wciąż powinny być stosowane, gdyż znacząco ułatwiają odczytywanie inforamcji. Zarówno wykres kołowy jak i wykres słupkowy 3d poległy w starciu z ich odpowiednikami (kolejno: wykresem słupkowym i słupkowym segmentowym). 

@@ -1,0 +1,154 @@
+---
+title: "Wykres kołowy czy słupkowy?"
+subtitle: "Badanie czytelności tych rodzajów wykresów"
+author: "Bartosz Sawicki"
+date: "10/31/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,dev='cairo_pdf')
+library(ggthemes)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+
+
+# wig 20 data
+wig_20 <- read.csv("wig_20.csv")
+wig_20$udzial <- as.numeric(gsub(",",".",strsplit(wig_20$Udział.pakietu....,"%")))
+
+wig_20$Spółka <- unlist(lapply(strsplit(wig_20$Spółka," "),'[[',1))
+
+df_wig <- wig_20 %>% select(Spółka, udzial) %>% arrange(desc(udzial))
+order_spolka <- df_wig$Spółka
+
+# cars data
+library(PogromcyDanych)
+
+data("auta2012")
+
+auta2012$Marka <- as.character(auta2012$Marka)
+
+df_cars <- auta2012 %>% group_by(marka = Marka) %>% summarise(liczba = n()) %>% 
+  arrange(desc(liczba)) %>% mutate(marka = ifelse(liczba>3500,marka,"inna")) %>%
+  group_by(marka) %>% summarise(liczba = sum(liczba)) %>% arrange(desc(liczba))
+
+order_marka <- df_cars$marka
+
+
+# results uploading
+result1 <- read.csv("result1.csv")
+result2 <- read.csv("result2.csv")
+audi_real = 6.19021
+pgnig_real = 4.51
+
+preference <- c(result1$Z.którego.wykresu.łatwiej.Ci.było.odczytać.dane.,result2$Z.którego.wykresu.łatwiej.Ci.było.odczytać.dane.)
+df1 <- data.frame(preference)
+
+
+
+audi_bar_pgnig_pie <-result1 %>% select(audi_bar = Ile.procent.sprzedanych.samochodów.w.2012.roku.stanowiły.pojazdy.marki.Audi.,
+                                        pgnig_pie = Jaki.jest.procentowy.udział.spółki.PGNIG.w.indeksie.WIG20.) %>%
+  cbind(audi_real = rep(audi_real),
+        pgnig_real = rep(pgnig_real)) %>%
+  mutate(relative_bar_error = abs(audi_bar-audi_real)/audi_real,
+        relative_pie_error = abs(pgnig_pie-pgnig_real)/pgnig_real)
+
+audi_bar <- data.frame(error = audi_bar_pgnig_pie$relative_bar_error,gr = rep("audi_bar"))
+pgnig_pie <- data.frame(error = audi_bar_pgnig_pie$relative_pie_error,gr = rep("pgnig_pie"))
+
+audi_pie_pgnig_bar <- result2 %>% select(audi_pie = Ile.procent.sprzedanych.samochodów.w.2012.roku.stanowiły.pojazdy.marki.Audi.,
+                                          pgnig_bar = Jaki.jest.procentowy.udział.spółki.PGNIG.w.indeksie.WIG20.) %>%
+  cbind(audi_real = rep(audi_real),pgnig_real = rep(pgnig_real)) %>%
+  mutate(relative_bar_error = abs(pgnig_bar-pgnig_real)/pgnig_real,
+         relative_pie_error = abs(audi_pie-audi_real)/audi_real) %>%
+  mutate(relative_pie_error = ifelse(is.na(relative_pie_error),mean(relative_pie_error),relative_pie_error))
+
+pgnig_bar <- data.frame(error = audi_pie_pgnig_bar$relative_bar_error,gr = rep("pgnig_bar"))
+audi_pie <- data.frame(error = audi_pie_pgnig_bar$relative_pie_error,gr = rep("audi_pie"))
+
+
+df <- bind_rows(audi_bar,audi_pie,pgnig_bar,pgnig_pie) %>% mutate(gr2 = str_extract(gr,"[pgnigaudi]*"))
+```
+
+# Cel i metoda badania
+
+Celem badania było sprawdzenie jak typ wykresu wpływa na jego czytelność. Utworzono dwie pary wykresów, wykres kołowy i słupkowy dla danych o indeksie WIG 20 oraz wykres kołowy i słupkowy dla danych o samochodach używanych sprzedanych w 2012 roku w Polsce. Stworzono dwie ankiety. W każej umieszczono pytania o interpretacje wykresów kołowego i słupkowego dla różnych danych. Respondenci mieli odpowiedzieć na pytania 
+
+- Jaki jest procentowy udział spółki PGNIG w indeksie WIG20?
+- Ile procent sprzedanych samochodów w 2012 roku stanowiły pojazdy marki Audi?
+- Z którego wykresu łatwiej Ci było odczytać dane?
+
+## Wykresy umieszczone w pierwszej ankiecie
+
+```{r wig201, echo=FALSE, fig.show="hold", out.width="50%"}
+# piechart wig 20
+pie(x =df_wig$udzial, labels = NA, main = "Udział w indeksie WIG20 poszczególnych spółek", col = rainbow(20))
+legend("topright", df_wig$Spółka, cex=0.6 , fill = rainbow(20))
+
+# cars barplot
+ggplot(df_cars, aes(x = marka)) + 
+  geom_bar(aes(y = liczba/sum(liczba)*100), stat = 'identity')+
+  scale_y_continuous(name = "Udział w %")+
+  scale_x_discrete(limits = order_marka, name = "")+
+  theme_stata()+
+  theme(
+    axis.text.x=element_text(angle=60, hjust=1)
+  )+
+  labs(
+    title = "Marki samochodów sprzedanych w 2012 roku"
+  )
+```
+
+
+## Wykresy umieszczone w drugiej ankiecie
+
+```{r cars1, echo=FALSE, fig.show="hold", out.width="50%"}
+
+# barplot wig 20
+ggplot(df_wig, aes(x = Spółka))+
+  geom_bar(aes(y = udzial), stat = 'identity') +
+  scale_x_discrete(limits = order_spolka)+
+  scale_y_continuous(name = "Udział w %")+
+  theme_stata()+
+  theme(
+    axis.text.x=element_text(angle=60, hjust=1)
+  )+
+  labs(
+    title = "Procentowy udział w indeksie WIG20 poszczególnych spółek"
+  )
+
+# cars pieplot 
+pie(x = df_cars$liczba, labels =df_cars$marka, main = "Marki samochodów sprzedanych w 2012 roku")
+```
+
+# Wyniki badania
+
+Na podstawie odpowiedzi respondentów przygotowano wykresy błędu względnego odpowiedzi oraz preferencji respondentów. Błąd względny był większy dla wykresów kołowych. Również dla tego typu wykresu rozpiętość odpowiedzi była większa. Na wykresach kołowych oznaczenie danych kolorami okazało się bardziej problematyczne niż opisanie ich tekstem. Ponad 85% respondentów twierdzi, że łatwiej było odczytać dane z wykresu słupkowego.
+
+```{r result, echo=FALSE,warning=FALSE, fig.show="hold", out.width="50%"}
+# error plot
+ggplot(df,aes(x = error,y = gr, group = gr)) +
+  geom_boxplot() + 
+  scale_y_discrete(labels = c("audi_bar" = "samochody słupkowy", "audi_pie" = "samochody kołowy", "pgnig_bar" = "WIG 20 słupkowy", "pgnig_pie" = "WIG 20 kołowy")) +
+  labs(y ="Rodzaj i temat wykresu",
+       x = "Błąd względny odpowiedzi",
+       title = "Błąd względny podczas odczytu danych z różnych wykresów") +
+  theme_classic()
+
+# preference plot
+  ggplot(df1) + 
+  geom_bar(aes(preference)) +
+  labs(x = "Typ wykresu",
+       y = "Liczba głosów",
+       title = "Z którego wykresu łatwiej odczytać dane?") +
+  theme_classic()
+
+```
+
+# Wnioski
+
+- Wykres słupkowy pozwala na bardziej precyzyjną prezentację danych niż wykres kołowy.
+- Dla większości ludzi łatwiej odczytać dane z wykresu słupkowego niż kołowego.
+- Na wykresach kołowych łatwiej odczytać dane, kiedy odpowiednie wycinki są podpisane.
