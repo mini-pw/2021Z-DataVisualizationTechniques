@@ -1,0 +1,68 @@
+---
+title: "Raport"
+author: "Maciej Pawlikowski"
+date: "1 11 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+```
+# Wstęp
+Niniejszy raport dotyczy eksperymentu, którego celem było sprawdzenie, czy problemy z odczytywaniem danych na wykresach wciąż występują. A konkretnie, czy dobre praktyki opracowane lat temu, faktycznie działają.
+
+W niniejszym eksperymencie skupiono się na sprawdzeniu, czy łatwiej odczytuje się dane z wykresów kołowych czy z słupkowych.
+
+# Eksperyment
+Eksperyment został przeprowadzony przy pomocy aplikacji kahoot. Uczestnicy mięli za zadanie odpowiedzieć na pozornie proste pytanie : "Która wartość na wykresie jest większa?". Do wyboru były odpowiedzi "zielona","czerwona" oraz "obie są takie same".
+Wykresy różniły się zarówno kształtem jaki danymi, dwa z nich były słupkowe oraz jeden kołowy. Aby utrudnić uczestnikom testu to zadanie różnice pomiędzy wielkościami były niewielkie (do 10%), ale zauważalne przy dokładniejszym przyjrzeniu się, dlatego wprowadzone zostało ograniczenie czasowe na każdą odpowieć, aby dodać odrobinę więcej realizmu, ponieważ na codzień nikt (nie licząc analityków) nie skupia się na wykresie dłużej niż kilkanaście sekund 
+\newpage
+Najwięcej problemów sprawił uczestnikom wykres poniżej. Z ankietowanych 16 osób nikt nie odpowiedział poprawnie na pytanie. Większośćodpowiedziała, że obie wartości są takie same (11 osób), a reszta wybrała błędny kolor(czerwony)
+
+# Wykres 1(Powodzenie 0%)
+```{r, echo=FALSE}
+Date<-as.character(format(seq(as.Date("2020-10-01"), as.Date("2020-10-9"), by="days"),format="%d.%m"))
+Resp<-as.numeric(as.character(c(130,50,20,53,25,60,130,120,50)))
+dat<-data.frame("Data"=Date,"Respir"=Resp)
+ggplot(dat, aes(x="", y=Resp, fill=Date)) +
+  geom_bar(stat="identity", width=0.6) +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_manual(values=c("grey50","red","grey30","green","gray30","gray40","gray50","grey45","grey40"))+
+  theme(
+    legend.position="none"
+  )
+
+```
+\newpage
+Trudność kolejnych dwóch wykresów polegała na tym jak bardzo są one do siebie podobne dlatego większość osób odpowiedziałą błędnie na wykres, który pojawił się później w quizie, prawdopodobnie myśląc, że to jeden i ten sam wykres.
+
+# Wykres 2(Powodzenie 50%)
+```{r, echo=FALSE}
+Resp2<-as.numeric(as.character(c(130,52,120,130,40,50,25,60,50)))
+ggplot(dat, aes(x=Date, y=Resp2, fill=Date)) +
+  geom_bar(stat="identity",width=0.6) +
+  scale_fill_manual(values=c("grey50","red","grey30","gray30","gray40","green","gray50","grey45","grey40"))+
+  theme_void()+
+  theme(
+    legend.position="none"
+  )
+```
+
+# Wykres 3(Powodzenie 19%)
+```{r, echo=FALSE}
+Resp3<-as.numeric(as.character(c(130,50,120,130,40,50,25,60,50)))
+ggplot(dat, aes(x=Date, y=Resp3, fill=Date)) +
+  geom_bar(stat="identity",width=0.6) +
+  scale_fill_manual(values=c("grey50","red","grey30","gray30","gray40","green","gray50","grey45","grey40"))+
+  theme_void()+
+  theme(
+    legend.position="none"
+  )
+```
+
+# Podsumowanie
+Uzyskane rezultaty w sporej części były zgodne z przewidywaniami. Spodziewanym wynikiem był fakt, że wykresy słupkowe wypadną lepiej niż wykres kołowy oraz, że wykres który będzie pokazany jako pierwszy będzie miał przewagę. Niespodziewany był jednak tak niski procent powodzenia wśród ankietowanych. Pomimo faktu,że ankietowani są przedstawicielami różnych grup wiekowych (od 10 do 52 lat) wszyscy odpowiadali z podobną skutecznością ponieważ nikt nie odpowiedział na więcej niż jedno pytanie prawidłowo.
+
+
