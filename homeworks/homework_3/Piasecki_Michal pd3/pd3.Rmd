@@ -1,0 +1,33 @@
+---
+title: "Praca domowa nr.3"
+author: "Michał Piasecki"
+date: "01/11/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wprowadzenie
+
+W tej pracy postanowiłem porównać postrzeganie wykresu kołowego i słupkowego. Na obu wykresach znajdują się dane dotyczące najbardziej popularnych imion nadawanym chłopcom w pierwszej połowie 2020 roku (dane pochodzą z [dane.gov.pl](https://dane.gov.pl/pl)). Usunąłem wartości dla każdego z imion, aby odpowiadający musieli oprzeć się tylko na swoje wrażenia wzrokowe. W ankciecie wzięło udział 20 osób w wieku około 20 lat.
+
+![](C:/Users/Dokumenty/Desktop/IIADPW\trzeci_semestr/Techniki Wizualizacji danych\hom3/kolowy2.png)
+![](C:/Users/Dokumenty/Desktop/IIADPW\trzeci_semestr/Techniki Wizualizacji danych\hom3/slupkowy2.png)
+
+## Pytania
+
+Zadałem dwa pytania.  
+- Które imię jest bardziej popularne? (Jakub / Franciszek) **Poprawna Odpowiedź** : Jakub     
+- Które imię jest bardziej popularne? (Filip / Mikołaj) **Poprawna Odpowiedź** : Filip  
+
+## Wyniki
+Na pierwsze pytanie patrząc na wykres kołowy odpowiedzi były: (**47 % Franciszek, 53 % Jakub**). Natomiast na wykresie słupkowym (**100 %  Jakub**).    
+Na drugie pytanie z wykresu kołowe odpowiedzi układały się następująco: (**35 % Mikołaj, 65 % Filip**), a na wykresie słupkowym: (**100 % Filip**)
+
+## Wnioski
+Wnioskiem jest to, że przy małych różnicach, nie sposób jest porównywać między sobą wartości na wykresie kołowym,dlatego go lepiej wtedy nie używać, a najlepiej to go nigdy nie używać (bo jest brzydki i kiepsko z niego coś wyczytać).
+
+
+
