@@ -59,51 +59,8 @@ theme_set(theme_bw())  # pre-set the bw theme.
 
 Żródło:Raport apostel.pl
 
-##
-
-<img src="./figs/W5-3D.JPG" width="700px"class="center">
-
-Żródło: https://pharmascope.org/ijrps/article/view/3267/8020#figures
-
-Znalazca: Patryk Bojarski
-
-##
-Poprawiony wykres
-
-<img src="./figs/W5-3D-popr.JPG" width="700px"class="center">
-
-Żródło: https://pharmascope.org/ijrps/article/view/3267/8020#figures
 
 
-
-## 
-
-<img src="./figs/W5-3D-2.JPG" width="700px"class="center">
-
-Źródło: Biznes dla Ludzi emitowanego w dniu 11 pazdziernika na kanale
-TVN24.
-
-Znalazca: Karol Degórski
-
-## Poprawiony wykres
-
-```{r}
-library(ggplot2)
-procent <- c(66, 20, 7, 6, 1)
-Metoda_platnosci <- c("Karta", "Gotówka",
-"Telefon, zegarek", "Bankowosc internetowa", "Inne")
-dane <- data.frame(procent, Metoda_platnosci)
-dane$Metoda_platnosci <- factor(dane$Metoda_platnosci,
-levels = c("Karta", "Gotówka", "Telefon, zegarek",
-"Bankowosc internetowa", "Inne"))
-ggplot(dane, aes(x = Metoda_platnosci, y = procent)) +
-scale_y_continuous(labels = scales::percent_format(scale = 1)) +
-geom_col() + ggtitle("Czym najchetniej płacimy") +
-theme(plot.title = element_text(hjust = 0.5)) +
-labs(y = NULL, x = "Metoda płatnosci") +
-geom_text(aes(label=paste(procent, '%')),
-position=position_dodge(width=0.9), vjust=-0.25) + guides(fill=FALSE)
-```
 
 
 ## 
@@ -200,6 +157,7 @@ Znalazca: Kinga Ułasik
 
 Poprawiony wykres
 
+```{r}
 Pais <- c( "Brasil", "Argentina", "EEUU", "Italia", "Alemania", "Noruega")
 Testeos <- c(258, 330, 7000, 14100, 15700, 22300)
 colores <- c("gold1", "lightblue", "gold1", "gold1", "gold1", "gold1" )
@@ -210,7 +168,7 @@ ggplot(CovidPruebas, aes(x = Pais, y = Testeos)) +
 geom_bar(stat = "identity", fill = colores) +
 geom_text(aes(label = Testeos), vjust=-0.3, size=3.5) +
 theme_minimal()
-
+```
 
 ## 
 
@@ -226,4 +184,51 @@ Znalazcy: Paweł Wojciechowski, Agata Kaczmarek
 Poprawiony wykres
 
 <img src="./figs/W5-brakujace-dane-popr.JPG" width="700px"class="center">
+
+## 
+
+<img src="./figs/W5-3D-2.JPG" width="700px"class="center">
+
+Źródło: Biznes dla Ludzi emitowanego w dniu 11 pazdziernika na kanale
+TVN24.
+
+Znalazca: Karol Degórski
+
+## Poprawiony wykres
+
+```{r}
+library(ggplot2)
+procent <- c(66, 20, 7, 6, 1)
+Metoda_platnosci <- c("Karta", "Gotówka",
+"Telefon, zegarek", "Bankowosc internetowa", "Inne")
+dane <- data.frame(procent, Metoda_platnosci)
+dane$Metoda_platnosci <- factor(dane$Metoda_platnosci,
+levels = c("Karta", "Gotówka", "Telefon, zegarek",
+"Bankowosc internetowa", "Inne"))
+ggplot(dane, aes(x = Metoda_platnosci, y = procent)) +
+scale_y_continuous(labels = scales::percent_format(scale = 1)) +
+geom_col() + ggtitle("Czym najchetniej płacimy") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(y = NULL, x = "Metoda płatnosci") +
+geom_text(aes(label=paste(procent, '%')),
+position=position_dodge(width=0.9), vjust=-0.25) + guides(fill=FALSE)
+```
+
+
+
+##
+
+<img src="./figs/W5-3D.JPG" width="700px"class="center">
+
+Żródło: https://pharmascope.org/ijrps/article/view/3267/8020#figures
+
+Znalazca: Patryk Bojarski
+
+##
+Poprawiony wykres
+
+<img src="./figs/W5-3D-popr.JPG" width="700px"class="center">
+
+Żródło: https://pharmascope.org/ijrps/article/view/3267/8020#figures
+
 
