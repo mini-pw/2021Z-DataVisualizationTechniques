@@ -1,0 +1,68 @@
+---
+title: "Praca domowa nr 5"
+author: "Karol Degórski"
+date: "11/2/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pdf.options(encoding='ISOLatin2.enc')
+```
+
+## Poprawiana wizualizacja
+
+Poprawiana wizualizajca pochodzi ze Spisu Powszechnego wykonanego przez Główny Urząd Statystyczny, z informatora "Wybrane aspekty aktywności ekonomicznej ludności - Narodowy Spis Powszechny Ludności i Mieszkań 2011" (Link do źródła: https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/wybrane-aspekty-aktywnosci-ekonomicznej-ludnosci-nsp-2011,3,4.html)
+
+![](previous_plot.png)
+
+## Poprawiony wykres
+
+```{r plot, echo=TRUE}
+library(ggplot2)
+library(patchwork)
+library(stringr)
+
+procent_15lat_wiecej <- c(46, 42.6, 6.3, 5.1)
+status <- c("pracujący", "bierni zawodowo", "bezrobotni", "nieustalony status")
+procent_15_24lat <- c(25.6, 59.9, 9.4, 5.1)
+dane_15lat_wiecej <- data.frame(procent_15lat_wiecej, status)
+dane_15_24lat<- data.frame(procent_15_24lat, status)
+
+dane_15lat_wiecej$status <- factor(dane_15lat_wiecej$status,
+                          levels = c("pracujący", "bierni zawodowo", "bezrobotni",
+                                     "nieustalony status"))
+
+dane_15_24lat$status <- factor(dane_15_24lat$status,
+                            levels = c("pracujący", "bierni zawodowo", "bezrobotni",
+                                       "nieustalony status"))
+
+
+wykres_15lat_wiecej <- ggplot(dane_15lat_wiecej, aes(x = status,
+                                                     y = procent_15lat_wiecej)) + 
+  scale_y_continuous(labels = scales::percent_format(scale = 1),
+                     breaks = c(0, 10, 20, 30, 40, 50, 60), limits = c(0, 65)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) +
+  geom_col(fill = "#0099ff") + 
+  ggtitle("Ludność w wieku 15 lat i więcej") + 
+  labs(y = NULL, x = "status") + theme_bw()
+
+dane_15_24lat <- ggplot(dane_15_24lat, aes(x = status,
+                                           y = procent_15_24lat)) + 
+  scale_y_continuous(labels = scales::percent_format(scale = 1),
+                     breaks = c(0, 10, 20, 30, 40, 50, 60), limits = c(0, 65)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) +
+  geom_col(fill = "#0099ff") + 
+  ggtitle("Ludność w wieku 15 - 24 lata") + 
+  labs(y = NULL, x = "status") + theme_bw()
+
+wykres_15lat_wiecej + dane_15_24lat + 
+  plot_annotation(title = "Aktywność ekonomiczna ludzi młodych i całej populacji",
+                  theme = theme(plot.title = element_text(hjust = 0.5)))
+
+```
+
+## Dokonane zmiany
+
+Zmienilem typ wykresu na słupkowy, aby łatwiej było porównywać wartości pomiędzy poszczególnymi kategoriami. Również usunąłem efekt wypukłości oraz kolory, które niepotrzebnie zaburzają wizualizację oraz utrudniają odczytywanie jej przez osoby np. z daltonizmem. Teraz też łatwiej jest zauważyć różnicę pomiędzy poszczególnymi grupami oraz łatwiej odczytać dokładne wartości, co pozwla na niepodpisywanie wartości słupków.
+
