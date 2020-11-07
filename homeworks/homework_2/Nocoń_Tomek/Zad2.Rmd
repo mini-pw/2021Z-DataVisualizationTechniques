@@ -1,0 +1,34 @@
+---
+title: "Zadanie 2"
+author: "Tomek Nocoń"
+output: pdf_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# LINK DO WYKRESU
+*https://ctmirror.org/category/ct-viewpoints/there-are-tools-to-address-the-racial-ethnic-health-disparities-exposed-by-the-coronavirus/*
+
+# WYKRES POPRAWIONY 
+
+```{r}
+
+library("ggplot2")
+
+dataFrame <- data.frame(
+  "Ethnic" = c("Hispanic", "American indain", "Asian", "Black", "White"),
+  "number" = c(1195, 408, 324, 1299, 531))
+
+ggplot(data = dataFrame, aes(x = reorder(Ethnic, -number), y = number)) +
+  geom_col(fill = "deepskyblue4") +
+  labs(title = "Race of COVID-19 cases by race/ethnic in Connecticut",
+       x = "ethnic", y = "Rate per 100,000 population")
+```
+
+# RZECZY, KTÓRE ZOSTAŁY POPRAWIONE
+- USUNIĘCIE NIEPOTRZBYCH KOLORÓW ZE SŁUPKÓW
+- POGRUPOWANIE SŁUPKOW MALEJĄCO. DZIĘKI TEMU WYKRES ŁATWIEJ SIĘ CZYTA
+- USUNICE Z BACKGROUNDU STANU CONNECTICUT I DODANIE GO DO NAZWY TYTUŁU. NIE KAŻDY PO KSZTAŁCIE STANU MOŻE SIĘ DOMYSLIĆ O JAKI REGION CHODZI, A ZAPEWNE NAWET CZĘŚĆ AMERYKANÓW MOŻE TEGO NIE WIEDZIEĆ.

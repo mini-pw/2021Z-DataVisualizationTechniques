@@ -1,0 +1,104 @@
+---
+title: "Praca domowa 3 i 4"
+author: "Urszula Bialonczyk"
+date: "01/11/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library("plotrix")
+library(ggplot2)
+library(tidyverse)
+require("reshape2")
+
+```
+
+## Wstęp
+W ramach pracy domowej, postanowiłam stworzyć dwa problematyczne typy wykresów. Pierwszy jest dość oczywisty i jest to trójwymiarowy wykres kołowy. Drugi, może nie aż tak typowy, to tzw. stacked barplot.
+
+Jeśli chodzi o ankietowanych, to było to 15 osób, moi znajomi i rodzina, większość niezwiązana z matematyką.
+
+## Wykres kołowy 2d vs 3d
+
+W ramach pierwszego eksperymentu, narysowałam dwa wykresy kołowe: jeden w dwóch wymiarach, drugi w trzech. Wykresy opierały się na tych samych danych, zatem przedstawiały to samo. Oto poniższe wykresy:
+
+```{r pie, echo=FALSE, fig.height=3, fig.width=3, fig.align='center'}
+#dane
+pieval<-c(5,42,11,42)
+pielabels<- LETTERS[1:4]
+
+pie3D(pieval,radius=2, labels = pielabels, explode=0.05,main="3D PIE CHART",
+      col=c("brown","cornsilk1","pink","grey70"))
+
+```
+
+
+```{r pie2, echo=FALSE, fig.height=3, fig.width=3, fig.align='center'}
+# ramka danych do 2d
+data <- data.frame(
+  group=LETTERS[1:4],
+  value=pieval
+)
+
+# 2d
+
+ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  theme_void() +
+  ggtitle("2D PIE CHART") +
+  theme(plot.title = element_text(size=14, face="bold", hjust = 0.5))
+```
+
+Ankietowanym zadałam następujące pytanie:
+
+Jak mają się do siebie pola B i D na obydwu wykresach? 
+
+Poprosiłam ich ponadto, żeby nie zastanawiali się bardzo długo nad odpowiedzią, tylko odpowiedzieli "jak im się wydaje". Wykresy 3d pojawiają się bowiem głownie w telewizji, gdzie nie ma czasu na dokładne przyjrzenie się i dogłębną analizę.
+
+Dla wykresu 3d trzymałam następujący rozkład odpowiedzi:
+* B>D: 40%
+* D>B: 20%
+* D=B: 40%
+
+Dla wykresu 2d, odpowiedzi rozłożyły się następująco
+* D>B: 20%
+* D=B: 80%
+
+Można zatem przypuszczać, że faktycznie wykres 2d jest bardziej czytelny.
+
+
+
+## Stacked barplot
+Drugim wykresem, który stworzyłam, był tzw. stacked barplot. Przedstawia się on następująco:
+
+```{r barplot, echo=FALSE, fig.align='center'}
+
+#dane
+condition <- c("condition 1", "condition 2", "condition 3", "condition 1", "condition 2", "condition 3", "condition 1", "condition 2", "condition 3", "condition 1", "condition 2", "condition 3", "condition 1", "condition 2", "condition 3")
+number_of_errors <- c(1,2,3,3,2,1,4,4,5,4,5,1,2,2,3)
+
+df <- data.frame(condition, number_of_errors)
+
+df_melt <-suppressMessages(melt(df)) #This creates a data frame with 3 columns, 'condition', 'variable' and 'value' where 'variable' just says 'number_of_errors' for each row
+
+df$number_of_errors <- factor(df$number_of_errors)
+
+ggplot(df, aes(x=condition, fill = number_of_errors)) +
+  geom_bar(stat="count") + ylab("Number of errors") + theme_bw()
+
+```
+
+Dla mnie nigdy takie wykresy nie były intuicyjne.
+Przykładowo: dla condition1 3 błędy i reprezentowane są one przez zacieniowanie pola słupka pomiędzy 2 i 3. Nigdy nie jestem pewna, czy oznacza to, ze tylko raz dla condition1 wystąpiły 3 błędy, czy że 3 błędy wystąpiły 3 razy (bo jednak ten kolor dochodzi do 3). 
+Nie budowałam innego wykresu, żeby zobaczyć, jak ankietowani zinterpretują stacked barplot bez "podpowiadania" prawidłowej odpowiedzi.
+
+Tym razem nie zadałam ankietowanym konkretnego pytania, tylko poprosiłam o zinterpretowanie wykresu dla condition2.
+
+Co było interesujące, okazało się, że wszystkim ankietowanym (nawet tym, którzy finalnie udzielili poprawnej odpowiedzi), musiałam lepiej "wytłumaczyć wykres". Dopowiedziałam zatem historię, że condition 1, 2, i 3 mogą być interpretowane jako kolejne stopnie zaawansowania dysleksji. Kilku osobom z każdej grupy kazano napisać jakieś zdanie, a następnie sprawdzono, ile każde z nich popełniło błędów. Liczba błędów była z zakresu od 1 do 5. 
+Dopiero po takim nieco bardziej obrazowym przykładzie, ankietowani udzielali odpowiedzi. Podzieliłam je na dwie kategorie, poprawne i niepoprawne, a ich rozkład przedstawia się następująco:
+
+* poprawne: 40%
+* niepoprawne: 60%
+
+Wydaje się to potwierdzać moją tezę, że wykres pomimo, że jest poprawny i dość informatywny, nie jest zbyt intuicyjny, przez co powoduje problemy w interpretacji. Ankietowanymi były osoby niezbyt związane z matematyką, można zatem powiedzieć, że temu wykresowi brakuje pewnej uniwersalności - trudniej z nim będzie dotrzeć do osób, dla których analiza danych nie jest codziennością.

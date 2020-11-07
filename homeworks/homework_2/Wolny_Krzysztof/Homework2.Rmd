@@ -1,0 +1,60 @@
+---
+title: "Praca domowa 2"
+author: "Krzysztof Wolny"
+date: "18 10 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+# Wykres początkowy
+Poprawiam wykres przedstawiający stopę bezrobocia w USA od września 2019r. do września 2020r. Wykres pochodzi ze strony \url{https://www.statista.com/statistics/273909/seasonally-adjusted-monthly-unemployment-rate-in-the-us/}.
+
+\begin{figure} % t - na gorze
+\centering 
+\includegraphics[width=\textwidth]{./poprawiany_wykres.png} 
+\caption{Stopa bezrobocia w USA od września 2019r. do września 2020r.} 
+\end{figure}
+
+\newpage
+
+# Poprawiony wykres
+
+
+```{r, echo = FALSE}
+data <- data.frame(
+  Month = c("Sep '19", "Oct '19", "Nov '19", "Dec '19", 
+        "Jan '20", "Feb '20", "Mar '20", "Apr '20", 
+        "May '20", "Jun '20", "Jul '20", "Aug '20", "Sep '20"), 
+  UnemploymentRate = c(3.5, 3.6, 3.5, 3.5, 3.6, 3.5, 
+        4.4, 14.7, 13.3, 11.1, 10.2, 8.4, 7.9 )
+)
+data$Month <- factor(data$Month, levels = data$Month)
+```
+
+```{r}
+ggplot(data, aes(x = Month, y = UnemploymentRate)) +
+  geom_bar(stat="identity", fill = "dodgerblue3", width=0.7) + 
+  geom_text(aes(label=paste(UnemploymentRate, "%", sep = "")), vjust=-0.5, size = 3) + 
+  ylab("Unemployment rate") + 
+  xlab("") + 
+  labs(title = "Monthly unemployment rate in the US", 
+       subtitle = "from September 2019 to September 2020") +  
+  scale_y_continuous(limits = c(0, 17.5), 
+                     breaks = seq(0, 15, 5), 
+                     labels = paste(seq(0, 15, 5), "%", sep = "")) + 
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, size = 7),
+        plot.title = element_text(size = 18, hjust = 0.5), 
+        plot.subtitle = element_text(size = 12, hjust = 0.5))
+```
+
+# Poprawione elementy: 
+
+1.   Poprawiony wykres ma zapisany tytuł, co pozwala łatwiej zrozumiec jego treść. 
+2.   Tytuł osi y jest wiekszy i wyraźniejszy. 
+3.   Skala osi y jest co 5% zamist 2.5%, co eliminuje niepotrzebne informacje zawarte w wykresie. 
+4.   Oś x również jest zapisana wyraźniej. Daty są wiekszę i lepiej widoczne, ale wciąż nie zlewają się ze sobą. 
+
