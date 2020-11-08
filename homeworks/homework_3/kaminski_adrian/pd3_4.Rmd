@@ -1,0 +1,135 @@
+---
+title: "Techniki wizualizacji danych - praca domowa 3+4"
+author: "Adrian Kamiński"
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+output: pdf_document
+urlcolor: blue
+header-includes:
+    - \usepackage[justification=raggedright,labelfont=bf,labelformat=empty,singlelinecheck=false]{caption}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("pd3_4.R")
+library(knitr)
+library(kableExtra)
+```
+
+# Wpływ ułożenia słupków na czytelność wykresu.
+
+Eksperyment, który przeprowadziłem [(LINK)](https://forms.gle/ZFQ11MyCmbcUmkg77), miał na celu sprawdzenie czytelności dwóch wykresów słupkowych przedstawiających te same dane na dwa różne sposoby.  
+Wykresy te różnią się rozstawieniem słupków.
+
+
+\vspace{1em}
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+ggplot(iris_modified, aes(x = TypeofValue, y = value, fill = Species)) + 
+  geom_bar(stat = "summary", fun.y = "mean") + 
+  scale_fill_manual(values = c('#1b9e77','#d95f02','#7570b3')) +
+  theme_hc() +
+  xlab("Wykres 1.") +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(face = "italic"),
+    legend.position = "none",
+    # plot.title = element_text(hjust = 0.5, face="bold"),
+    # axis.title.x = element_blank(),
+    axis.text.x = element_text(size = 8),
+    axis.title.y = element_blank(),
+    axis.text.y = element_text()
+  ) -> bars_stack
+
+ggplot(iris_modified, aes(x = TypeofValue, y = value, fill = Species)) + 
+  geom_bar(stat = "summary", fun.y = "mean", position = "dodge") +
+  scale_fill_manual(values = c('#1b9e77','#d95f02','#7570b3')) +
+  # ggtitle(format("Wielkości popularnych gatunków irysów")) +
+  theme_hc() +
+  xlab("Wykres 2.") +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(face = "italic"),
+    legend.position = "none",
+    # plot.title = element_text(hjust = 0.5, face="bold"),
+    # axis.title.x = element_blank(),
+    axis.text.x = element_text(size = 8),
+    axis.title.y = element_blank(),
+    axis.text.y = element_text()
+  ) -> bars_dodge
+
+plots <- (bars_stack + bars_dodge) & theme(
+  legend.title = element_blank(),
+  legend.text = element_text(face = "italic"),
+  legend.position = "bottom"
+)
+plots <- plots + plot_layout(guides = 'collect')
+
+plots + plot_annotation(
+  title = "Wielkości popularnych gatunków irysów",
+  theme = theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face="bold")
+  )
+)
+```
+
+\vspace{1.5em}
+
+
+## Co było sprawdzane?
+
+Poprzez formularz google [(LINK)](https://forms.gle/ZFQ11MyCmbcUmkg77) sprawdzałem umiejętność odczytywania konkretnych wartości jak i również umiejętność określenia największej i najmiejszej wartości. Zebrałem również opinie który wykres był przyjemniejszy do odczytania.
+
+\newpage
+
+## Wyniki.
+
+```{r, echo=FALSE, results='asis'}
+kable(sorting_data, align = "crr", caption = '\\textbf{Średnia poprawnych posortowań}',
+      format='latex', booktabs = TRUE) %>%
+  kable_styling(font_size = 12,latex_options = c("hold_position","striped"),
+                stripe_index = 2) %>%
+  footnote(general = "Wskazanie 1 wartości poprawnie - 33%",
+           general_title = "", fixed_small_size=T,
+           footnote_as_chunk = TRUE, threeparttable = TRUE)
+```
+
+
+\vspace{1em}
+
+
+**Błędy przy odczytywaniu wartości**
+
+
+\vspace{1em}
+
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data_petal_width, aes(x = value, fill=Species)) +
+  geom_boxplot() + 
+  facet_wrap(~Wykres, strip.position="left", ncol = 1) +
+  theme_hc() +
+  scale_fill_manual(values = c('#1b9e77','#d95f02','#7570b3')) +
+  xlab("Błąd bezwzględny") +
+  scale_x_continuous(limits = c(0,0.6)) +
+  theme(
+    axis.title.x = element_text(size=12, face = "italic"),
+    axis.text.y = element_blank(),
+    strip.text.y.left = element_text(size=12,angle = 0, face = "italic"),
+    strip.placement = "outside",
+    strip.background = element_rect(colour=NA, fill=NA),
+    
+    legend.position = "none"
+  )
+```
+
+
+\vspace{1em}
+
+
+**Opinia**
+
+Tutaj jednogłośnie lepszy okazał się wykres nr 2 (słupki rozstawione obok siebie, nie na sobie).
