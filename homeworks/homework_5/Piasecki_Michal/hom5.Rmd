@@ -1,0 +1,37 @@
+---
+title: "Praca domowa 5"
+author: "Michał Piasecki"
+date: "02/11/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Poprawianie wykresy
+
+Postanowiłem poprawić ten wykres, ponieważ słupki na nim są jakieś dziwnie wypukłe oraz na środku wykresu linie są wycięte(nie mam pojęcia o co chodzi, chyba ktoś poprostu wyciął kawałek wykresu, ale jest to dziwne).  
+  
+  
+  
+  
+
+
+
+## Stary wykres
+
+
+
+![](C:/Users/Dokumenty/Desktop/IIADPW/trzeci_semestr/Techniki Wizualizacji danych/hom5/imigranci.png)
+
+
+## Nowy wykres
+<br>
+<br>
+
+![](C:/Users/Dokumenty/Desktop/IIADPW/trzeci_semestr/Techniki Wizualizacji danych/hom5/poprawiony.png)
+
+
