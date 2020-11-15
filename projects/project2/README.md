@@ -8,7 +8,7 @@ Celem drugiego projektu jest przygotowanie plakatu w formacie pdf, który przeds
 
 Plakat powinien składać się ze zbioru przynajmniej 3 wykresów oraz komentarzy/opisów do wykresów. Projekt ten realizowany jest w zespołach 3 osobowych (grupy różne od tych z Projektu 1). Kody zródłowe wykresów, plakat i prezentację należy umiescic na GitHubie. Ostateczny wynik projektu prezentowany jest na wykładzie (2 min).
 
-Wykresy mogą być wykonane w dowolnym narzędziu i złożone w plakat z uzyciem dowolnej techniki.
+Wykresy mogą być wykonane w dowolnym narzędziu i złożone w plakat z użyciem dowolnej techniki.
 
 Przykładowe plakaty z poprzedniego roku można znaleźć pod adresem https://github.com/mini-pw/2020Z-TechnikiWizualizacjiDanych/tree/master/Projekt1, a sprzed dwóch lat http://smarterpoland.pl/index.php/2018/12/data-movies-and-ggplot2/.
 
@@ -18,7 +18,7 @@ Nie warto na plakacie umieszczać wszystkich możliwych statystyk, to jest zresz
 
 ## Dane
 
-[COVID-19 w Polsce](https://docs.google.com/spreadsheets/d/1ierEhD6gcq51HAm433knjnVwey4ZE5DCnu1bW7PRG3E/htmlview) lub/i [COVID-19 na świecie](https://ourworldindata.org/coronavirus)
+[COVID-19 w Polsce](https://docs.google.com/spreadsheets/d/1ierEhD6gcq51HAm433knjnVwey4ZE5DCnu1bW7PRG3E/htmlview) lub/i [COVID-19 na świecie](https://ourworldindata.org/coronavirus).
 
 Bonusowe punkty można dostać za wykorzystanie dodatkowego ciekawego zbioru danych (np. jeden z powyższych + https://trends.google.com/trends/?geo=PL).
 
