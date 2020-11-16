@@ -28,10 +28,10 @@ Winter Semester 2020/2021
 - 26.10.2020 - L4: R: ggplot2 - advanced, extensions: patchwork, ggstatsplot, ggmap
 - 02.11.2020 - L5: [Fix the plot: NSP](https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
 - 09.11.2020 - L6: Python: pandas - introduction
-- 16.11.2020 - L7: Python: matplotlib seaborn - introduction
-- 23.11.2020 - L8: Python: matplotlib [seaborn](https://seaborn.pydata.org/index.html) 
-- 30.11.2020 - L9: Python: plotly - basic interactivie plots 
-- 07.12.2020 - L10: Python: plotly - advanced interactive visualizations 
+- 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
+- 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
+- 30.11.2020 - L9: Python: interactive plots 
+- 07.12.2020 - L10: Python: plotly 
 - 14.12.2020 - L11: R: plotly & ggplot2 integration
 - 21.12.2020 - L12: Xmas trees
 - 11.01.2021 - L13: R: shiny - introduction
