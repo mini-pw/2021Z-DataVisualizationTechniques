@@ -1,0 +1,49 @@
+---
+title: "Praca Domowa nr 2 "
+author: "Dawid Janus 305742"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+
+
+specie <- c(rep("Mężczyźni" , 4) , rep("Kobiety" , 4))
+condition <- rep(c("przedprodukcyjny" , "produkcyjnoy mobilny" , "produkcyjny niemobilny", "poprodukcyjny") , 2)
+value <- c(0.2,62.4,35.6,1.8,0.1,62.3,33.6,4.0)
+data <- data.frame(specie,condition,value)
+data
+
+x<-ggplot(data, aes(fill=condition, y=value, x=factor(specie, levels = c("Mężczyźni", "Kobiety")))) + 
+  geom_bar( stat="identity", position = "dodge") +
+  scale_y_continuous(limits = c(0, 70), breaks = seq(0,70,10)) +
+  ggtitle("Struktura pracujących według ekonomicznych grup wieku i płci") +
+  xlab("")+
+  ylab("%")+
+  labs(fill="") +
+  theme_bw() +
+  theme(
+    plot.title = element_text(color="black", size=14, face="bold", hjust=0),
+    axis.title.x = element_text(color="black", size=14, face="bold", vjust = 0.1),
+    axis.title.y = element_text(color="black", size=14, face="bold",vjust=0.5),
+    axis.text = element_text(size=12)
+      
+  ) + geom_text(aes(label = value),vjust = -0.3, color = "black", position = position_dodge(0.9))
+
+
+
+```
+## Wersja oryginalna
+
+[Link do oryginalu]("https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/aktywnosc-ekonomiczna-ludnosci-polski-nsp-2011,12,1.html")
+
+![Wykres oryginalny](abc.JPG)
+
+\newpage
+## Wersja poprawiona
+
+```{r echo=FALSE}
+x
+```
+
