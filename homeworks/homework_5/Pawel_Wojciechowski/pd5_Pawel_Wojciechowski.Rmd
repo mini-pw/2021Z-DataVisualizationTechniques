@@ -1,0 +1,20 @@
+---
+title: "Praca domowa 5"
+author: "Paweł Wojciechowski - nr indeksu 298920"
+date: "2 listopada 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Wykres oryginalny
+```{r, out.width="90%", fig.align='center'}
+knitr::include_graphics("oryginalny.png")
+```
+
+## Wykres poprawiony
+```{r, out.width="90%", fig.align='center'}
+knitr::include_graphics("poprawiony.png")
+```
