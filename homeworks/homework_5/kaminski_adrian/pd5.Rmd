@@ -1,0 +1,25 @@
+---
+title: "Techniki wizualizacji danych - praca domowa 5"
+author: "Adrian Kamiński"
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## Wykres oryginalny
+
+![](oryginalny.png)
+
+## Wykresy poprawione 
+### Pierwsza możliwość
+![](wykres1.jpeg)
+
+### Druga możliwość
+
+![](wykres2.jpeg)
+
