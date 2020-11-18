@@ -43,7 +43,7 @@ Ocena końcowa dotyczy trzech aspektów:
 
 Proszę o umieszczanie plików projektu w folderze o nazwie `nazwisko1_nazwisko2_nazwisko3` w folderze [`./projects/project2`](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/tree/master/projects/project2).
 
-- do **29/12** (niedziela) powinien pojawić się **PR** z raportem - raport i kody w folderze `raport`
+- do **29/11** (niedziela) powinien pojawić się **PR** z raportem - raport i kody w folderze `raport`
 - do **12/12** (sobota) powinien pojawić się **PR** z plakatem - plakat i kody w folderze `plakat`
 - [opcjonalnie] do **13/12** (niedziela) powinien pojawić się **PR** z nagraniem `nazwisko1_nazwisko2_nazwisko3.**` w formacie, który łatwo otworzyć (można wysłać mailem)
 
