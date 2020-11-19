@@ -60,5 +60,6 @@ Tytuł **PR**: odpowiednio `[projekt2] nazwisko1 raport/plakat/nagranie` (**Pull
 - zmiany w świadcezniach społecznych w 2020 vs poprzednie lata
 - rozwój epidemii w powiatach/województwach
 - jaka jest szansa że spotkam osobę zakażoną w zależności od powiatu/województwa
+- https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/zgony-wedlug-tygodni,39,2.html
 
 </details>
