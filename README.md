@@ -3,39 +3,39 @@ Winter Semester 2020/2021
 
 ## Lectures
 
-- 05.10.2020 - W1: Review of tools for data visualization
-- 12.10.2020 - W2: [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
-- 19.10.2020 - W3: [Colors](http://www.biecek.pl/Eseje/indexKolory.html) and [Scales](http://www.biecek.pl/Eseje/indexDane.html)
-- 26.10.2020 - W4: [The International Business Communication Standards](https://www.ibcs.com/standards/)
-- 02.11.2020 - W5: [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html)
-- 09.11.2020 - W6: [Other Plot types](https://www.r-graph-gallery.com/)
-- 16.11.2020 - W7: Presentation of project I
-- 23.11.2020 - W8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
-- 30.11.2020 - W9: Edward Tufte
-- 07.12.2020 - W10: Scrollytelling
-- 14.12.2020 - W11: Presentation of project II
-- 21.12.2020 - W12: Dashboards
-- 11.01.2021 - W13: Hans Rosling
-- 18.01.2021 - W14: Presentation of project III
+- 05.10.2020 - L1: Review of tools for data visualization
+- 12.10.2020 - L2: [The Grammar of Graphics](http://biecek.pl/Eseje/indexGramatyka.html)
+- 19.10.2020 - L3: [Colors](http://www.biecek.pl/Eseje/indexKolory.html) and [Scales](http://www.biecek.pl/Eseje/indexObraz.html)
+- 26.10.2020 - L4: [The International Business Communication Standards](https://www.ibcs.com/standards/)
+- 02.11.2020 - L5: [Don't do this at home](http://biecek.pl/Eseje/indexPomylka.html)
+- 09.11.2020 - L6: [Other Plot types](https://www.r-graph-gallery.com/)
+- 16.11.2020 - L7: Presentation of project I
+- 23.11.2020 - L8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
+- 30.11.2020 - L9: Edward Tufte
+- 07.12.2020 - L10: Scrollytelling
+- 14.12.2020 - L11: Presentation of project II
+- 21.12.2020 - L12: Dashboards
+- 11.01.2021 - L13: Hans Rosling
+- 18.01.2021 - L14: Presentation of project III
 - 25.01.2021 - 
 
 
 ## Labs
 
-- 05.10.2020 - R: dplyr, tidyr - introduction
-- 12.10.2020 - R: [ggplot2 - introduction & grammar](https://rkabacoff.github.io/datavis/)
-- 19.10.2020 - R: ggplot2 - plot modification, theme, facets
-- 26.10.2020 - R: ggplot2 - advanced, extensions: patchwork, ggstatsplot, ggmap
-- 02.11.2020 - [Fix the plot: NSP](https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
-- 09.11.2020 - Python: pandas - introduction
-- 16.11.2020 - Python: matplotlib seaborn - introduction
-- 23.11.2020 - Python: matplotlib [seaborn](https://seaborn.pydata.org/index.html) 
-- 30.11.2020 - Python: plotly - basic interactivie plots 
-- 07.12.2020 - Python: plotly - advanced interactive visualizations 
-- 14.12.2020 - R: plotly & ggplot2 integration
-- 21.12.2020 - Xmas trees
-- 11.01.2021 - R: shiny - introduction
-- 18.01.2021 - R: [shiny - mastering](https://mastering-shiny.org/)
+- 05.10.2020 - L1: R: dplyr, tidyr - introduction
+- 12.10.2020 - L1: R: [ggplot2 - introduction & grammar](https://rkabacoff.github.io/datavis/)
+- 19.10.2020 - L3: R: ggplot2 - plot modification, theme, facets
+- 26.10.2020 - L4: R: ggplot2 - advanced, extensions: patchwork, ggstatsplot, ggmap
+- 02.11.2020 - L5: [Fix the plot: NSP](https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
+- 09.11.2020 - L6: Python: pandas - introduction
+- 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
+- 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
+- 30.11.2020 - L9: Python: interactive plots 
+- 07.12.2020 - L10: Python: plotly 
+- 14.12.2020 - L11: R: plotly & ggplot2 integration
+- 21.12.2020 - L12: Xmas trees
+- 11.01.2021 - L13: R: shiny - introduction
+- 18.01.2021 - L14: R: [shiny - mastering](https://mastering-shiny.org/)
 - 25.02.2021 - 
 
 [shiny in Python](https://dash.plotly.com/)
