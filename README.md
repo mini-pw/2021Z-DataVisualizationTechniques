@@ -11,11 +11,11 @@ Winter Semester 2020/2021
 - 09.11.2020 - L6: [Other Plot types](https://www.r-graph-gallery.com/)
 - 16.11.2020 - L7: Presentation of project I
 - 23.11.2020 - L8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
-- 30.11.2020 - L9: Edward Tufte
+- 30.11.2020 - L9: Hans Rosling
 - 07.12.2020 - L10: Scrollytelling
 - 14.12.2020 - L11: Presentation of project II
 - 21.12.2020 - L12: Dashboards
-- 11.01.2021 - L13: Hans Rosling
+- 11.01.2021 - L13: Edward Tufte
 - 18.01.2021 - L14: Presentation of project III
 - 25.01.2021 - 
 
