@@ -30,9 +30,9 @@ Winter Semester 2020/2021
 - 09.11.2020 - L6: Python: pandas - introduction
 - 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
 - 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
-- 30.11.2020 - L9: Python: interactive plots 
-- 07.12.2020 - L10: Python: plotly 
-- 14.12.2020 - L11: R: plotly & ggplot2 integration
+- 30.11.2020 - L9: Python: interactive plots (plotly)
+- 07.12.2020 - L10: R: plotly & ggplot2 integration
+- 14.12.2020 - L11: 
 - 21.12.2020 - L12: Xmas trees
 - 11.01.2021 - L13: R: shiny - introduction
 - 18.01.2021 - L14: R: [shiny - mastering](https://mastering-shiny.org/)
