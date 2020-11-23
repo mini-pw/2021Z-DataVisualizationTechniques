@@ -11,7 +11,7 @@ Winter Semester 2020/2021
 - 09.11.2020 - L6: [Other Plot types](https://www.r-graph-gallery.com/)
 - 16.11.2020 - L7: Presentation of project I
 - 23.11.2020 - L8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
-- 30.11.2020 - L9: Hans Rosling
+- 30.11.2020 - L9: Hans Rosling: [The best stats you've ever seen](https://www.youtube.com/watch?v=hVimVzgtD6w&ab_channel=TED), [Why the world population won’t exceed 11 billion](https://www.youtube.com/watch?v=2LyzBoHo5EI&ab_channel=THINKGlobalSchool)
 - 07.12.2020 - L10: Scrollytelling
 - 14.12.2020 - L11: Presentation of project II
 - 21.12.2020 - L12: Dashboards
