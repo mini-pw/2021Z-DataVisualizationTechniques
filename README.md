@@ -31,14 +31,13 @@ Winter Semester 2020/2021
 - 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
 - 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
 - 30.11.2020 - L9: R: plotly & ggplot2 integration
-- 07.12.2020 - L10: Scrollytelling in R
-- 14.12.2020 - L11: 
+- 07.12.2020 - L10: R: shiny - introduction
+- 14.12.2020 - L11: R: Shiny dashboard on [soccer-data]( https://github.com/michbur/soccer-data)
 - 21.12.2020 - L12: Xmas trees
-- 11.01.2021 - L13: R: shiny - introduction
-- 18.01.2021 - L14: R: [shiny - mastering](https://mastering-shiny.org/)
-- 25.02.2021 - 
+- 11.01.2021 - L13: R: [shiny - mastering](https://mastering-shiny.org/)
+- 18.01.2021 - L14: 
+- 25.02.2021 - L15:
 
-[shiny in Python](https://dash.plotly.com/)
 
 ## Projects
 
