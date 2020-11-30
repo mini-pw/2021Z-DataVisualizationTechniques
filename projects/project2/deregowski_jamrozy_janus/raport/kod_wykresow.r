@@ -74,7 +74,7 @@ library(reader)
 data<-read.csv(url("https://github.com/owid/covid-19-data/raw/master/public/data/owid-covid-data.csv"))
 
 range_moving_mean=7
-data_start=as.Date("2020-03-1")
+data_start=as.Date("2020-03-01")
 data_end=as.Date("2020-11-30")
 county_code="POL"
 
@@ -83,8 +83,8 @@ plot <-function(country_code,country_name){
   
   country_date<- dplyr::filter(data,iso_code==country_code)
   country_date<-country_date %>% mutate(Date=as.Date(date))
-  country_date %>% filter(Date>data_start && Date<data_end)
-  ggplot(country_date, aes(x=Date,y=new_cases_smoothed_per_million))+
+  country_date<-country_date %>% filter(Date>data_start & Date<data_end)
+  ggplot(country_date, aes(x=Date,y=new_cases_smoothed_per_million)) +
     geom_line(size=1.2)+
     theme_minimal()+
     labs(x="",y="Nowe przypadki")+
@@ -95,7 +95,7 @@ plot <-function(country_code,country_name){
   
 }
 
-
+head(data)
 
 #Legenda
 
@@ -112,7 +112,8 @@ abc2("brown", c(rep(0,46),rep(1,46),rep(2,46),rep(3,46),rep(4,46),rep(5,45))) +g
 # Wykresy
 
 
-
+plot("POL",'Polska')
+plot("SWE","Szwecja")
 
 plot("SWE","Szwecja") +(abc(sweden_stayathome,"red",1) + ggtitle("Zakaz opuszczania domu")+ theme(plot.title = element_text(hjust = 0.5, vjust=-2))+
                             abc(sweden_schoolsworkplaces,"blue4",7) + ggtitle("Szkoła i miejsca pracy")+ theme(plot.title = element_text(hjust = 0.5, vjust=-2))+
