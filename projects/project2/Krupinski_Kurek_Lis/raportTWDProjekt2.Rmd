@@ -1,0 +1,57 @@
+---
+title: "Raport weekly 2 TWD"
+author: "Marcelina Kurek, Tomasz Krupiński, Jakub Lis"
+output: pdf_document
+fontsize: 12pt
+---
+
+
+
+## Wstęp
+Postanowiliśmy zbadać wpływ rozwoju pandemii na turystykę w wybranych krajach Unii Europejskiej. W tym celu skorzystaliśmy z baz danych udostępnionych przez:
+
+- Our World in Data: https://ourworldindata.org/coronavirus
+- Google Trends: https://trends.google.com/trends/
+- Eurostat: https://ec.europa.eu/eurostat/databrowser/view/TOUR_OCC_NIM__custom_288793/default/table?lang=en oraz https://ec.europa.eu/eurostat/databrowser/view/TOUR_OCC_NIM__custom_93509/bookmark/table?lang=en&bookmarkId=39b14d02-dc41-430a-aaee-48e5493146aa
+
+
+## Jak wpływa poziom obostrzeń na zainteresowanie wybranymi hasłami w Polsce.
+
+Dzięki danym z Our World in Data oraz Google Trends, można wywnioskować, czy ludzie się interesują mniej, więcej, bądź tak samo hasłami związanymi z turystyką w zależności od obostrzeń. Wybraliśmy słowa: 
+
+- PKP
+- LOT
+- Hotel
+
+![]("plots/PKP.png")
+![]("plots/LOT.png")
+![]("plots/hotel.png")
+
+Na każdym z trzech wykresów, widać zależność, że im wyższe były obostrzenia (czerwona linia - im bliżej 100, tym większy rygor), tym mniejsze było wyszukiwanie tych słów kluczowych przez ludzi (niebieskie słupki, im bliżej 100, tym większe zainteresowanie). Należy mieć jednak na uwadze, że kiedy zostały zmniejszone obostrzenia, były wakacje, więc również to miało wpływ na zwiększenie zainteresowania. Wyjątkiem jest hasło "LOT", gdzie mimo wakacji, zainteresowanie tym hasłem nie wzrosło aż tak mocno jak w pozostałych słowach kluczwych.
+
+## Liczba pasażerów podróżujących samolotem w zależności od kraju.
+
+Stworzyliśmy wykresy porównujące liczbę pasażerów podróżujących samolotem w 2019 i 2020 roku dla wybranych krajów: Niemcy, Norwegia, Holandia oraz Wielka Brytania. Wybraliśmy je, ponieważ były dostępne pełne dane od początku 2019 roku do końca września 2020.
+
+![]("plots/air_DE.png")
+![]("plots/air_NL.png")
+![]("plots/air_NO.png")
+![]("plots/air_UK.png")
+
+## Liczba nocy spędzonych w hotelach w zależności od kraju.
+
+Analogicznie jak w poprzednich wykresach, stworzyliśmy wizualizacje dotyczące liczby nocy spędzonych w hotelach w 2019 i 2020 roku w tych samych krajach.
+
+![]("plots/germany_noclegi")
+![]("plots/netherlands_noclegi")
+![]("plots/norway_noclegi")
+![]("plots/uk_noclegi")
+
+## Zachorowania we wcześniej wymienionych krajach.
+
+![]("plots/fourCountries.png")
+
+## TODO
+
+1. Dopisać konkretne punkty w zmianach obostrzeń w Polsce do pierwszych trzech wykresów.
+2. Ujednolicić wykresy.
