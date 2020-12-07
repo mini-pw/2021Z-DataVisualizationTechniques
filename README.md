@@ -12,7 +12,7 @@ Winter Semester 2020/2021
 - 16.11.2020 - L7: Presentation of project I
 - 23.11.2020 - L8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
 - 30.11.2020 - L9: Hans Rosling: [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen), [Let my dataset change your mindset](https://www.ted.com/talks/hans_rosling_let_my_dataset_change_your_mindset)
-- 07.12.2020 - L10: Scrollytelling
+- 07.12.2020 - L10: Scrollytelling: [Pockets](https://pudding.cool/2018/08/pockets/), [Powerless](https://projects.propublica.org/graphics/wva), [Here’s How America Uses Its Land](https://www.bloomberg.com/graphics/2018-us-land-use/)
 - 14.12.2020 - L11: Presentation of project II
 - 21.12.2020 - L12: Dashboards
 - 11.01.2021 - L13: Edward Tufte
@@ -31,7 +31,7 @@ Winter Semester 2020/2021
 - 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
 - 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
 - 30.11.2020 - L9: R: plotly & ggplot2 integration
-- 07.12.2020 - L10: R: shiny - introduction
+- 07.12.2020 - L10: R: shiny - introduction, [Shiny gallery](https://shiny.rstudio.com/gallery/#demos)
 - 14.12.2020 - L11: R: Shiny dashboard on [soccer-data]( https://github.com/michbur/soccer-data)
 - 21.12.2020 - L12: Xmas trees
 - 11.01.2021 - L13: R: [shiny - mastering](https://mastering-shiny.org/)
