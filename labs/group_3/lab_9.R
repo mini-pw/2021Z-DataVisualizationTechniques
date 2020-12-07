@@ -283,6 +283,7 @@ ggplot(dragons, aes(x = scars)) +
 
 
 # d)
+# moze byc potrzebne ustawienie `zeroline = FALSE` dla osi x.
 set.seed(1)
 dragons_sample <- dragons[sample(1:nrow(dragons), 100), ]
 ggplot(dragons_sample, aes(x = year_of_birth, y = life_length, color = colour)) +
