@@ -4,7 +4,7 @@ Termin: 17 stycznia 2021
 
 Do zdobycia jest 10 pkt.
 
-Zadaniem w ostatniej pracy domowej jest zrobienie aplikacja Shiny zawierającej *wizualizacje* dotyczące jednego z podanych niżej tematów.
+Zadaniem w ostatniej pracy domowej jest zrobienie aplikacja Shiny zawierającej *wizualizacje* dotyczące wyników TIMSS 2019.
 
 Proszę o umieszczenie aplikacji w folderze `homeworks/homework_10/imie_nazwisko`, czyli tak jak zawsze. 
 Folder powinien zawierać *kod aplikacji* oraz *plik readme.md* z linkiem do aplikacji na shinyapps [shinyapps.io](shinyapps.io).
@@ -15,7 +15,7 @@ Tworząc darmowe konto na shinyapps należy podać adres email. Nie trzeba wykor
 
 ## TIMSS 2019 -  Trends in International Mathematics and Science Study
 
-Aplikacja powinna wspierać użytkownika w przeanalizowaniu wyników wybranego przez niego państwa. Aplikacja powinna pomagać w identyfikacji słabych i mocnych stron krajów. 
+Aplikacja powinna wspierać użytkownika w przeanalizowaniu wyników wybranego przez niego państwa. 
 Dodatkowo aplikacja za maksymalną liczbę punktów powinna uwzględniać również wyniki z poprzednich lat lub więcej informacji z 2019 (znajdują się w linku ze źródłem).
 
 Raport: https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf
@@ -23,8 +23,3 @@ Raport: https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-
 Źródło danych: https://timss2019.org/reports/download-center/
 
 Kody: `timss-get-data.R`
-
-Niestety trzeba wczytywać nieprzyjemnie sformatowane excele.
-Prawdopodonie wygodne korzystanie będzie możliwe niedługo dzięki pakietom R `EdSurvey` lub `intsvy`. W momencie pisania treści pracy domowej te pakiety obsługują starsze edycje.
-
-
