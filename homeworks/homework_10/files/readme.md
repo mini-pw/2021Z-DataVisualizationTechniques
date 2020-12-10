@@ -1,6 +1,6 @@
 # Praca domowa 10+11
 
-Termin: 24 stycznia 2021
+Termin: 17 stycznia 2021
 
 Do zdobycia jest 10 pkt.
 
