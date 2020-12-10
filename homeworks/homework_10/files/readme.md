@@ -15,7 +15,8 @@ Tworząc darmowe konto na shinyapps należy podać adres email. Nie trzeba wykor
 
 ## TIMSS 2019 -  Trends in International Mathematics and Science Study
 
-Aplikacja powinna wspierać użytkownika w przeanalizowaniu wyników wybranego przez niego państwa. Aplikacja powinna pomagać w identyfikacji słabych i mocnych stron krajów. Dodatkowo aplikacja może uwzględniać również wyniki z poprzednich lat lub więcej informacji z 2019 (znajdują się w linku ze źródłem).
+Aplikacja powinna wspierać użytkownika w przeanalizowaniu wyników wybranego przez niego państwa. Aplikacja powinna pomagać w identyfikacji słabych i mocnych stron krajów. 
+Dodatkowo aplikacja za maksymalną liczbę punktów powinna uwzględniać również wyniki z poprzednich lat lub więcej informacji z 2019 (znajdują się w linku ze źródłem).
 
 Raport: https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf
 
