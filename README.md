@@ -11,11 +11,11 @@ Winter Semester 2020/2021
 - 09.11.2020 - L6: [Other Plot types](https://www.r-graph-gallery.com/)
 - 16.11.2020 - L7: Presentation of project I
 - 23.11.2020 - L8: [History of Statistical Graphics](http://biecek.pl/Eseje/indexHistoria.html)
-- 30.11.2020 - L9: Edward Tufte
-- 07.12.2020 - L10: Scrollytelling
+- 30.11.2020 - L9: Hans Rosling: [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen), [Let my dataset change your mindset](https://www.ted.com/talks/hans_rosling_let_my_dataset_change_your_mindset)
+- 07.12.2020 - L10: Scrollytelling: [Pockets](https://pudding.cool/2018/08/pockets/), [Powerless](https://projects.propublica.org/graphics/wva), [Here’s How America Uses Its Land](https://www.bloomberg.com/graphics/2018-us-land-use/)
 - 14.12.2020 - L11: Presentation of project II
 - 21.12.2020 - L12: Dashboards
-- 11.01.2021 - L13: Hans Rosling
+- 11.01.2021 - L13: Edward Tufte
 - 18.01.2021 - L14: Presentation of project III
 - 25.01.2021 - 
 
@@ -30,15 +30,14 @@ Winter Semester 2020/2021
 - 09.11.2020 - L6: Python: pandas - introduction
 - 16.11.2020 - L7: Python: [matplotlib](https://matplotlib.org/) 
 - 23.11.2020 - L8: Python: [seaborn](https://seaborn.pydata.org/index.html) 
-- 30.11.2020 - L9: Python: interactive plots 
-- 07.12.2020 - L10: Python: plotly 
-- 14.12.2020 - L11: R: plotly & ggplot2 integration
+- 30.11.2020 - L9: R: plotly & ggplot2 integration
+- 07.12.2020 - L10: R: Shiny - introduction, [Shiny gallery](https://shiny.rstudio.com/gallery/#demos)
+- 14.12.2020 - L11: R: Shiny app on [TIMSS 2019](https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf)
 - 21.12.2020 - L12: Xmas trees
-- 11.01.2021 - L13: R: shiny - introduction
-- 18.01.2021 - L14: R: [shiny - mastering](https://mastering-shiny.org/)
-- 25.02.2021 - 
+- 11.01.2021 - L13: R: [shiny - mastering](https://mastering-shiny.org/)
+- 18.01.2021 - L14: 
+- 25.02.2021 - L15:
 
-[shiny in Python](https://dash.plotly.com/)
 
 ## Projects
 
