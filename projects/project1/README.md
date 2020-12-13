@@ -26,6 +26,7 @@ Plik pdf plakatu należy umieścić na GitHubie do 15.11, a potencjalny link do 
 - 10.11 weekly 3
 - 16.11 (wykład) prezentacja projektu 
 
+Oddanie: https://github.com/mini-pw/2021Z-DataVisualizationTechniques/issues/225
 
 ## Ocena
 
