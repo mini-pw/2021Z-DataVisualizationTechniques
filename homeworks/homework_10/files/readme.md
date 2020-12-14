@@ -19,6 +19,7 @@ Aplikacja powinna wspierać użytkownika w przeanalizowaniu wyników wybranego p
 Dodatkowo aplikacja za maksymalną liczbę punktów powinna uwzględniać również wyniki z poprzednich lat lub więcej informacji z 2019 (znajdują się w linku ze źródłem).
 
 Raport: https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf
+
 [CO POTRAFIĄ POLSCY CZWARTOKLASIŚCI? WYNIKI BADANIA TIMSS 2019](http://www.evidin.pl/wp-content/uploads/2020/12/POLICY-NOTE-1-2020-TIMSS-1.pdf)
 
 Źródło danych: https://timss2019.org/reports/download-center/
