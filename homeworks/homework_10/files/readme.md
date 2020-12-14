@@ -9,7 +9,7 @@ Zadaniem w ostatniej pracy domowej jest zrobienie aplikacja Shiny zawierającej 
 Proszę o umieszczenie aplikacji w folderze `homeworks/homework_10/imie_nazwisko`, czyli tak jak zawsze. 
 Folder powinien zawierać *kod aplikacji* oraz *plik readme.md* z linkiem do aplikacji na shinyapps [shinyapps.io](shinyapps.io).
 
-Praca domowa powinna zawierać tytuł, przynajmniej dwie kontrolki (lub interaktywności w obrębie wykresu) i przynajmniej dwa estetyczne wykresy.
+Praca domowa powinna zawierać tytuł, przynajmniej dwie kontrolki (lub interaktywności w obrębie wykresu - zaimplementowana a nie plotly) i przynajmniej dwa estetyczne wykresy. Warto też dodać instrukcję, jeśli funkcjonalności nie są oczywiste.
 
 Tworząc darmowe konto na shinyapps należy podać adres email. Nie trzeba wykorzystywać prywatnego adresu email, można założyć również inny adres wyłącznie na potrzeby rejestracji.
 
