@@ -1,0 +1,49 @@
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(plotly)
+
+source("timss-get-data.R")
+
+data_4_8 <- M4 %>% inner_join(M8,by = "Country") %>% 
+  inner_join(S4,by = "Country") %>% 
+  inner_join(S8,by = "Country") %>%
+  mutate(M_diff = M8-M4, S_diff = S8-S4) %>%
+  arrange(M_diff) 
+
+
+data_4_8 %>%
+  pivot_longer(cols = -Country)%>%
+  ggplot()+
+  geom_bar(aes(x = Country, y = value, fill = name), stat = 'identity', position = 'dodge')
+
+
+p <- ggplot(data_4_8) +
+  geom_point(aes(x = M8, y = S8))
+ggplotly(p)
+
+data_4 <- M4 %>% inner_join(S4, by = "Country")
+
+data_4 %>%
+  pivot_longer(cols = -Country)%>%
+  ggplot()+
+  geom_bar(aes(x = Country, y = value, fill = name), stat = 'identity', position = 'dodge')
+
+p <- ggplot(data_4) +
+  geom_point(aes(x = M4, y = S4, color = Country))
+ggplotly(p)
+
+
+p <- M4_instruction_type %>%
+  ggplot()+
+  geom_point(aes(x = total_h, y = mat_h, color = Country))
+ggplotly(p)
+
+p <- M4_instruction_type %>%
+  mutate(mat_precent = mat_h/total_h * 100) %>%
+  inner_join(data_4, by = "Country") %>%
+  ggplot()+
+  geom_point(aes(x = mat_h, y = M4, color = Country)) +
+  geom_density2d(aes(x = mat_h, y = M4))
+ggplotly(p)
