@@ -22,7 +22,7 @@ Ostateczny wynik prezentowany jest na wykładzie (2 min).
 Za ten projekt można otrzymać od 0 do 15 punktów, z czego:
 
 - **22/12**: do 2 punktów uzyskuje się za sporządenie planu(ów) projektu (pdf, max 2 strony)
-- **08/12**: we wtorek nie ma zajęć, więc w piątek jest możliwość indywidualnej konsultacji
+- **08/01**: we wtorek nie ma zajęć, więc w piątek jest możliwość indywidualnej konsultacji
 - **12/01**: do 4 punktów uzyskuje się za zaprezentowanie prototypu projektu (wstęp do oceny końcowej!)
 - **18/01**: do 9 punktów uzyskuje się za projekt i prezentację
 
