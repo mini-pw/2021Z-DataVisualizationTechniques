@@ -21,7 +21,7 @@ Ostateczny wynik prezentowany jest na wykładzie (2 min).
 
 Za ten projekt można otrzymać od 0 do 15 punktów, z czego:
 
-- **22/12**: do 2 punktów uzyskuje się za sporządenie planu(ów) projektu (pdf, max 2 strony)
+- **22/12**: do 2 punktów uzyskuje się za sporządzenie planu(ów) projektu (pdf, max 2 strony)
 - **08/01**: we wtorek nie ma zajęć, więc w piątek jest możliwość indywidualnej konsultacji
 - **12/01**: do 4 punktów uzyskuje się za zaprezentowanie prototypu projektu (wstęp do oceny końcowej!)
 - **18/01**: do 9 punktów uzyskuje się za projekt i prezentację
@@ -38,7 +38,7 @@ Ocena końcowa dotyczy trzech aspektów:
 
 Proszę o umieszczanie plików projektu w folderze o nazwie `nazwisko1_nazwisko2_nazwisko3` w folderze [`./projects/project3`](https://github.com/mini-pw/2021Z-DataVisualizationTechniques/tree/master/projects/project3).
 
-- do **16/01** (sobota) powinien pojawić się **PR** z dashboardem/stroną
+- do **16/01** (sobota) powinien pojawić się **PR** z kodem (lub mail)
 - do **17/01** (niedziela) powinien pojawić się **PR** z nagraniem `nazwisko1_nazwisko2_nazwisko3.**` w formacie, który łatwo otworzyć (można wysłać mailem)
 
 Tytuł **PR**: odpowiednio `[projekt3] nazwisko1 kod/nagranie` (**Pull Request** robi jedna osoba z zespołu)
