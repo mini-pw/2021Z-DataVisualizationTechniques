@@ -30,5 +30,5 @@ p <- ggplot(df)+
         title = element_text(size = 20))+
   transition_reveal(row)
 
-animate(p, fps = 120,nframes = 16, end_pause = 6)
+animate(p, fps = 60,nframes = 16, end_pause = 6)
 anim_save('tree.gif')
