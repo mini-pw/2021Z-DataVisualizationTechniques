@@ -42,24 +42,18 @@ for (i in 1:n){
   z[[2]][i] = (z[[2]][i] - y_min)/(y_max - y_min)
 }
 
+# gwiazda 
 g <- as.data.frame(list(c(0.48, 0.48), c(0.98, 0.98)))
 colnames(g) <- c("X", "Y")
 
+# bombki
 b <- as.data.frame(list(c(0.03, 0.32, 0.61, 0.34, 0.3, 0.78, 0.88, 0.48, 0.6, 0.72, 0.46, 0.2, 0.98, 0.46, 0.28, 0.77, 0.66, 0.37), 
                         c(0.44, 0.10, 0.25, 0.65, 0.25, 0.58, 0.19, 0.47, 0.7, 0.11, 0.12, 0.21, 0.44, 0.75, 0.41, 0.28, 0.4, 0.35), 
                         c("blue", "yellow", "blue", "orange", "pink", "red", "yellow", "orange", "pink", "red", "red", "orange", "pink", "blue", "yellow", "orange", "yellow", "blue")))
 
 colnames(b) <- c("X", "Y", "col")
 
-p <- ggplot(z, aes(x = X, y = Y)) +
-  geom_point(color = "darkgreen") +
-  theme(panel.background = element_rect(fill = "darkblue")) +
-  geom_point(data = g, aes(x = X, y = Y), shape = c(24, 25), fill = "yellow", size = 5, color = "yellow") +
-  geom_point(data = b, aes(x = X, y = Y), size = 5, colour = b$col)
-
-p + annotate(geom="text", x=0.2, y=0.85, label="Merry Christmas!",
-             color="yellow", size = 3)
-
+# płatki śniegu
 n_times = 100
 n_flakes = 100
 
@@ -88,6 +82,7 @@ flake_frame$flake_locations_y <- locations_y
 
 flake_frame$size <- flake_frame$size/15
 
+# animacja
 anim <- flake_frame %>%
 ggplot(aes(x = flake_location_x, y = flake_locations_y)) +
   geom_point(data = z, aes(x = X, y = Y), color = "darkgreen") +
