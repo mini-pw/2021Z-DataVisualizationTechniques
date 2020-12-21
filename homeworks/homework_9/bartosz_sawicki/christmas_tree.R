@@ -5,13 +5,13 @@ library(ggthemes)
 
 df <- NULL
 x <- 1
-for (i in 1:16) {
+for (i in 1:15) {
   x <- c(0, x) + c(x, 0);
   y <- paste(x, collapse = " ")
   df = rbind(df,data.frame(row = i,
                            val = y, 
-                           star_x = runif(1,-0.4,0.4),
-                           star_y = runif(1,-5,0))) 
+                           star_x = sample(c(runif(1,-0.2,-0.05),runif(1,0.05,0.2)),1),
+                           star_y = runif(1,-4.5,0))) 
 }
 
 p <- ggplot(df)+
