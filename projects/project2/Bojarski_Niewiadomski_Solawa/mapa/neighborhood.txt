@@ -1,0 +1,93 @@
+name1	id1	name2	id2
+Powiat białobrzeski	1401	Powiat przysuski	1423
+Powiat białobrzeski	1401	Powiat radomski	1425
+Powiat białobrzeski	1401	Powiat kozienicki	1407
+Powiat białobrzeski	1401	Powiat grójecki	1406
+Powiat ciechanowski	1402	Powiat płoński	1420
+Powiat ciechanowski	1402	Powiat pułtuski	1424
+Powiat ciechanowski	1402	Powiat makowski	1411
+Powiat ciechanowski	1402	Powiat przasnyski	1422
+Powiat ciechanowski	1402	Powiat mławski	1413
+Powiat garwoliński	1403	Powiat otwocki	1417
+Powiat garwoliński	1403	Powiat grójecki	1406
+Powiat garwoliński	1403	Powiat kozienicki	1407
+Powiat gostyniński	1404	Powiat płocki	1419
+Powiat gostyniński	1404	Powiaft sochaczewski	1428
+Powiat grodziski	1405	Powiat żyrardowski	1438
+Powiat grodziski	1405	Powiat grójecki	1406
+Powiat grodziski	1405	Powiat piaseczyński	1418
+Powiat grodziski	1405	Powiat pruszkowski	1421
+Powiat grodziski	1405	Powiat warszawski zachodni	1432
+Powiat grodziski	1405	Powiat sochaczewski	1428
+Powiat grójecki	1406	Powiat przysuski	1423
+Powiat grójecki	1406	Powiat kozienicki	1407
+Powiat grójecki	1406	Powiat otwocki	1417
+Powiat grójecki	1406	Powiat piaseczyński	1418
+Powiat grójecki	1406	Powiat żyrardowski	1438
+Powiat kozienicki	1407	Powiat zwoleński	1436
+Powiat kozienicki	1407	Powiat radomski	1425
+Powiat kozienicki	1407	Powiat otwocki	1417
+Powiat legionowski	1408	Powiat Warszawa	1465
+Powiat legionowski	1408	Powiat wołomiński	1434
+Powiat legionowski	1408	Powiat wyszkowski	1435
+Powiat legionowski	1408	Powiat przysuski	1423
+Powiat legionowski	1408	Powiat nowodworski	1414
+Powiat legionowski	1408	Powiat warszawski zachodni	1432
+Powiat lipski	1409	Powiat zwoleński	1436
+Powiat lipski	1409	Powiat radomski	1425
+Powiat łosicki	1410	Powiat siedlecki	1426
+Powiat makowski	1411	Powiat pułtuski	1424
+Powiat makowski	1411	Powiat wyszkowski	1435
+Powiat makowski	1411	Powiat ostrołęcki	1415
+Powiat makowski	1411	Powiat przasnyski	1422
+Powiat miński	1412	Powiat Warszawa	1465
+Powiat miński	1412	Powiat otwocki	1417
+Powiat miński	1412	Powiat siedlecki	1426
+Powiat miński	1412	Powiat węgrowski	1433
+Powiat miński	1412	Powiat wołomiński	1434
+Powiat mławski	1413	Powiat żuromiński	1437
+Powiat mławski	1413	Powiat płoński	1420
+Powiat mławski	1413	Powiat przasnyski	1422
+Powiat nowodworski	1414	Powiat warszawski zachodni	1432
+Powiat nowodworski	1414	Powiat pułtuski	1424
+Powiat nowodworski	1414	Powiat płoński	1420
+Powiat nowodworski	1414	Powiat sochaczewski	1428
+Powiat ostrołęcki	1415	Powiat przasnyski	1422
+Powiat ostrołęcki	1415	Powiat wyszkowski	1435
+Powiat ostrołęcki	1415	Powiat ostrowski	1416
+Powiat Ostrołęka	1461	Powiat ostrołęcki	1415
+Powiat ostrowski	1416	Powiat węgrowski	1433
+Powiat ostrowski	1416	Powiat sokołowski	1429
+Powiat otwocki	1417	Powiat Warszawa	1465
+Powiat otwocki	1417	Powiat piaseczyński	1418
+Powiat piaseczyński	1418	Powiat Warszawa	1465
+Powiat piaseczyński	1418	Powiat pruszkowski	1421
+Powiat płocki	1419	Powiat sochaczewski	1428
+Powiat płocki	1419	Powiat płoński	1420
+Powiat płocki	1419	Powiat sierpecki	1427
+Powiat Płock	1462	Powiat płocki	1419
+Powiat płoński	1420	Powiat sochaczewski	1428
+Powiat płoński	1420	Powiat pułtuski	1424
+Powiat płoński	1420	Powiat żuromiński	1437
+Powiat płoński	1420	Powiat sierpecki	1427
+Powiat pruszkowski	1421	Powiat Warszawa	1465
+Powiat pruszkowski	1421	Powiat warszawski zachodni	1432
+Powiat przysuski	1423	Powiat radomski	1425
+Powiat przysuski	1423	Powiat szydłowiecki	1430
+Powiat pułtuski	1424	Powiat wyszkowski	1435
+Powiat radomski	1425	Powiat szydłowiecki	1430
+Powiat radomski	1425	Powiat zwoleński	1436
+Powiat Radom	1463	Powiat radomski	1425
+Powiat siedlecki	1426	Powiat węgrowski	1433
+Powiat siedlecki	1426	Powiat sokołowski	1429
+Powiat Siedlce	1464	Powiat siedlecki	1426
+Powiat sierpecki	1427	Powiat żuromiński	1437
+Powiat sochaczewski	1428	Powiat warszawski zachodni	1432
+Powiat sochaczewski	1428	Powiat żyrardowski	1438
+Powiat sokołowski	1429	Powiat węgrowski	1433
+Powiat warszawski zachodni	1432	Powiat Warszawa	1465
+Powiat Warszawa	1465	Powiat wołomiński	1434
+Powiat węgrowski	1433	Powiat wołomiński	1434
+Powiat węgrowski	1433	Powiat wyszkowski	1435
+Powiat wołomiński	1434	Powiat wyszkowski	1435
+
