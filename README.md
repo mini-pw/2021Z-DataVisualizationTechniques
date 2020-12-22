@@ -33,7 +33,7 @@ Winter Semester 2020/2021
 - 30.11.2020 - L9: R: plotly & ggplot2 integration
 - 07.12.2020 - L10: R: Shiny - introduction, [Shiny gallery](https://shiny.rstudio.com/gallery/#demos)
 - 14.12.2020 - L11: R: Shiny app on [TIMSS 2019](https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf)
-- 21.12.2020 - L12: Xmas trees
+- 21.12.2020 - L12: [Xmas trees](http://smarterpoland.pl/index.php/tag/choinka/) - [gganimate](https://gganimate.com/articles/gganimate.html), [RBokeh](http://hafen.github.io/rbokeh/#preview), [ggiraph](https://github.com/davidgohel/ggiraph), [vegalite](https://github.com/hrbrmstr/vegalite), [googleVis](http://www.magesblog.com/2016/09/googlevis-061-on-cran.html)
 - 11.01.2021 - L13: R: [shiny - mastering](https://mastering-shiny.org/)
 - 18.01.2021 - L14: 
 - 25.02.2021 - L15:
