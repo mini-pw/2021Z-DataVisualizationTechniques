@@ -5,14 +5,13 @@ ui <- fluidPage(
   tags$head(tags$link(rel="shortcut icon",
                       href="https://i.ibb.co/SsqLNtQ/unicorns-Are-Real.png")),
   
-  titlePanel("TIMSS Countries Comparison"),
+  titlePanel("TIMSS 2019 Countries Comparison"),
   
   sidebarLayout(
     
     sidebarPanel(
-      
-      selectInput(inputId = "year",label =  "Select year:",
-                  choices = c("2019")),
+      helpText("Presented data is currently only from 2019 TIMSS edition, however some updates
+               may add year selection functionality"),
       
       selectInput(inputId = "subject",label =  "Select subject:",
                   choices = c("Mathematics", "Science")),
@@ -39,13 +38,13 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(
         tabPanel(title = "Average Score Plot", 
-                 h4("Average Achievement and Scale Score Distributions"),
+                 h4("Average Achievement Score Distribution"),
                  helpText("Plot below is interactive - try hovering over bars or zooming."),
                  
                  plotlyOutput(outputId = "avgplot",height = 400),
                  
                  ),
-        tabPanel("Detailed Students' Achievment Plot", 
+        tabPanel("Detailed Students' Achievement Plot", 
                  h4("Percentages of Students Reaching International Benchmarks Achievement"),
                  helpText("Plot below shows percentage of students who scored above 625 (Advanced 
                - black dots), 550 (High - white dots), 475 (Intermediate - dark blue) 
