@@ -2,8 +2,7 @@
 
 server <- function(input, output, session){
   
-  no_country <- FALSE
-  
+  # Matematyka klasa 4
   M4 <- read_xlsx("1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
@@ -12,6 +11,7 @@ server <- function(input, output, session){
   
   colnames(M4) <- c("country", "advanced", "high", "intermediate", "low")
   
+  # Matematyka klasa 8
   M8 <- read_xlsx("3-8_benchmarks-results-M8.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
@@ -19,6 +19,24 @@ server <- function(input, output, session){
   M8 <- M8[-(40:47), ]
   
   colnames(M8) <- c("country", "advanced", "high", "intermediate", "low")
+  
+  # Przyroda klasa 4
+  S4 <- read_xlsx("2-8_benchmarks-results-S4.xlsx", skip = 5) %>%
+    select(3, 5, 8, 11, 14) %>%
+    na.omit()
+  
+  S4 <- S4[-(59:65), ]
+  
+  colnames(S4) <- c("country", "advanced", "high", "intermediate", "low")
+  
+  # Przyroda klasa 8
+  S8 <- read_xlsx("4-8_benchmarks-results-S8.xlsx", skip = 5) %>%
+    select(3, 5, 8, 11, 14) %>%
+    na.omit()
+  
+  S8 <- S8[-(40:47), ]
+  
+  colnames(S8) <- c("country", "advanced", "high", "intermediate", "low")
   
   
   output$plot1 <- renderPlot({
@@ -28,6 +46,12 @@ server <- function(input, output, session){
         data <- M4
       } else{
         data <- M8
+      }
+    } else{
+      if(input$form == "4th"){
+        data <- S4
+      } else{
+        data <- S8
       }
     }
     
@@ -52,11 +76,10 @@ server <- function(input, output, session){
                                y = !!sym(input$benchmark),
                                fill = color)) +
         geom_bar(stat = "identity") +
-        coord_flip() +
-        scale_y_discrete(expand = c(0, 0)) +
-        scale_fill_manual(values = c( "yes"="#800000", "no"="#D3D3D3" ), guide = FALSE ) +
-        ggtitle(paste("Percent of students reachind", input$benchmark, "benchmark")) +
-        ylab("student %") +
+        coord_flip(expand = FALSE, ylim = c(0, 100)) +
+        scale_fill_manual(values = c("yes"="#800000", "no"="#D3D3D3" ), guide = FALSE) +
+        ggtitle(paste("Percent of students reaching", input$benchmark, "benchmark")) +
+        labs(y = "students %") +
         xlab(element_blank()) +
         theme_bw()
       
