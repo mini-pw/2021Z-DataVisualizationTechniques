@@ -2,7 +2,7 @@
 
 server <- function(input, output, session){
   
-  # Matematyka klasa 4
+  # Dane dla 1 wykresu
   M4 <- read_xlsx("1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
@@ -95,6 +95,82 @@ server <- function(input, output, session){
   
     
   })
+  
+  # Dane dla 2 wykresu
+  
+  m4 <- read.csv("data_m4.csv") %>%
+    select(2:4)
+  
+  s4 <- read.csv("data_s4.csv") %>%
+    select(2:4)
+  
+  m8 <- read.csv("data_m8.csv") %>%
+    select(2:4)
+  
+  s8 <- read.csv("data_s8.csv") %>%
+    select(2:4)
+  
+  output$plot2 <- renderPlotly({
+    
+    if(input$subject == "math"){
+      if(input$form == "4th"){
+        data <- m4
+      } else{
+        data <- m8
+      }
+    } else{
+      if(input$form == "4th"){
+        data <- s4
+      } else{
+        data <- s8
+      }
+    }
+    
+    data %>% mutate(color = ifelse(country == input$country, "#800000", "#D3D3D3")) -> data
+    
+    data %>% filter(country == input$country) -> tmp
+    
+    if(length(tmp[[1]]) == 0){
+      
+      plot <- ggplot(data, aes(x = country, y = !!sym(input$benchmark))) +
+        annotate("text", x = 10, y = 30, label = paste("Sorry, there is no data for ", input$country, ".", sep="")) +
+        theme(axis.line=element_blank(),axis.text.x=element_blank(),
+              axis.text.y=element_blank(),axis.ticks=element_blank(),
+              axis.title.x=element_blank(),
+              axis.title.y=element_blank(),legend.position="none",
+              panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
+              panel.grid.minor=element_blank(),plot.background=element_blank())
+      
+    }else{
+    
+    plot <- plot_ly(type = 'scatter', mode = 'markers') 
+    
+    plot <- plot %>%
+      add_trace(
+        x = data$mark, 
+        y = data$experience,
+        text = data$country,
+        hoverinfo = 'text',
+        marker = list(color = data$color),
+        showlegend = F
+      ) %>% 
+      layout(
+        xaxis = list(
+          range=c(0,700),
+          title = 'average test result'
+        ),
+        
+        yaxis = list(
+          range=c(0,30),
+          title = 'average work years'
+        ),
+        title = 'Teachers work years and average test result'
+      )
+    }
+    
+    plot
+  })
+  
   
 
   

@@ -40,9 +40,10 @@ ui <- fluidPage(
       selectInput((inputId = "form"),
                   label = "Choose form",
                   choices = c("4th", "8th") 
-      )
+      ),
       
-      # checkboxInput("show_median", "Show median", TRUE)
+      tags$a(href="https://timssandpirls.bc.edu/timss-landing.html", 
+             "Futher reading on TIMSS")
       
   ),
   
@@ -50,7 +51,7 @@ ui <- fluidPage(
     
     tabsetPanel(type = "tabs",
                 
-       tabPanel("Tab1",
+       tabPanel("Benchmarks",
     
             fluidRow(
     
@@ -74,10 +75,11 @@ ui <- fluidPage(
     
              ),
        
-       tabPanel("Tab2", 
-                plotOutput("plot2"))
+       tabPanel("Teachers & results", 
+                plotlyOutput("plot2"))
       
-       )
+       ),
+
 )
 
 )
