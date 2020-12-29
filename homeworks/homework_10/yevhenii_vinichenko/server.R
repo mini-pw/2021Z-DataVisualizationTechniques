@@ -143,17 +143,31 @@ server <- function(input, output, session){
       
     }else{
     
-    plot <- plot_ly(type = 'scatter', mode = 'markers') 
+    plot <- plot_ly(data, 
+                    x = ~mark, 
+                    y = ~experience, 
+                    type = 'scatter', 
+                    mode = 'markers') 
+    
+    # dlaczegoś nie chciało czasem wyświetlić Belgii
+    # więc ją rysujemy oddzielnie
+    belgium <- data %>% filter(country == "Belgium (Flemish)")
     
     plot <- plot %>%
       add_trace(
-        x = data$mark, 
-        y = data$experience,
-        text = data$country,
+        text = ~country,
         hoverinfo = 'text',
-        marker = list(color = data$color),
+        marker = list(color = ~color),
         showlegend = F
       ) %>% 
+      add_trace( 
+        x = belgium$mark,
+        y = belgium$experience,
+        text = belgium$country,
+        hoverinfo = 'text',
+        marker = list(color = belgium$color),
+        showlegend = F
+        ) %>%
       layout(
         xaxis = list(
           range=c(0,700),

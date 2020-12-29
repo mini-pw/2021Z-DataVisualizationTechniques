@@ -2,6 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(shiny)
 library("readxl")
+library(plotly)
 
 countries <- read_xlsx("1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
   select(3) %>%
@@ -42,8 +43,17 @@ ui <- fluidPage(
                   choices = c("4th", "8th") 
       ),
       
+      "In case of suggestions or questions:",
+      
+      tags$a(href="mailto:shinyappTWD@protonmail.com", target="_blank", 
+             "shinyappTWD@protonmail.com"),
+      
+      ".",
+      
+      tags$br(),
+      
       tags$a(href="https://timssandpirls.bc.edu/timss-landing.html", 
-             "Futher reading on TIMSS")
+             "Futher reading on TIMSS.")
       
   ),
   
@@ -75,8 +85,9 @@ ui <- fluidPage(
     
              ),
        
-       tabPanel("Teachers & results", 
-                plotlyOutput("plot2"))
+       tabPanel("Teachers & results",
+                plotlyOutput("plot2"),
+                "This plot is interactive, try hovering or zooming.")
       
        ),
 
