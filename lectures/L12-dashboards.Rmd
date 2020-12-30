@@ -1,0 +1,176 @@
+---
+title: "Dashboardy"
+author: "Alicja Gosiewska"
+date: "21 12 2020"
+output: 
+  ioslides_presentation:
+    theme: "simplex"
+---
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+slides > slide {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+</style>
+
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(patchwork)
+library(ggthemes)
+library(ggbeeswarm)
+opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+theme_set(theme_bw())  # pre-set the bw theme.
+```
+
+# Efektywne projektowanie dashboardów
+
+## Rodzaje dashboardów
+
+ - analityczne,
+ - operacyjne.
+
+
+Źródło: https://uxplanet.org/
+
+## Analityczny dashboard
+
+<img src="https://miro.medium.com/max/1900/1*IiOrF2Kdliy0c8u3xhAfhA.jpeg" width="750px" class="center">
+
+Źródło: https://uxplanet.org/
+
+
+## Operacyjny dashboard
+
+<img src="https://miro.medium.com/max/1900/1*ZmAcZE075Vx5q74pKjLE2w.jpeg" width="750px" class="center">
+
+Źródło: https://uxplanet.org/
+
+## Układ treści
+
+<img src="https://cdn.sisense.com/wp-content/uploads/inverted-pyramid-design-for-dashboards-example-770x399.png" width="750px" class="center">
+
+Źródło: https://www.sisense.com/blog/4-design-principles-creating-better-dashboards/
+
+## Właściwy dobór wizualizacji do danych
+<a href="https://eazybi.com/blog/data_visualization_and_chart_types"><img src="https://eazybi.com/static/img/blog/posts/2016_03_01/chart-selection-diagram.png" width="500px"  class="center"></a>
+
+Źródło: https://eazybi.com/blog/data_visualization_and_chart_types.
+
+## Interakcja
+
+"*Only 10–15% of people click on buttons*".
+
+Gregor Aisch, New York Times, podczas Information+ Conference, 2016.
+
+## Interakcja
+
+"*15% of readers isn’t nobody*".
+
+Gregor Aisch, New York Times, 2017.
+
+## Zastosowanie interakcji
+
+Kluczowa informacja na wykresie nie może być skryta przed użytkownikiem za pomocą interakcji.
+
+Interakcje powinny zawierać wyłącznie informacje doprecyzowujące główny przekaz.
+
+
+## Interaktywność
+
+Zbędna interaktywność wymaga od nas akcji w celu uzyskania podstawowych informacji.
+
+<img src="https://trinachi.github.io/data-design-builds/images/sections/05/ch19-06-pointless-hover.png" width="800px" class="center">
+
+Źródło: [Data + design](https://trinachi.github.io/data-design-builds/titlepage01.html)
+
+## Interaktywność
+
+Poprawnie użyta interaktywność ułatwia eksplorację danych.
+
+<img src="https://trinachi.github.io/data-design-builds/images/sections/05/ch19-07-interactive-exploration.png" width="450px" class="center">
+
+Źródło: [Data + design](https://trinachi.github.io/data-design-builds/titlepage01.html)
+
+## Przykład: tooltipy
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, group = Species)) +
+           geom_point() +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka w podziale na gatunki irysów.
+
+## Przykład: tooltipy
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+           geom_point() +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka w podziale na gatunki irysów.
+
+## Przykład: tooltipy
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, shape = Species)) +
+           geom_point() +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka w podziale na gatunki irysów.
+
+## Przykład: tooltipy
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, group = Species)) +
+           geom_point() +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka <s>w podziale na gatunki irysów</s>.
+
+## Przykład: zbliżenie
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+           geom_point() +
+           coord_cartesian(xlim = c(7, 8), ylim = c(4, 7)) +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka w podziale na gatunki irysów.
+
+## Przykład: zbliżenie
+
+```{r}
+ggplotly(ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+           geom_point() +
+           geom_rect(xmin = 7, xmax = 8, ymin = 4, ymax = 7, color = "black", fill = NA,
+                     linetype = "dashed") +
+           theme_bw()) 
+```
+
+Cel wizualizacji: zależność długości pręcika od długości słupka w podziale na gatunki irysów.
+
+
+## Dobitne wizualizacje
+
+<iframe width="1166" height="656" src="https://www.youtube.com/embed/bRkXPuGAHkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
