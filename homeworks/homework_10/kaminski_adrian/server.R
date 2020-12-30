@@ -150,11 +150,12 @@ function(input, output, session) {
         p + geom_bar_interactive(stat = "identity") + 
           geom_crossbar_interactive(aes(ymin=pmax(Values - Error, 0),
                                         ymax=pmin(Values + Error, 100)), fill = "white"
-          ) -> p
+          )  -> p
       } 
       
       p + scale_y_continuous(limits = c(0, 100), expand = c(0,0)) + 
         theme_classic() +
+        scale_fill_manual(values = color.palette) +
         guides(fill = "none") +
         labs(y = "Percent of Students", x = "",
              title = ifelse(is.null(countries),
