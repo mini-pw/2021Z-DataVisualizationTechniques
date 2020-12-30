@@ -1,4 +1,4 @@
-In order to run this app locally download following files from https://timss2019.org/reports/download-center/
+In order to run this app locally download from https://timss2019.org/reports/download-center/ the following files:
 
 - 1-1_achievement-results-M4.xlsx
 - 2-1_achievement-results-S4.xlsx
