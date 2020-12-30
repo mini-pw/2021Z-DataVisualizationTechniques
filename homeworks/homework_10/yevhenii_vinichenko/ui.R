@@ -4,7 +4,7 @@ library(shiny)
 library("readxl")
 library(plotly)
 
-countries <- read_xlsx("1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
+countries <- read_xlsx("data/plot1/1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
   select(3) %>%
   na.omit()
 
@@ -31,12 +31,6 @@ ui <- fluidPage(
                   label = "Choose subject",
                   choices = c("math", "science") 
       ),
-      
-      # selectInput((inputId = "benchmark"),
-      #             label = "Choose benchmark",
-      #             choices = c("low", "intermediate",
-      #                         "high", "advanced"),
-      # ),
       
       selectInput((inputId = "form"),
                   label = "Choose form",

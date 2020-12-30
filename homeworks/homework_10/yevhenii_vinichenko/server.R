@@ -3,7 +3,8 @@
 server <- function(input, output, session){
   
   # Dane dla 1 wykresu
-  M4 <- read_xlsx("1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
+  # Matematyka klasa 4
+  M4 <- read_xlsx("data/plot1/1-8_benchmarks-results-M4.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
   
@@ -12,7 +13,7 @@ server <- function(input, output, session){
   colnames(M4) <- c("country", "advanced", "high", "intermediate", "low")
   
   # Matematyka klasa 8
-  M8 <- read_xlsx("3-8_benchmarks-results-M8.xlsx", skip = 5) %>%
+  M8 <- read_xlsx("data/plot1/3-8_benchmarks-results-M8.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
   
@@ -21,7 +22,7 @@ server <- function(input, output, session){
   colnames(M8) <- c("country", "advanced", "high", "intermediate", "low")
   
   # Przyroda klasa 4
-  S4 <- read_xlsx("2-8_benchmarks-results-S4.xlsx", skip = 5) %>%
+  S4 <- read_xlsx("data/plot1/2-8_benchmarks-results-S4.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
   
@@ -30,7 +31,7 @@ server <- function(input, output, session){
   colnames(S4) <- c("country", "advanced", "high", "intermediate", "low")
   
   # Przyroda klasa 8
-  S8 <- read_xlsx("4-8_benchmarks-results-S8.xlsx", skip = 5) %>%
+  S8 <- read_xlsx("data/plot1/4-8_benchmarks-results-S8.xlsx", skip = 5) %>%
     select(3, 5, 8, 11, 14) %>%
     na.omit()
   
@@ -97,17 +98,20 @@ server <- function(input, output, session){
   })
   
   # Dane dla 2 wykresu
-  
-  m4 <- read.csv("data_m4.csv") %>%
+  # Matematyka klasa 4
+  m4 <- read.csv("data/plot2/data_m4.csv") %>%
     select(2:4)
   
-  s4 <- read.csv("data_s4.csv") %>%
+  # Przyroda klasa 4
+  s4 <- read.csv("data/plot2/data_s4.csv") %>%
     select(2:4)
   
-  m8 <- read.csv("data_m8.csv") %>%
+  # Matematyka klasa 8
+  m8 <- read.csv("data/plot2/data_m8.csv") %>%
     select(2:4)
   
-  s8 <- read.csv("data_s8.csv") %>%
+  # Przyroda klasa 8
+  s8 <- read.csv("data/plot2/data_s8.csv") %>%
     select(2:4)
   
   output$plot2 <- renderPlotly({
@@ -184,10 +188,5 @@ server <- function(input, output, session){
     
     plot
   })
-  
-  
 
-  
-
-  
 }
