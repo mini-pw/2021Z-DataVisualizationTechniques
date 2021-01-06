@@ -26,8 +26,6 @@ S8t <- read_xlsx("4-3_achievement-trends-S8.xlsx", skip = 5) %>% select(-starts_
   melt(id.vars="Country",variable.name = "year")
 S8t[is.na(S8t)] <- 0 
 
-St <- left_join(S4t,S8t,by=c("Country","year")) %>% rename(value4 = value.x, value8 = value.y)
-St[is.na(St)] <- 0 
 
 St <- left_join(M4t,M8t,by=c("Country","year")) %>% rename(value4 = value.x, value8 = value.y)
 St[is.na(St)] <- 0 
