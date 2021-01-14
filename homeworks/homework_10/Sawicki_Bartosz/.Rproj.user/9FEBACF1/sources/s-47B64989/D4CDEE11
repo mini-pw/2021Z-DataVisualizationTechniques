@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1609592261103.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D4CDEE11",
+    "lastKnownWriteTime" : 1609875986,
+    "last_content_update" : 1609875986659,
+    "path" : "~/Studia/3sem/TWD/hw_10/Sawicki_Bartosz/hw10/ui.R",
+    "project_path" : "hw10/ui.R",
+    "properties" : {
+        "cursorPosition" : "19,10",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

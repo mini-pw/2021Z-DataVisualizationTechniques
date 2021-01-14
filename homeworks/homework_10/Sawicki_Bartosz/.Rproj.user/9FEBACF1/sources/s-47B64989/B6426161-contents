@@ -1,0 +1,7 @@
+library(rsconnect)
+
+rsconnect::setAccountInfo(name='sawickibartosz',
+                          token='8F5FEF31AE36989FD923A32E2B1E2BD4',
+                          secret='tySXTvNVIaYQ7/YCOz0vsYnfxJ1KBHRhl0+nM8gO')
+
+deployApp("hw10")

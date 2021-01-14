@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1609873775383.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2181835053",
+    "id" : "B6426161",
+    "lastKnownWriteTime" : 1610657539,
+    "last_content_update" : 1610657539051,
+    "path" : "~/Studia/3sem/TWD/hw_10/Sawicki_Bartosz/hw10/hosting.R",
+    "project_path" : "hw10/hosting.R",
+    "properties" : {
+        "cursorPosition" : "7,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
