@@ -1,0 +1,1 @@
+link do aplikacji: [ https://bajcyk.shinyapps.io/pd1011/]( https://bajcyk.shinyapps.io/pd1011/)
