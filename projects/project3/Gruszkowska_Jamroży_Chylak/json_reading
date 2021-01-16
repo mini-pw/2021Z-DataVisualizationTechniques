@@ -1,0 +1,57 @@
+import json
+from os import listdir
+from os.path import isfile, join
+import re
+from functools import partial
+
+# ścieżka do rozpakowanego ściagniętego folderu
+path = "D:/PW/MINI/ROK_2/techniki_wizualizacji_danych/pr_3/facebook-bartoszjamrozy3_3"
+# plik do zapisu
+csv_file_name="osoba1.csv"
+
+def read_json(path,file):
+    fix_mojibake_escapes = partial(
+        re.compile(rb'\\u00([\da-f]{2})').sub,
+        lambda m: bytes.fromhex(m.group(1).decode()))
+    with open(path, 'rb') as binary_data:
+        repaired = fix_mojibake_escapes(binary_data.read())
+
+    data = json.loads(repaired.decode('utf8'))
+    messages=data["messages"]
+    for message in messages:
+        line=""
+        line+=","
+        line+=str(message["timestamp_ms"]) +","
+        line+=","
+        line+=str(message["type"]) +","
+        for k in ['share','videos','sticker','photos','gifs']:
+            line+=check_exits(message,k)
+        try:
+            r=message["reactions"]
+            n=len(r)
+            for i in range(n):
+                r[i]=r[i]["reaction"]
+            line+="\"" + str(r)+"\"" + ","
+        except: line+=","
+        try:
+            line+=str(len(str(message["content"]))) + ","
+        except: line += "0,"
+        file.write(line + "\n")
+
+def check_exits(message,key):
+    try:
+        str(message[key])
+        return "1,"
+    except:return ","
+
+next_path="/messages/inbox/"
+mypath=path + next_path
+dirs = [f for f in listdir(mypath)]
+
+csv_file = open(csv_file_name,'w', encoding="utf-8")
+csv_file.write("'sender_name','timestamp_ms','content','type', 'share','videos','sticker','photos','gifs','reactions','ms_long',\n")
+for d in dirs:
+    mypath_json=mypath+d
+    files = [f for f in listdir(mypath_json) if isfile(join(mypath_json, f))]
+    for f in files:
+        read_json(mypath_json+"/"+f,csv_file)
