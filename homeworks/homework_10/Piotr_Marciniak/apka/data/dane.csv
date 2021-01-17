@@ -1,0 +1,691 @@
+Country;Score;Subject;Gender;Class
+Singapore;625;Math;Both;4
+Hong Kong SAR;602;Math;Both;4
+Korea, Rep. of;600;Math;Both;4
+Chinese Taipei;599;Math;Both;4
+Japan;593;Math;Both;4
+Russian Federation;567;Math;Both;4
+Northern Ireland;566;Math;Both;4
+England;556;Math;Both;4
+Ireland;548;Math;Both;4
+Latvia;546;Math;Both;4
+Norway (5);543;Math;Both;4
+Lithuania;542;Math;Both;4
+Austria;539;Math;Both;4
+Netherlands;538;Math;Both;4
+United States;535;Math;Both;4
+Czech Republic;533;Math;Both;4
+Belgium (Flemish);532;Math;Both;4
+Cyprus;532;Math;Both;4
+Finland;532;Math;Both;4
+Portugal;525;Math;Both;4
+Denmark;525;Math;Both;4
+Hungary;523;Math;Both;4
+Turkey (5);523;Math;Both;4
+Sweden;521;Math;Both;4
+Germany;521;Math;Both;4
+Poland;520;Math;Both;4
+Australia;516;Math;Both;4
+Azerbaijan;515;Math;Both;4
+Bulgaria;515;Math;Both;4
+Italy;515;Math;Both;4
+Kazakhstan;512;Math;Both;4
+Canada;512;Math;Both;4
+Slovak Republic;510;Math;Both;4
+Croatia;509;Math;Both;4
+Malta;509;Math;Both;4
+Serbia;508;Math;Both;4
+Spain;502;Math;Both;4
+TIMSS Scale Centerpoint;500;Math;Both;4
+Armenia;498;Math;Both;4
+Albania;494;Math;Both;4
+New Zealand;487;Math;Both;4
+France;485;Math;Both;4
+Georgia;482;Math;Both;4
+United Arab Emirates;481;Math;Both;4
+Bahrain;480;Math;Both;4
+North Macedonia;472;Math;Both;4
+Montenegro;453;Math;Both;4
+Bosnia and Herzegovina;452;Math;Both;4
+Qatar;449;Math;Both;4
+Kosovo;444;Math;Both;4
+Iran, Islamic Rep. of;443;Math;Both;4
+Chile;441;Math;Both;4
+Oman;431;Math;Both;4
+Saudi Arabia;398;Math;Both;4
+Morocco;383;Math;Both;4
+Kuwait;383;Math;Both;4
+South Africa (5);374;Math;Both;4
+Pakistan;328;Math;Both;4
+Philippines;297;Math;Both;4
+Moscow City, Russian Fed.;593;Math;Both;4
+Dubai, UAE;544;Math;Both;4
+Quebec, Canada;532;Math;Both;4
+Madrid, Spain;518;Math;Both;4
+Ontario, Canada;512;Math;Both;4
+Abu Dhabi, UAE;441;Math;Both;4
+Singapore;616;Math;Both;8
+Chinese Taipei;612;Math;Both;8
+Korea, Rep. of;607;Math;Both;8
+Japan;594;Math;Both;8
+Hong Kong SAR;578;Math;Both;8
+Russian Federation;543;Math;Both;8
+Ireland;524;Math;Both;8
+Lithuania;520;Math;Both;8
+Israel;519;Math;Both;8
+Australia;517;Math;Both;8
+Hungary;517;Math;Both;8
+United States;515;Math;Both;8
+England;515;Math;Both;8
+Finland;509;Math;Both;8
+Norway (9);503;Math;Both;8
+Sweden;503;Math;Both;8
+Cyprus;501;Math;Both;8
+Portugal;500;Math;Both;8
+TIMSS Scale Centerpoint;500;Math;Both;8
+Italy;497;Math;Both;8
+Turkey;496;Math;Both;8
+Kazakhstan;488;Math;Both;8
+France;483;Math;Both;8
+New Zealand;482;Math;Both;8
+Bahrain;481;Math;Both;8
+Romania;479;Math;Both;8
+United Arab Emirates;473;Math;Both;8
+Georgia;461;Math;Both;8
+Malaysia;461;Math;Both;8
+Iran, Islamic Rep. of;446;Math;Both;8
+Qatar;443;Math;Both;8
+Chile;441;Math;Both;8
+Lebanon;429;Math;Both;8
+Jordan;420;Math;Both;8
+Egypt;413;Math;Both;8
+Oman;411;Math;Both;8
+Kuwait;403;Math;Both;8
+Saudi Arabia;394;Math;Both;8
+South Africa (9);389;Math;Both;8
+Morocco;388;Math;Both;8
+Moscow City, Russian Fed.;575;Math;Both;8
+Quebec, Canada;543;Math;Both;8
+Dubai, UAE;537;Math;Both;8
+Ontario, Canada;530;Math;Both;8
+Western Cape, RSA (9);441;Math;Both;8
+Abu Dhabi, UAE;436;Math;Both;8
+Gauteng, RSA (9);421;Math;Both;8
+Singapore;595;Science;Both;4
+Korea, Rep. of;588;Science;Both;4
+Russian Federation;567;Science;Both;4
+Japan;562;Science;Both;4
+Chinese Taipei;558;Science;Both;4
+Finland;555;Science;Both;4
+Latvia;542;Science;Both;4
+Norway (5);539;Science;Both;4
+United States;539;Science;Both;4
+Lithuania;538;Science;Both;4
+Sweden;537;Science;Both;4
+England;537;Science;Both;4
+Czech Republic;534;Science;Both;4
+Australia;533;Science;Both;4
+Hong Kong SAR;531;Science;Both;4
+Poland;531;Science;Both;4
+Hungary;529;Science;Both;4
+Ireland;528;Science;Both;4
+Turkey (5);526;Science;Both;4
+Croatia;524;Science;Both;4
+Canada;523;Science;Both;4
+Denmark;522;Science;Both;4
+Austria;522;Science;Both;4
+Bulgaria;521;Science;Both;4
+Slovak Republic;521;Science;Both;4
+Northern Ireland;518;Science;Both;4
+Netherlands;518;Science;Both;4
+Germany;518;Science;Both;4
+Serbia;517;Science;Both;4
+Cyprus;511;Science;Both;4
+Spain;511;Science;Both;4
+Italy;510;Science;Both;4
+Portugal;504;Science;Both;4
+New Zealand;503;Science;Both;4
+Belgium (Flemish);501;Science;Both;4
+TIMSS Scale Centerpoint;500;Science;Both;4
+Malta;496;Science;Both;4
+Kazakhstan;494;Science;Both;4
+Bahrain;493;Science;Both;4
+Albania;489;Science;Both;4
+France;488;Science;Both;4
+United Arab Emirates;473;Science;Both;4
+Chile;469;Science;Both;4
+Armenia;466;Science;Both;4
+Bosnia and Herzegovina;459;Science;Both;4
+Georgia;454;Science;Both;4
+Montenegro;453;Science;Both;4
+Qatar;449;Science;Both;4
+Iran, Islamic Rep. of;441;Science;Both;4
+Oman;435;Science;Both;4
+Azerbaijan;427;Science;Both;4
+North Macedonia;426;Science;Both;4
+Kosovo;413;Science;Both;4
+Saudi Arabia;402;Science;Both;4
+Kuwait;392;Science;Both;4
+Morocco;374;Science;Both;4
+South Africa (5);324;Science;Both;4
+Pakistan;290;Science;Both;4
+Philippines;249;Science;Both;4
+Moscow City, Russian Fed.;595;Science;Both;4
+Dubai, UAE;545;Science;Both;4
+Ontario, Canada;524;Science;Both;4
+Madrid, Spain;523;Science;Both;4
+Quebec, Canada;522;Science;Both;4
+Abu Dhabi, UAE;418;Science;Both;4
+Singapore;595;Science;Both;8
+Korea, Rep. of;588;Science;Both;8
+Russian Federation;567;Science;Both;8
+Japan;562;Science;Both;8
+Chinese Taipei;558;Science;Both;8
+Finland;555;Science;Both;8
+Latvia;542;Science;Both;8
+Norway (5);539;Science;Both;8
+United States;539;Science;Both;8
+Lithuania;538;Science;Both;8
+Sweden;537;Science;Both;8
+England;537;Science;Both;8
+Czech Republic;534;Science;Both;8
+Australia;533;Science;Both;8
+Hong Kong SAR;531;Science;Both;8
+Poland;531;Science;Both;8
+Hungary;529;Science;Both;8
+Ireland;528;Science;Both;8
+Turkey (5);526;Science;Both;8
+Croatia;524;Science;Both;8
+Canada;523;Science;Both;8
+Denmark;522;Science;Both;8
+Austria;522;Science;Both;8
+Bulgaria;521;Science;Both;8
+Slovak Republic;521;Science;Both;8
+Northern Ireland;518;Science;Both;8
+Netherlands;518;Science;Both;8
+Germany;518;Science;Both;8
+Serbia;517;Science;Both;8
+Cyprus;511;Science;Both;8
+Spain;511;Science;Both;8
+Italy;510;Science;Both;8
+Portugal;504;Science;Both;8
+New Zealand;503;Science;Both;8
+Belgium (Flemish);501;Science;Both;8
+TIMSS Scale Centerpoint;500;Science;Both;8
+Malta;496;Science;Both;8
+Kazakhstan;494;Science;Both;8
+Bahrain;493;Science;Both;8
+Albania;489;Science;Both;8
+France;488;Science;Both;8
+United Arab Emirates;473;Science;Both;8
+Chile;469;Science;Both;8
+Armenia;466;Science;Both;8
+Bosnia and Herzegovina;459;Science;Both;8
+Georgia;454;Science;Both;8
+Montenegro;453;Science;Both;8
+Qatar;449;Science;Both;8
+Iran, Islamic Rep. of;441;Science;Both;8
+Oman;435;Science;Both;8
+Azerbaijan;427;Science;Both;8
+North Macedonia;426;Science;Both;8
+Kosovo;413;Science;Both;8
+Saudi Arabia;402;Science;Both;8
+Kuwait;392;Science;Both;8
+Morocco;374;Science;Both;8
+South Africa (5);324;Science;Both;8
+Pakistan;290;Science;Both;8
+Philippines;249;Science;Both;8
+Moscow City, Russian Fed.;595;Science;Both;8
+Dubai, UAE;545;Science;Both;8
+Ontario, Canada;524;Science;Both;8
+Madrid, Spain;523;Science;Both;8
+Quebec, Canada;522;Science;Both;8
+Abu Dhabi, UAE;418;Science;Both;8
+Philippines;315;Math;Girls;4
+Philippines;280;Math;Boys;4
+Saudi Arabia;412;Math;Girls;4
+Saudi Arabia;385;Math;Boys;4
+South Africa (5);384;Math;Girls;4
+South Africa (5);364;Math;Boys;4
+Pakistan;338;Math;Girls;4
+Pakistan;319;Math;Boys;4
+Oman;438;Math;Girls;4
+Oman;424;Math;Boys;4
+Kuwait;387;Math;Girls;4
+Kuwait;380;Math;Boys;4
+Bahrain;482;Math;Girls;4
+Bahrain;477;Math;Boys;4
+Azerbaijan;517;Math;Girls;4
+Azerbaijan;514;Math;Boys;4
+Morocco;385;Math;Girls;4
+Morocco;382;Math;Boys;4
+Armenia;499;Math;Girls;4
+Armenia;497;Math;Boys;4
+Serbia;509;Math;Girls;4
+Serbia;507;Math;Boys;4
+Qatar;450;Math;Girls;4
+Qatar;449;Math;Boys;4
+Japan;593;Math;Girls;4
+Japan;593;Math;Boys;4
+Kazakhstan;512;Math;Girls;4
+Kazakhstan;512;Math;Boys;4
+North Macedonia;472;Math;Girls;4
+North Macedonia;472;Math;Boys;4
+Bulgaria;514;Math;Girls;4
+Bulgaria;516;Math;Boys;4
+Finland;531;Math;Girls;4
+Finland;533;Math;Boys;4
+Albania;493;Math;Girls;4
+Albania;495;Math;Boys;4
+Northern Ireland;564;Math;Girls;4
+Northern Ireland;568;Math;Boys;4
+Turkey (5);521;Math;Girls;4
+Turkey (5);525;Math;Boys;4
+Chinese Taipei;597;Math;Girls;4
+Chinese Taipei;601;Math;Boys;4
+Norway (5);540;Math;Girls;4
+Norway (5);545;Math;Boys;4
+Kosovo;442;Math;Girls;4
+Kosovo;447;Math;Boys;4
+Lithuania;540;Math;Girls;4
+Lithuania;544;Math;Boys;4
+Latvia;544;Math;Girls;4
+Latvia;548;Math;Boys;4
+Montenegro;450;Math;Girls;4
+Montenegro;455;Math;Boys;4
+Korea, Rep. of;597;Math;Girls;4
+Korea, Rep. of;602;Math;Boys;4
+New Zealand;484;Math;Girls;4
+New Zealand;490;Math;Boys;4
+Hong Kong SAR;599;Math;Girls;4
+Hong Kong SAR;604;Math;Boys;4
+Ireland;545;Math;Girls;4
+Ireland;552;Math;Boys;4
+Denmark;521;Math;Girls;4
+Denmark;528;Math;Boys;4
+Sweden;518;Math;Girls;4
+Sweden;525;Math;Boys;4
+England;552;Math;Girls;4
+England;560;Math;Boys;4
+Iran, Islamic Rep. of;439;Math;Girls;4
+Iran, Islamic Rep. of;447;Math;Boys;4
+Malta;505;Math;Girls;4
+Malta;513;Math;Boys;4
+Georgia;478;Math;Girls;4
+Georgia;486;Math;Boys;4
+Austria;535;Math;Girls;4
+Austria;543;Math;Boys;4
+Singapore;621;Math;Girls;4
+Singapore;629;Math;Boys;4
+Poland;516;Math;Girls;4
+Poland;524;Math;Boys;4
+United Arab Emirates;477;Math;Girls;4
+United Arab Emirates;486;Math;Boys;4
+Russian Federation;563;Math;Girls;4
+Russian Federation;571;Math;Boys;4
+Netherlands;533;Math;Girls;4
+Netherlands;542;Math;Boys;4
+Chile;437;Math;Girls;4
+Chile;445;Math;Boys;4
+Bosnia and Herzegovina;447;Math;Girls;4
+Bosnia and Herzegovina;456;Math;Boys;4
+Australia;511;Math;Girls;4
+Australia;521;Math;Boys;4
+Germany;516;Math;Girls;4
+Germany;526;Math;Boys;4
+Belgium (Flemish);527;Math;Girls;4
+Belgium (Flemish);538;Math;Boys;4
+Czech Republic;527;Math;Girls;4
+Czech Republic;538;Math;Boys;4
+United States;529;Math;Girls;4
+United States;540;Math;Boys;4
+Hungary;518;Math;Girls;4
+Hungary;529;Math;Boys;4
+Croatia;504;Math;Girls;4
+Croatia;515;Math;Boys;4
+Italy;509;Math;Girls;4
+Italy;521;Math;Boys;4
+Slovak Republic;503;Math;Girls;4
+Slovak Republic;516;Math;Boys;4
+France;478;Math;Girls;4
+France;491;Math;Boys;4
+Spain;495;Math;Girls;4
+Spain;509;Math;Boys;4
+Portugal;516;Math;Girls;4
+Portugal;533;Math;Boys;4
+Cyprus;523;Math;Girls;4
+Cyprus;542;Math;Boys;4
+Canada;502;Math;Girls;4
+Canada;521;Math;Boys;4
+International Average;499;Math;Girls;4
+International Average;503;Math;Boys;4
+Abu Dhabi, UAE;438;Math;Girls;4
+Abu Dhabi, UAE;443;Math;Boys;4
+Dubai, UAE;540;Math;Girls;4
+Dubai, UAE;548;Math;Boys;4
+Moscow City, Russian Fed.;588;Math;Girls;4
+Moscow City, Russian Fed.;597;Math;Boys;4
+Madrid, Spain;510;Math;Girls;4
+Madrid, Spain;526;Math;Boys;4
+Quebec, Canada;523;Math;Girls;4
+Quebec, Canada;541;Math;Boys;4
+Ontario, Canada;502;Math;Girls;4
+Ontario, Canada;521;Math;Boys;4
+Oman;432;Math;Girls;8
+Oman;391;Math;Boys;8
+Jordan;432;Math;Girls;8
+Jordan;409;Math;Boys;8
+Bahrain;492;Math;Girls;8
+Bahrain;471;Math;Boys;8
+Saudi Arabia;403;Math;Girls;8
+Saudi Arabia;385;Math;Boys;8
+Romania;487;Math;Girls;8
+Romania;471;Math;Boys;8
+Egypt;420;Math;Girls;8
+Egypt;404;Math;Boys;8
+Iran, Islamic Rep. of;453;Math;Girls;8
+Iran, Islamic Rep. of;440;Math;Boys;8
+Turkey;501;Math;Girls;8
+Turkey;490;Math;Boys;8
+Kuwait;407;Math;Girls;8
+Kuwait;398;Math;Boys;8
+Malaysia;465;Math;Girls;8
+Malaysia;456;Math;Boys;8
+Hong Kong SAR;582;Math;Girls;8
+Hong Kong SAR;575;Math;Boys;8
+Qatar;447;Math;Girls;8
+Qatar;440;Math;Boys;8
+South Africa (9);393;Math;Girls;8
+South Africa (9);386;Math;Boys;8
+United Arab Emirates;476;Math;Girls;8
+United Arab Emirates;471;Math;Boys;8
+Finland;511;Math;Girls;8
+Finland;507;Math;Boys;8
+Cyprus;503;Math;Girls;8
+Cyprus;499;Math;Boys;8
+Kazakhstan;490;Math;Girls;8
+Kazakhstan;486;Math;Boys;8
+United States;517;Math;Girls;8
+United States;514;Math;Boys;8
+Singapore;617;Math;Girls;8
+Singapore;614;Math;Boys;8
+Sweden;504;Math;Girls;8
+Sweden;501;Math;Boys;8
+Chinese Taipei;614;Math;Girls;8
+Chinese Taipei;611;Math;Boys;8
+Ireland;524;Math;Girls;8
+Ireland;523;Math;Boys;8
+Norway (9);503;Math;Girls;8
+Norway (9);503;Math;Boys;8
+England;514;Math;Girls;8
+England;516;Math;Boys;8
+Lithuania;519;Math;Girls;8
+Lithuania;521;Math;Boys;8
+Japan;593;Math;Girls;8
+Japan;595;Math;Boys;8
+Australia;515;Math;Girls;8
+Australia;519;Math;Boys;8
+Morocco;386;Math;Girls;8
+Morocco;391;Math;Boys;8
+Russian Federation;541;Math;Girls;8
+Russian Federation;546;Math;Boys;8
+Korea, Rep. of;604;Math;Girls;8
+Korea, Rep. of;609;Math;Boys;8
+Lebanon;427;Math;Girls;8
+Lebanon;432;Math;Boys;8
+New Zealand;478;Math;Girls;8
+New Zealand;484;Math;Boys;8
+France;478;Math;Girls;8
+France;487;Math;Boys;8
+Georgia;457;Math;Girls;8
+Georgia;465;Math;Boys;8
+Chile;436;Math;Girls;8
+Chile;445;Math;Boys;8
+Portugal;495;Math;Girls;8
+Portugal;505;Math;Boys;8
+Israel;514;Math;Girls;8
+Israel;525;Math;Boys;8
+Italy;491;Math;Girls;8
+Italy;504;Math;Boys;8
+Hungary;510;Math;Girls;8
+Hungary;524;Math;Boys;8
+International Average;491;Math;Girls;8
+International Average;488;Math;Boys;8
+Abu Dhabi, UAE;441;Math;Girls;8
+Abu Dhabi, UAE;431;Math;Boys;8
+Gauteng, RSA (9);423;Math;Girls;8
+Gauteng, RSA (9);417;Math;Boys;8
+Ontario, Canada;528;Math;Girls;8
+Ontario, Canada;531;Math;Boys;8
+Quebec, Canada;541;Math;Girls;8
+Quebec, Canada;546;Math;Boys;8
+Dubai, UAE;532;Math;Girls;8
+Dubai, UAE;541;Math;Boys;8
+Western Cape, RSA (9);436;Math;Girls;8
+Western Cape, RSA (9);447;Math;Boys;8
+Moscow City, Russian Fed.;566;Math;Girls;8
+Moscow City, Russian Fed.;584;Math;Boys;8
+Saudi Arabia;434;Science;Girls;4
+Saudi Arabia;373;Science;Boys;4
+Kuwait;413;Science;Girls;4
+Kuwait;374;Science;Boys;4
+Pakistan;311;Science;Girls;4
+Pakistan;273;Science;Boys;4
+Bahrain;510;Science;Girls;4
+Bahrain;476;Science;Boys;4
+Oman;447;Science;Girls;4
+Oman;423;Science;Boys;4
+Philippines;261;Science;Girls;4
+Philippines;238;Science;Boys;4
+South Africa (5);335;Science;Girls;4
+South Africa (5);314;Science;Boys;4
+North Macedonia;433;Science;Girls;4
+North Macedonia;419;Science;Boys;4
+Kosovo;420;Science;Girls;4
+Kosovo;407;Science;Boys;4
+Qatar;456;Science;Girls;4
+Qatar;443;Science;Boys;4
+Armenia;471;Science;Girls;4
+Armenia;462;Science;Boys;4
+Morocco;379;Science;Girls;4
+Morocco;370;Science;Boys;4
+Albania;494;Science;Girls;4
+Albania;485;Science;Boys;4
+Bulgaria;525;Science;Girls;4
+Bulgaria;518;Science;Boys;4
+Serbia;521;Science;Girls;4
+Serbia;513;Science;Boys;4
+Bosnia and Herzegovina;462;Science;Girls;4
+Bosnia and Herzegovina;455;Science;Boys;4
+Kazakhstan;497;Science;Girls;4
+Kazakhstan;491;Science;Boys;4
+Montenegro;457;Science;Girls;4
+Montenegro;451;Science;Boys;4
+Japan;565;Science;Girls;4
+Japan;559;Science;Boys;4
+Finland;557;Science;Girls;4
+Finland;552;Science;Boys;4
+Latvia;544;Science;Girls;4
+Latvia;540;Science;Boys;4
+New Zealand;505;Science;Girls;4
+New Zealand;500;Science;Boys;4
+Lithuania;540;Science;Girls;4
+Lithuania;536;Science;Boys;4
+United Arab Emirates;475;Science;Girls;4
+United Arab Emirates;471;Science;Boys;4
+Azerbaijan;429;Science;Girls;4
+Azerbaijan;425;Science;Boys;4
+Norway (5);541;Science;Girls;4
+Norway (5);538;Science;Boys;4
+Poland;532;Science;Girls;4
+Poland;529;Science;Boys;4
+Sweden;538;Science;Girls;4
+Sweden;536;Science;Boys;4
+France;489;Science;Girls;4
+France;487;Science;Boys;4
+Northern Ireland;519;Science;Girls;4
+Northern Ireland;518;Science;Boys;4
+Denmark;523;Science;Girls;4
+Denmark;522;Science;Boys;4
+Australia;533;Science;Girls;4
+Australia;532;Science;Boys;4
+Netherlands;519;Science;Girls;4
+Netherlands;518;Science;Boys;4
+Croatia;524;Science;Girls;4
+Croatia;524;Science;Boys;4
+Hong Kong SAR;531;Science;Girls;4
+Hong Kong SAR;531;Science;Boys;4
+England;537;Science;Girls;4
+England;537;Science;Boys;4
+Russian Federation;567;Science;Girls;4
+Russian Federation;568;Science;Boys;4
+Spain;511;Science;Girls;4
+Spain;512;Science;Boys;4
+Iran, Islamic Rep. of;440;Science;Girls;4
+Iran, Islamic Rep. of;442;Science;Boys;4
+Chinese Taipei;557;Science;Girls;4
+Chinese Taipei;559;Science;Boys;4
+Belgium (Flemish);499;Science;Girls;4
+Belgium (Flemish);503;Science;Boys;4
+Cyprus;509;Science;Girls;4
+Cyprus;514;Science;Boys;4
+Ireland;526;Science;Girls;4
+Ireland;530;Science;Boys;4
+Germany;516;Science;Girls;4
+Germany;520;Science;Boys;4
+Malta;493;Science;Girls;4
+Malta;498;Science;Boys;4
+Georgia;452;Science;Girls;4
+Georgia;457;Science;Boys;4
+Canada;520;Science;Girls;4
+Canada;526;Science;Boys;4
+Turkey (5);524;Science;Girls;4
+Turkey (5);529;Science;Boys;4
+Slovak Republic;518;Science;Girls;4
+Slovak Republic;523;Science;Boys;4
+United States;536;Science;Girls;4
+United States;541;Science;Boys;4
+Portugal;501;Science;Girls;4
+Portugal;506;Science;Boys;4
+Austria;519;Science;Girls;4
+Austria;525;Science;Boys;4
+Chile;466;Science;Girls;4
+Chile;472;Science;Boys;4
+Hungary;526;Science;Girls;4
+Hungary;533;Science;Boys;4
+Italy;506;Science;Girls;4
+Italy;514;Science;Boys;4
+Singapore;591;Science;Girls;4
+Singapore;598;Science;Boys;4
+Czech Republic;529;Science;Girls;4
+Czech Republic;538;Science;Boys;4
+Korea, Rep. of;583;Science;Girls;4
+Korea, Rep. of;592;Science;Boys;4
+International Average;493;Science;Girls;4
+International Average;489;Science;Boys;4
+Abu Dhabi, UAE;422;Science;Girls;4
+Abu Dhabi, UAE;413;Science;Boys;4
+Dubai, UAE;545;Science;Girls;4
+Dubai, UAE;544;Science;Boys;4
+Moscow City, Russian Fed.;595;Science;Girls;4
+Moscow City, Russian Fed.;595;Science;Boys;4
+Madrid, Spain;521;Science;Girls;4
+Madrid, Spain;524;Science;Boys;4
+Ontario, Canada;522;Science;Girls;4
+Ontario, Canada;526;Science;Boys;4
+Quebec, Canada;519;Science;Girls;4
+Quebec, Canada;525;Science;Boys;4
+Oman;485;Science;Girls;8
+Oman;431;Science;Boys;8
+Jordan;480;Science;Girls;8
+Jordan;427;Science;Boys;8
+Bahrain;512;Science;Girls;8
+Bahrain;461;Science;Boys;8
+Saudi Arabia;455;Science;Girls;8
+Saudi Arabia;408;Science;Boys;8
+Kuwait;461;Science;Girls;8
+Kuwait;426;Science;Boys;8
+Qatar;488;Science;Girls;8
+Qatar;461;Science;Boys;8
+Egypt;402;Science;Girls;8
+Egypt;374;Science;Boys;8
+United Arab Emirates;486;Science;Girls;8
+United Arab Emirates;461;Science;Boys;8
+Finland;552;Science;Girls;8
+Finland;533;Science;Boys;8
+Iran, Islamic Rep. of;459;Science;Girls;8
+Iran, Islamic Rep. of;441;Science;Boys;8
+Cyprus;491;Science;Girls;8
+Cyprus;476;Science;Boys;8
+South Africa (9);376;Science;Girls;8
+South Africa (9);364;Science;Boys;8
+Sweden;527;Science;Girls;8
+Sweden;516;Science;Boys;8
+Romania;475;Science;Girls;8
+Romania;465;Science;Boys;8
+Turkey;520;Science;Girls;8
+Turkey;510;Science;Boys;8
+Kazakhstan;483;Science;Girls;8
+Kazakhstan;474;Science;Boys;8
+Malaysia;463;Science;Girls;8
+Malaysia;458;Science;Boys;8
+Ireland;526;Science;Girls;8
+Ireland;521;Science;Boys;8
+Lebanon;379;Science;Girls;8
+Lebanon;374;Science;Boys;8
+United States;525;Science;Girls;8
+United States;520;Science;Boys;8
+England;518;Science;Girls;8
+England;515;Science;Boys;8
+Lithuania;535;Science;Girls;8
+Lithuania;533;Science;Boys;8
+Hong Kong SAR;505;Science;Girls;8
+Hong Kong SAR;503;Science;Boys;8
+Morocco;395;Science;Girls;8
+Morocco;393;Science;Boys;8
+Georgia;447;Science;Girls;8
+Georgia;446;Science;Boys;8
+Australia;529;Science;Girls;8
+Australia;528;Science;Boys;8
+Norway (9);495;Science;Girls;8
+Norway (9);496;Science;Boys;8
+New Zealand;497;Science;Girls;8
+New Zealand;500;Science;Boys;8
+Israel;512;Science;Girls;8
+Israel;515;Science;Boys;8
+France;487;Science;Girls;8
+France;490;Science;Boys;8
+Chinese Taipei;572;Science;Girls;8
+Chinese Taipei;576;Science;Boys;8
+Portugal;516;Science;Girls;8
+Portugal;522;Science;Boys;8
+Singapore;604;Science;Girls;8
+Singapore;611;Science;Boys;8
+Russian Federation;539;Science;Girls;8
+Russian Federation;546;Science;Boys;8
+Italy;497;Science;Girls;8
+Italy;504;Science;Boys;8
+Japan;565;Science;Girls;8
+Japan;575;Science;Boys;8
+Korea, Rep. of;555;Science;Girls;8
+Korea, Rep. of;566;Science;Boys;8
+Chile;457;Science;Girls;8
+Chile;468;Science;Boys;8
+Hungary;520;Science;Girls;8
+Hungary;540;Science;Boys;8
+International Average;495;Science;Girls;8
+International Average;485;Science;Boys;8
+Abu Dhabi, UAE;436;Science;Girls;8
+Abu Dhabi, UAE;406;Science;Boys;8
+Gauteng, RSA (9);427;Science;Girls;8
+Gauteng, RSA (9);416;Science;Boys;8
+Dubai, UAE;551;Science;Girls;8
+Dubai, UAE;544;Science;Boys;8
+Quebec, Canada;537;Science;Girls;8
+Quebec, Canada;536;Science;Boys;8
+Ontario, Canada;520;Science;Girls;8
+Ontario, Canada;523;Science;Boys;8
+Moscow City, Russian Fed.;561;Science;Girls;8
+Moscow City, Russian Fed.;572;Science;Boys;8
+Western Cape, RSA (9);434;Science;Girls;8
+Western Cape, RSA (9);445;Science;Boys;8
