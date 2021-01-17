@@ -15,7 +15,7 @@ Winter Semester 2020/2021
 - 07.12.2020 - L10: Scrollytelling: [Pockets](https://pudding.cool/2018/08/pockets/), [Powerless](https://projects.propublica.org/graphics/wva), [Here’s How America Uses Its Land](https://www.bloomberg.com/graphics/2018-us-land-use/)
 - 14.12.2020 - L11: Presentation of project II
 - 21.12.2020 - L12: Dashboards
-- 11.01.2021 - L13: Edward Tufte
+- 11.01.2021 - L13: [rpivotTable](https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html), [visNetwork](https://datastorm-open.github.io/visNetwork/), [DiagrammeR](https://rich-iannone.github.io/DiagrammeR/)
 - 18.01.2021 - L14: Presentation of project III
 - 25.01.2021 - 
 
