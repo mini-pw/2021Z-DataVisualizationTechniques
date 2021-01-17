@@ -1,0 +1,622 @@
+"","word","freq"
+"1","rock",864
+"2","modern rock",748
+"3","pop",553
+"4","permanent wave",455
+"5","polish alternative",393
+"6","indie rock",382
+"7","indie pop",311
+"8","polish pop",304
+"9","alternative rock",299
+"10","hip hop",252
+"11","stomp and holler",240
+"12","modern alternative rock",232
+"13","rap",230
+"14","pop rock",167
+"15","alternative dance",152
+"16","dance pop",146
+"17","new rave",146
+"18","baroque pop",142
+"19","polish indie",136
+"20","classic rock",131
+"21","album rock",129
+"22","lo-fi beats",125
+"23","indie folk",120
+"24","neo soul",111
+"25","pop dance",111
+"26","dance-punk",109
+"27","garage rock",100
+"28","hard rock",97
+"29","neo-psychedelic",88
+"30","polish hip hop",82
+"31","art rock",80
+"32","folk-pop",78
+"33","pop rap",78
+"34","australian psych",76
+"35","melancholia",76
+"36","electropop",75
+"37","art pop",72
+"38","canadian indie",63
+"39","sheffield indie",63
+"40","grunge",62
+"41","indietronica",62
+"42","post-teen pop",62
+"43","alternative r&b",61
+"44","freak folk",61
+"45","chamber pop",59
+"46","irish singer-songwriter",57
+"47","quebec indie",56
+"48","metropopolis",55
+"49","britpop",52
+"50","lgbtq+ hip hop",52
+"51","polish alternative rock",52
+"52","dance rock",51
+"53","soul",51
+"54","mellow gold",50
+"55","funk",49
+"56","metal",49
+"57","bedroom pop",46
+"58","british soul",45
+"59","modern folk rock",45
+"60","psychedelic rock",45
+"61","uk americana",45
+"62","tropical house",44
+"63","nu gaze",43
+"64","soft rock",42
+"65","beatlesque",41
+"66","eau claire indie",41
+"67","edm",41
+"68","alternative metal",39
+"69","birmingham metal",37
+"70","singer-songwriter",37
+"71","new wave",36
+"72","oxford indie",36
+"73","psychedelic soul",36
+"74","canadian pop",35
+"75","uk pop",35
+"76","classic polish pop",34
+"77","neo mellow",33
+"78","british invasion",32
+"79","chillhop",32
+"80","funk rock",32
+"81","glam rock",32
+"82","detroit hip hop",31
+"83","electronica",31
+"84","polish electronica",31
+"85","punk blues",31
+"86","blues rock",30
+"87","indie poptimism",30
+"88","atl hip hop",29
+"89","funk metal",29
+"90","urban contemporary",29
+"91","dream pop",28
+"92","soundtrack",28
+"93","transpop",28
+"94","alternative pop",27
+"95","shimmer pop",27
+"96","piano rock",26
+"97","folk rock",25
+"98","merseybeat",25
+"99","poezja spiewana",25
+"100","r&b",25
+"101","leicester indie",24
+"102","new romantic",22
+"103","chicago rap",21
+"104","chill out",21
+"105","chillwave",21
+"106","german soundtrack",21
+"107","la indie",21
+"108","new wave pop",21
+"109","nu metal",21
+"110","seattle indie",21
+"111","indie soul",20
+"112","talent show",20
+"113","trap",20
+"114","chill beats",19
+"115","indie garage rock",19
+"116","madchester",19
+"117","canadian singer-songwriter",18
+"118","focus beats",18
+"119","lilith",18
+"120","polish alternative rap",18
+"121","polish rock",18
+"122","pop punk",18
+"123","pop soul",18
+"124","post-grunge",18
+"125","punk",18
+"126","underground hip hop",18
+"127","vapor soul",18
+"128","british indie rock",17
+"129","sophisti-pop",17
+"130","canadian contemporary r&b",16
+"131","roots rock",16
+"132","reggaeton",15
+"133","southern hip hop",15
+"134","uk alternative pop",15
+"135","albuquerque indie",14
+"136","chamber psych",14
+"137","electro house",14
+"138","irish pop",14
+"139","japanese chillhop",14
+"140","latin",14
+"141","trap latino",14
+"142","nz pop",13
+"143","polish punk",13
+"144","austindie",12
+"145","folk",12
+"146","house",12
+"147","pop edm",12
+"148","reggaeton colombiano",12
+"149","stomp pop",12
+"150","experimental folk",11
+"151","indie anthem-folk",11
+"152","manitoba indie",11
+"153","polish post-punk",11
+"154","polish reggae",11
+"155","shoegaze",11
+"156","alternative hip hop",10
+"157","british singer-songwriter",10
+"158","canadian hip hop",10
+"159","escape room",10
+"160","glam metal",10
+"161","modern blues rock",10
+"162","new americana",10
+"163","progressive rock",10
+"164","sung poetry",10
+"165","toronto rap",10
+"166","uwielbienie",10
+"167","adult standards",9
+"168","background piano",9
+"169","big room",9
+"170","compositional ambient",9
+"171","conscious hip hop",9
+"172","indie cafe pop",9
+"173","melodic rap",9
+"174","symphonic rock",9
+"175","synthpop",9
+"176","video game music",9
+"177","ambient pop",8
+"178","australian pop",8
+"179","bow pop",8
+"180","boy band",8
+"181","canadian rock",8
+"182","country rock",8
+"183","el paso indie",8
+"184","europop",8
+"185","scottish rock",8
+"186","anti-folk",7
+"187","australian indie",7
+"188","cello",7
+"189","emo",7
+"190","english indie rock",7
+"191","lo-fi indie",7
+"192","neo-classical",7
+"193","neo-progressive",7
+"194","neo-singer-songwriter",7
+"195","philly indie",7
+"196","post-punk",7
+"197","progressive metal",7
+"198","uk dance",7
+"199","uk hip hop",7
+"200","vocal jazz",7
+"201","alternative americana",6
+"202","australian rock",6
+"203","brighton indie",6
+"204","brooklyn indie",6
+"205","contemporary country",6
+"206","double drumming",6
+"207","focus",6
+"208","future garage",6
+"209","german dance",6
+"210","heartland rock",6
+"211","irish rock",6
+"212","modern dream pop",6
+"213","modern power pop",6
+"214","neo-synthpop",6
+"215","protopunk",6
+"216","scorecore",6
+"217","seattle hip hop",6
+"218","vapor trap",6
+"219","yacht rock",6
+"220","alternative pop rock",5
+"221","big beat",5
+"222","channel islands indie",5
+"223","classic canadian rock",5
+"224","dfw rap",5
+"225","etherpop",5
+"226","french indie pop",5
+"227","glitch pop",5
+"228","indie dream pop",5
+"229","indie pop rap",5
+"230","liquid funk",5
+"231","neoclassical darkwave",5
+"232","new french touch",5
+"233","north carolina indie",5
+"234","oakland hip hop",5
+"235","polish jazz",5
+"236","polish prog",5
+"237","progressive electro house",5
+"238","socal pop punk",5
+"239","swedish americana",5
+"240","swedish tropical house",5
+"241","trap queen",5
+"242","trip hop",5
+"243","vapor twitch",5
+"244","background music",4
+"245","beats",4
+"246","classic uk pop",4
+"247","classical",4
+"248","deep big room",4
+"249","deep euro house",4
+"250","downtempo",4
+"251","dutch rock",4
+"252","electro",4
+"253","filter house",4
+"254","future bass",4
+"255","garage rock revival",4
+"256","grime",4
+"257","indiecoustica",4
+"258","jazz trumpet",4
+"259","liverpool indie",4
+"260","modern blues",4
+"261","north carolina hip hop",4
+"262","old school thrash",4
+"263","palm desert scene",4
+"264","polish metal",4
+"265","polish trap",4
+"266","scandipop",4
+"267","shiver pop",4
+"268","small room",4
+"269","stoner metal",4
+"270","stoner rock",4
+"271","supergroup",4
+"272","swing",4
+"273","trap soul",4
+"274","uk alternative hip hop",4
+"275","uk funky",4
+"276","uk post-punk",4
+"277","vancouver indie",4
+"278","viral pop",4
+"279","australian americana",3
+"280","australian indie folk",3
+"281","baltimore indie",3
+"282","belgian rock",3
+"283","breakbeat",3
+"284","brostep",3
+"285","bubblegrunge",3
+"286","bubblegum dance",3
+"287","cambridgeshire indie",3
+"288","celtic rock",3
+"289","deep talent show",3
+"290","dixieland",3
+"291","drill",3
+"292","dutch indie",3
+"293","dutch pop",3
+"294","east coast hip hop",3
+"295","edmonton indie",3
+"296","electric blues",3
+"297","eurodance",3
+"298","gangster rap",3
+"299","german metal",3
+"300","german techno",3
+"301","harlem renaissance",3
+"302","icelandic experimental",3
+"303","icelandic pop",3
+"304","industrial",3
+"305","industrial metal",3
+"306","industrial rock",3
+"307","jam band",3
+"308","japanese city pop",3
+"309","jazz boom bap",3
+"310","kiwi rock",3
+"311","latin pop",3
+"312","latin viral pop",3
+"313","minimal techno",3
+"314","minneapolis sound",3
+"315","modern hard rock",3
+"316","motown",3
+"317","neue deutsche harte",3
+"318","new jersey indie",3
+"319","new orleans jazz",3
+"320","new weird america",3
+"321","noise pop",3
+"322","nottingham indie",3
+"323","ohio hip hop",3
+"324","pittsburgh rap",3
+"325","polish blues",3
+"326","polish indie rock",3
+"327","portland hip hop",3
+"328","r&b en espanol",3
+"329","rap latina",3
+"330","rock-and-roll",3
+"331","scottish indie rock",3
+"332","tech house",3
+"333","thrash metal",3
+"334","washington indie",3
+"335","welsh rock",3
+"336","west coast rap",3
+"337","acid rock",2
+"338","afropop",2
+"339","australian dance",2
+"340","australian house",2
+"341","azontobeats",2
+"342","banjo",2
+"343","baroque",2
+"344","belgian indie",2
+"345","brill building pop",2
+"346","british children's music",2
+"347","british soundtrack",2
+"348","bubblegum pop",2
+"349","chicago drill",2
+"350","chicago indie",2
+"351","colombian pop",2
+"352","country",2
+"353","country road",2
+"354","danish pop",2
+"355","deep house",2
+"356","disco",2
+"357","disco house",2
+"358","dmv rap",2
+"359","drone",2
+"360","dub techno",2
+"361","early music",2
+"362","electronic trap",2
+"363","ethereal wave",2
+"364","french indietronica",2
+"365","french shoegaze",2
+"366","french synthpop",2
+"367","german pop",2
+"368","grave wave",2
+"369","hands up",2
+"370","hip pop",2
+"371","houston rap",2
+"372","icelandic classical",2
+"373","indian edm",2
+"374","indie jazz",2
+"375","indie surf",2
+"376","instrumental bluegrass",2
+"377","instrumental rock",2
+"378","italian baroque",2
+"379","japanese jazz fusion",2
+"380","japanese r&b",2
+"381","lo-fi",2
+"382","lo-fi house",2
+"383","lounge",2
+"384","manchester indie",2
+"385","microhouse",2
+"386","minnesota hip hop",2
+"387","modern country rock",2
+"388","neo classical metal",2
+"389","new york drill",2
+"390","nigerian hip hop",2
+"391","nigerian pop",2
+"392","ninja",2
+"393","nordic post-rock",2
+"394","north east england indie",2
+"395","norwegian indie",2
+"396","organic house",2
+"397","piano cover",2
+"398","portland indie",2
+"399","progressive bluegrass",2
+"400","psychedelic pop",2
+"401","rap metal",2
+"402","rock alternatif francais",2
+"403","sad rap",2
+"404","san diego indie",2
+"405","shred",2
+"406","soul flow",2
+"407","spanish electronic",2
+"408","swedish hard rock",2
+"409","swedish indie rock",2
+"410","swedish pop",2
+"411","synth funk",2
+"412","texas country",2
+"413","acoustic rock",1
+"414","afrofuturism",1
+"415","ai",1
+"416","alternative country",1
+"417","alternative emo",1
+"418","ambient idm",1
+"419","anthem emo",1
+"420","asmr",1
+"421","athens indie",1
+"422","atl trap",1
+"423","auckland indie",1
+"424","australian electropop",1
+"425","australian talent show",1
+"426","austrian dnb",1
+"427","baton rouge rap",1
+"428","beach house",1
+"429","bebop",1
+"430","bedroom soul",1
+"431","belgian edm",1
+"432","belgian pop",1
+"433","bitpop",1
+"434","bluegrass",1
+"435","bmore",1
+"436","boston folk",1
+"437","british folk",1
+"438","broadway",1
+"439","calming instrumental",1
+"440","canadian electropop",1
+"441","canadian soundtrack",1
+"442","classic j-rock",1
+"443","classic soul",1
+"444","classical era",1
+"445","contemporary post-bop",1
+"446","contemporary vocal jazz",1
+"447","cool jazz",1
+"448","cosmic american",1
+"449","cuban alternative",1
+"450","dainuojamoji poezija",1
+"451","dark trap",1
+"452","deep gothic post-punk",1
+"453","deep idm",1
+"454","deep new americana",1
+"455","digital hardcore",1
+"456","dirty south rap",1
+"457","diva house",1
+"458","dreamgaze",1
+"459","drill and bass",1
+"460","drum and bass",1
+"461","dundee indie",1
+"462","dutch edm",1
+"463","dutch hip hop",1
+"464","dutch house",1
+"465","dutch rap pop",1
+"466","early modern classical",1
+"467","early romantic era",1
+"468","early us punk",1
+"469","easy listening",1
+"470","edinburgh indie",1
+"471","epicore",1
+"472","essex indie",1
+"473","exotica",1
+"474","experimental electronic",1
+"475","experimental hip hop",1
+"476","experimental pop",1
+"477","experimental techno",1
+"478","experimental vocal",1
+"479","finnish indie",1
+"480","finnish metal",1
+"481","float house",1
+"482","focus trance",1
+"483","fourth world",1
+"484","french techno",1
+"485","future house",1
+"486","future rock",1
+"487","garage psych",1
+"488","gauze pop",1
+"489","german house",1
+"490","german pop rock",1
+"491","ghent indie",1
+"492","glasgow indie",1
+"493","glitch hop",1
+"494","groove metal",1
+"495","hard bop",1
+"496","hip house",1
+"497","icelandic rock",1
+"498","idaho indie",1
+"499","indie deutschrap",1
+"500","indie electronica",1
+"501","indie electropop",1
+"502","indie punk",1
+"503","indie quebecois",1
+"504","indie r&b",1
+"505","industrial hip hop",1
+"506","intelligent dance music",1
+"507","japanese folk",1
+"508","japanese psychedelic",1
+"509","japanese singer-songwriter",1
+"510","japanese soundtrack",1
+"511","jazz",1
+"512","jazz blues",1
+"513","jazz funk",1
+"514","jazz fusion",1
+"515","jazz pop",1
+"516","jig and reel",1
+"517","jump up",1
+"518","kansas city hip hop",1
+"519","korean r&b",1
+"520","la pop",1
+"521","laboratorio",1
+"522","latin alternative",1
+"523","leeds indie",1
+"524","lithuanian indie",1
+"525","lithuanian pop",1
+"526","lo-fi brasileiro",1
+"527","lo-fi cover",1
+"528","lo-fi emo",1
+"529","math rock",1
+"530","melodic dubstep",1
+"531","meme rap",1
+"532","metal guitar",1
+"533","mexican classic rock",1
+"534","miami hip hop",1
+"535","midwest emo",1
+"536","minimal tech house",1
+"537","mississippi hip hop",1
+"538","modern southern rock",1
+"539","montreal indie",1
+"540","moombahton",1
+"541","neo r&b",1
+"542","neon pop punk",1
+"543","new england americana",1
+"544","nintendocore",1
+"545","noise rock",1
+"546","norteno-sax",1
+"547","north carolina roots",1
+"548","northern irish indie",1
+"549","nu jazz",1
+"550","nyc pop",1
+"551","nz indie",1
+"552","oakland indie",1
+"553","oceania soundtrack",1
+"554","old-time",1
+"555","organic electronic",1
+"556","outlaw country",1
+"557","piano blues",1
+"558","polish modern jazz",1
+"559","pop emo",1
+"560","pop folk",1
+"561","pop r&b",1
+"562","post-hardcore",1
+"563","post-rock",1
+"564","power pop",1
+"565","prog metal",1
+"566","progressive house",1
+"567","progressive jazz fusion",1
+"568","progressive post-hardcore",1
+"569","proto-techno",1
+"570","psychedelic hip hop",1
+"571","puerto rican pop",1
+"572","queens hip hop",1
+"573","quiet storm",1
+"574","rap kreyol",1
+"575","rave",1
+"576","reggae rock",1
+"577","relaxative",1
+"578","retro soul",1
+"579","rochester mn indie",1
+"580","rock independant francais",1
+"581","rockabilly",1
+"582","russian edm",1
+"583","russian techno",1
+"584","scottish new wave",1
+"585","screamo",1
+"586","serbian indie",1
+"587","shibuya-kei",1
+"588","show tunes",1
+"589","ska",1
+"590","ska revival",1
+"591","skate punk",1
+"592","slowcore",1
+"593","social media pop",1
+"594","soul blues",1
+"595","south african alternative",1
+"596","southern rock",1
+"597","space age pop",1
+"598","stomp and flutter",1
+"599","sunshine pop",1
+"600","swedish country",1
+"601","swedish electronic",1
+"602","swedish electropop",1
+"603","swedish garage rock",1
+"604","swedish house",1
+"605","swedish indie pop",1
+"606","swedish melodic rock",1
+"607","swedish singer-songwriter",1
+"608","symphonic metal",1
+"609","tejano",1
+"610","tempe indie",1
+"611","tennessee hip hop",1
+"612","torch song",1
+"613","trance",1
+"614","twee pop",1
+"615","uk contemporary jazz",1
+"616","uk drill",1
+"617","uppsala indie",1
+"618","vapor pop",1
+"619","women's music",1
+"620","wrestling",1
+"621","zolo",1
