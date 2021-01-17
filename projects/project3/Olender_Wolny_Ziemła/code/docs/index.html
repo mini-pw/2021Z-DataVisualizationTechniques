@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+
+<head>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="div1.js"></script>
+    <script src="div2.js"></script>
+    <script src="div22.js"></script>
+    <script src="div3.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="first" class="section">
+        <h1>
+            <center>Spotify playlist overview</center>
+        </h1>
+        <p>
+            <center>Hello! This is a Data Visulization Techniques project made by Mateusz Ziemła, Krzysztof Wolny and
+                Przemysław Olender.
+                Using Spotify API we have analyzed our playlists with music we listened to the most in 2020.</center>
+
+
+        </p>
+
+        <div class="row" id="div1">
+            <div class="div1" id="div1p">
+
+            </div>
+            <div class=spacer1></div>
+            <div class="div1" id="div1u">
+
+            </div>
+            <div class=spacer1></div>
+            <div class="div1" id="div1z">
+
+            </div>
+        </div>
+        <div id="singleInfoWrap">
+            <div id="singleInfo">
+
+            </div>
+        </div>
+
+        <div id="second">
+            <br>
+            <h1>
+                <center>Scatterplot</center>
+            </h1>
+            <p>
+                <center>In this section you can compare two selected features and explore correlations between them in
+                    our favourite tracks.
+                </center>
+            </p>
+
+
+            <div id="div22">
+                <div id="d22sels">
+                    <div id="d22sel1">
+                        x axis:
+                        <select name="xval" id="d22xval" onchange="updateScatter()">
+                            <option value="danceability">Danceability</option>
+                            <option value="energy">Energy</option>
+                            <option value="loudness">Loudness</option>
+                            <option value="speechiness">Speechiness</option>
+                            <option value="acousticness">Acousticness</option>
+                            <option value="instrumentalness">Instrumentalness</option>
+                            <option value="liveness">Liveness</option>
+                            <option value="valence">Valence</option>
+                            <option value="tempo">Tempo</option>
+                            <option value="duration">Duration</option>
+                        </select>
+                    </div>
+                    <div id="d22sel2">
+                        y axis:
+                        <select name="yval" id="d22yval" onchange="updateScatter()">
+                            <option value="danceability">Danceability</option>
+                            <option value="energy">Energy</option>
+                            <option value="loudness">Loudness</option>
+                            <option value="speechiness">Speechiness</option>
+                            <option value="acousticness">Acousticness</option>
+                            <option value="instrumentalness">Instrumentalness</option>
+                            <option value="liveness">Liveness</option>
+                            <option value="valence">Valence</option>
+                            <option value="tempo">Tempo</option>
+                            <option value="duration">Duration</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="d22scatterwrap">
+                    <div id="d22scatter">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <center>
+            <h1>Distributions</h1>
+        </center>
+        <center>Every track is rated by Spotify in various categories, we have prepared plots describing disrtibutions
+            of each feature.</center>
+        <br>
+        <div id="div2">
+            <div id="radios2wrap">
+                <div id="radios2">
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('danceability')">Danceability
+                            <input type="checkbox">
+                            <span class="checkmark">
+                            </span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('energy')">
+                            <div class=spacer2></div>Energy
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('loudness')">Loudness
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('speechiness')">Speechiness
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('acousticness')">Acousticness
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('instrumentalness')">Instrumentalness
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('liveness')">Liveness
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('valence')">Valence
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('tempo')">Tempo
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="tickboxwrap">
+                        <label class="tickbox" onclick="ticks2('duration_ms')">Duration
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class=spacer1></div>
+
+                </div>
+            </div>
+            <div id="distributions">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="section">
+        <br>
+        <h1>
+            <center>Radar chart
+        </h1>
+        <p>
+            <center>On this chart you can what is the average of each feature of our favourite tracks, and which feature
+                is the most important for each person.
+            </center>
+        </p>
+        <center>
+            <div id="div3"></div>
+        </center>
+
+
+        <script>
+            RadarChart();
+        </script>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
