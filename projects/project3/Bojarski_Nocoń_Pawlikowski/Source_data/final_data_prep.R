@@ -1,0 +1,11 @@
+library(dplyr)
+library(tidyr)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+running_data<-read.csv("running_data.txt",sep="\t")
+weather_data<-read.csv("../Weather_data/weatherdata.csv")
+running_data<-running_data %>%
+  separate(date, sep="-", into = c("year", "month", "day"))
+running_data$month<-as.numeric(running_data$month)
+running_data$day<-as.numeric(running_data$day)
+data <- merge(running_data,weather_data,by=c("year","month","day"))
+write.csv(data,"plot_data.csv")
