@@ -1,0 +1,378 @@
+import base64
+from datetime import datetime, date
+
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+import pandas as pd
+import plotly.express as px
+from dash.dependencies import Input, Output, State
+import plotly.graph_objects as go
+
+# wczytanie pliku csv
+
+# csv_file_name
+df_os_1 = pd.read_csv("osoba1.csv")
+df_os_2 = pd.read_csv("osoba2.csv")
+df_os_3 = pd.read_csv("osoba3.csv")
+
+
+# zamiana timestamp na datetime
+# wyodrebnienie miesiaca z daty
+
+
+def data_adjust(df, p):
+    df["'timestamp_ms'"] = [datetime.fromtimestamp(x / 1000.0) for x in df["'timestamp_ms'"]]
+    df['date'] = [x.strftime('%Y-%m-%d') for x in df["'timestamp_ms'"]]
+    df['month'] = [x.month for x in df["'timestamp_ms'"]]
+    df['hour'] = [x.hour for x in df["'timestamp_ms'"]]
+    df['weekday'] = [x.strftime('%A') for x in df["'timestamp_ms'"]]
+    from pandas.api.types import CategoricalDtype
+    cats = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    df['weekday'] = df['weekday'].astype(CategoricalDtype(categories=cats, ordered=True))
+    df['Person'] = p
+
+data_adjust(df_os_1, 1)
+data_adjust(df_os_2, 2)
+data_adjust(df_os_3, 3)
+df_all= df_os_1.append(df_os_2)
+df_all =  df_all.append(df_os_3)
+
+# wykres 1. użytkownik wybiera miesiąc i wykres słupkowy z podziałem na dni tygodnia
+def plot_1(df, month,color):
+    month=int(month)
+    print(month)
+    print(type(month))
+    df = df[df['month'] == month]
+    d = df.groupby('weekday')['weekday'].agg('count').reset_index(name='counts')
+    fig = px.bar(d, x='weekday', y='counts', template="plotly_white", title="Number of messages in the selected month")
+    fig.update_traces(marker_color=color)
+    # fig.show()
+    return fig
+
+
+def plot_1_all(df1,df2,df3, month):
+    month = int(month)
+    df1 = df1[df1['month'] == month]
+    d1 = df1.groupby('weekday')['weekday'].agg('count').reset_index(name='counts')
+    df2 = df2[df2['month'] == month]
+    d2 = df2.groupby('weekday')['weekday'].agg('count').reset_index(name='counts')
+    df3 = df3[df3['month'] == month]
+    d3 = df3.groupby('weekday')['weekday'].agg('count').reset_index(name='counts')
+    fig = go.Figure(data=[
+        go.Bar(name="Person no. 1",x = d1['weekday'], y = d1['counts'],marker_color='#1f77b4'),
+        go.Bar(name="Person no. 2",x = d2['weekday'], y = d2['counts'],marker_color='#ff7f0e'),
+        go.Bar(name="Person no. 3",x = d3['weekday'], y = d3['counts'],marker_color='#2ca02c')
+    ])
+    # Change the bar mode
+    fig.update_layout(barmode='group',template="plotly_white", title="Number of messages in the selected month")
+    # fig.show()
+    return fig
+
+
+# wykres 2. kalendarz i użytkownik wybiera jeden dzień i wyświetla natężenie godzinowe wiadomości
+def plot_2(df, day,color):
+    df = df[df['date'] == day]
+    d = df.groupby('hour')["'timestamp_ms'"].agg('count').reset_index(name='counts')
+    fig = px.line(d, x='hour', y='counts', template="plotly_white",title="Number of messages in the selected day")
+    fig.update_traces(line_color=color)
+    # fig.show()
+    return fig
+
+
+def plot_2_all(df1,df2,df3, day):
+    df1 = df1[df1['date'] == day]
+    df2 = df2[df2['date'] == day]
+    df3 = df3[df3['date'] == day]
+    d1 = df1.groupby('hour')["'timestamp_ms'"].agg('count').reset_index(name='counts')
+    d2 = df2.groupby('hour')["'timestamp_ms'"].agg('count').reset_index(name='counts')
+    d3 = df3.groupby('hour')["'timestamp_ms'"].agg('count').reset_index(name='counts')
+    fig = go.Figure(data=[go.Scatter(name = "Person no. 1",x=d1['hour'], y=d1['counts'], mode='lines', line_color='#1f77b4'),
+                          go.Scatter(name = "Person no. 2",x=d2['hour'], y=d2['counts'], mode='lines', line_color='#ff7f0e'),
+                          go.Scatter(name = "Person no. 3",x=d3['hour'], y=d3['counts'], mode='lines', line_color='#2ca02c')
+                    ])
+    fig.update_layout(template="plotly_white", title_text='Number of messages in the selected day')
+
+    # fig.show()
+    return fig
+
+
+# wykres 3. ranking 3 najczęściej używanych reakcji
+def plot_3(df1,color):
+    d = df1.groupby("'reactions'")["'reactions'"].agg('count').reset_index(name='counts')
+    d = d.sort_values(by=['counts'], ascending=False).head(3)
+    fig = px.bar(d, x="'reactions'", y='counts',template="plotly_white", title="The most commonly used reactions")
+    fig.update_traces(marker_color=color)
+    # fig.show()
+    return fig
+
+
+def plot_3_all(df1,df2,df3):
+    d1 = df1.groupby(["'reactions'",'Person'])["'reactions'"].agg('count').reset_index(name='counts')
+    d1 = d1.sort_values(by=['counts'], ascending=False).head(3)
+    d2 = df2.groupby(["'reactions'", 'Person'])["'reactions'"].agg('count').reset_index(name='counts')
+    d2 = d2.sort_values(by=['counts'], ascending=False).head(3)
+    d3 = df3.groupby(["'reactions'", 'Person'])["'reactions'"].agg('count').reset_index(name='counts')
+    d3 = d3.sort_values(by=['counts'], ascending=False).head(3)
+    fig = go.Figure(data=[
+        go.Bar(name="Person no. 1", x=d1["'reactions'"], y=d1['counts'],marker_color='#1f77b4'),
+        go.Bar(name="Person no. 2", x=d2["'reactions'"], y=d2['counts'],marker_color='#ff7f0e'),
+        go.Bar(name="Person no. 3", x=d3["'reactions'"], y=d3['counts'],marker_color='#2ca02c')
+    ])
+    # Change the bar mode
+    fig.update_layout(barmode='group',template="plotly_white", title_text='The most commonly used reactions')
+    # fig.show()
+    return fig
+
+
+# wykres 4. dotyczył długości wysłanych wiadomości - średnia długość wiadomości każdego z nas
+def plot_4(df1, df2, df3):
+    colors = ['#1f77b4','#ff7f0e','#2ca02c']
+    d1 = df1["'ms_long'"].mean()
+    d2 = df2["'ms_long'"].mean()
+    d3 = df3["'ms_long'"].mean()
+    fig = go.Figure(data=[
+        go.Bar( x=["Person no. 1","Person no. 2", "Person no. 3"], y=[d1, d2, d3],
+        marker_color = colors)
+    ])
+    fig.update_layout(template="plotly_white",title_text='Average message length')
+    # fig.show()
+    return fig
+
+
+# Define app
+app = dash.Dash(__name__,
+                external_stylesheets=['https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css']
+                )
+app.scripts.config.serve_locally = True
+app.config['suppress_callback_exceptions'] = True
+
+# Style
+colors = {
+    'text': '#7FDBFF'
+}
+
+SIDEBAR_STYLE = {
+    "position": "fixed",
+    "top": 0,
+    "left": 0,
+    "bottom": 0,
+    "width": "16rem",
+    "padding": "2rem 1rem",
+    "background-color": "#f8f9fa",
+}
+
+CONTENT_STYLE = {
+    "margin-left": "18rem",
+    "margin-right": "2rem",
+    "padding": "2rem 1rem",
+}
+
+
+idd = 1
+test_png = 'facebook.png'
+test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
+
+
+# App layout
+app.layout = html.Div(children=[
+    html.Div(
+        children=[
+            html.Img(src='data:facebook/png;base64,{}'.format(test_base64)),
+            html.H1(
+                children='Facebook data',
+                style={
+                    'textAlign': 'center',
+                    'color': colors['text'],
+                    'textDecoration': "underline"
+                }
+            ),
+            html.Hr(),
+            html.H4(
+                children='Welcome!',
+                style={
+                    'textAlign': 'center',
+                }
+            ),
+            html.P('This our TWD project 3 concerning facebook messenger data. You can choose person, which '
+                   'data you want to display.',
+                    style={'textAlign': 'center'}
+            ),
+            html.P('Main page contains 4 plots, first shows us number of messeges in selected month, second one number of messeges in selected day,'
+                   'next one average length of sent messeges and the last one average message length among all of us',
+                    style={'textAlign': 'center'}
+            ),
+            html.H5(
+                children='Choose person:',
+                style={
+                    'textAlign': 'center',
+                    'color': colors['text'],
+                    'textDecoration': "underline"
+                }
+            ),
+            html.Button('Person no. 1', id='person_1', n_clicks=0),
+            html.Button('Person no. 2', id='person_2', n_clicks=0),
+            html.Button('Person no. 3', id='person_3', n_clicks=0),
+            html.Button('All', id='all', n_clicks=0),
+            html.Hr(),
+            html.H4('Authors:',
+                    style={'textAlign': 'center'}
+            ),
+            html.P('Klaudia Gruszkowska, Bartosz Jamroży, Maciej Chylak',
+            ),
+        ],
+        className="eight rows",
+        style=SIDEBAR_STYLE,
+    ),
+
+    html.Div(children=[
+        html.Div([
+                html.Div(
+                    children=[
+                        dcc.Graph(
+                            id='plot1',
+                        ),
+                        dcc.Dropdown(
+                            id='plot1_miesiac',
+                            options=[
+                                {'label': 'january', 'value': '1'},
+                                {'label': 'february', 'value': '2'},
+                                {'label': 'march', 'value': '3'},
+                                {'label': 'april', 'value': '4'},
+                                {'label': 'may', 'value': '5'},
+                                {'label': 'june', 'value': '6'},
+                                {'label': 'july', 'value': '7'},
+                                {'label': 'august', 'value': '8'},
+                                {'label': 'september', 'value': '9'},
+                                {'label': 'october', 'value': '10'},
+                                {'label': 'november', 'value': '11'},
+                                {'label': 'december', 'value': '12'}
+                            ],
+                            value='1',
+                        ),
+                    ],
+                    className="nine columns",
+                ),
+
+                html.Div(
+                    children=[
+                        dcc.Graph(
+                            id='plot2',
+                        ),
+                        dcc.DatePickerSingle(
+                            id='date_picker',
+                            min_date_allowed=date(2019, 1, 1),
+                            max_date_allowed=date(2020, 12, 25),
+                            initial_visible_month=date(2020, 12, 25),
+                            date=date(2020, 12, 25)
+                        ),
+                        html.Div(id='output-container-date-picker-single'),
+                    ],
+                    className="nine columns",
+                ),
+            ],
+                id="first_two_plots",
+        ),
+
+            html.Div([
+                html.Div(
+                    children=[
+                        dcc.Graph(
+                            id='plot3',
+                        ),
+                    ],
+                    className="nine columns",
+                ),
+                html.Div(
+                    children=[
+                        dcc.Graph(
+                            id='plot4',
+                        ),
+                    ],
+                    className="nine columns",
+                ),
+            ],
+                id="second_two_plots",
+                className="row flex-display",
+            ),
+
+    ],
+        id="content",
+        style=CONTENT_STYLE,
+    ),
+],
+    className="row",
+    id="main",
+)
+
+
+# Callbacks
+@app.callback(
+    [Output("plot1", "figure"), Output("plot2", "figure"), Output("plot3", "figure"), Output("plot4", "figure")],
+    Input('person_1', 'n_clicks'),
+    Input('person_2', 'n_clicks'),
+    Input('person_3', 'n_clicks'),
+    Input('plot1_miesiac', 'value'),
+    Input('date_picker', 'date'),
+    Input('all', 'n_clicks')
+)
+def render_page_content(b1, b2, b3, b4, b5,b6):
+    global idd
+    changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+    if "person_1" in changed_id:
+            idd = 1
+            return (plot_1(df_os_1, b4,'#1f77b4'), plot_2(df_os_1, b5,'#1f77b4'), plot_3(df_os_1,'#1f77b4'), plot_4(df_os_1, df_os_2, df_os_3))
+            ##return (plot_1_all(df_os_1, df_os_2, df_os_1, b4), plot_2_all(df_os_1, df_os_2, df_os_1, b5),plot_3_all(df_os_1, df_os_2, df_os_1), plot_4(df_os_1, df_os_2, df_os_1))
+    elif "person_2" in changed_id:
+            idd = 2
+            return (plot_1(df_os_2, b4,'#ff7f0e'), plot_2(df_os_2, b5,'#ff7f0e'), plot_3(df_os_2,'#ff7f0e'), plot_4(df_os_1, df_os_2, df_os_3))
+    elif "person_3" in changed_id:
+            idd = 3
+            return (plot_1(df_os_3, b4, '#2ca02c'), plot_2(df_os_3, b5, '#2ca02c'), plot_3(df_os_3, '#2ca02c'), plot_4(df_os_1, df_os_2, df_os_3))
+    elif "all" in changed_id:
+            idd = 4
+            return (plot_1_all(df_os_1, df_os_2, df_os_3, b4), plot_2_all(df_os_1,df_os_2,df_os_3, b5), plot_3_all(df_os_1,df_os_2,df_os_3), plot_4(df_os_1, df_os_2, df_os_3))
+    elif "plot1_miesiac" in changed_id:
+        if idd == 1:
+            return (plot_1(df_os_1, b4, '#1f77b4'), plot_2(df_os_1, b5, '#1f77b4'), plot_3(df_os_1, '#1f77b4'),
+                    plot_4(df_os_1, df_os_2, df_os_3))
+        if idd == 2:
+            return (plot_1(df_os_2, b4, '#ff7f0e'), plot_2(df_os_2, b5, '#ff7f0e'), plot_3(df_os_2, '#ff7f0e'),
+                    plot_4(df_os_1, df_os_2, df_os_3))
+
+        if idd == 3:
+            return (plot_1(df_os_3, b4, '#2ca02c'), plot_2(df_os_3, b5, '#2ca02c'), plot_3(df_os_3, '#2ca02c'),
+                    plot_4(df_os_1, df_os_2, df_os_3))
+        if idd == 4:
+            return (plot_1_all(df_os_1, df_os_2, df_os_3, b4), plot_2_all(df_os_1, df_os_2, df_os_3, b5),
+                    plot_3_all(df_os_1, df_os_2, df_os_3), plot_4(df_os_1, df_os_2, df_os_3))
+
+    elif "date_picker" in changed_id:
+        if idd == 1:
+            return (plot_1(df_os_1, b4,'#1f77b4'), plot_2(df_os_1, b5,'#1f77b4'), plot_3(df_os_1,'#1f77b4'), plot_4(df_os_1, df_os_2, df_os_3))
+        if idd == 2:
+            return (plot_1(df_os_2, b4,'#ff7f0e'), plot_2(df_os_2, b5,'#ff7f0e'), plot_3(df_os_2,'#ff7f0e'), plot_4(df_os_1, df_os_2, df_os_3))
+
+        if idd == 3:
+            return (plot_1(df_os_3, b4, '#2ca02c'), plot_2(df_os_3, b5, '#2ca02c'), plot_3(df_os_3, '#2ca02c'), plot_4(df_os_1, df_os_2, df_os_3))
+        if idd == 4:
+            return (plot_1_all(df_os_1, df_os_2, df_os_3, b4), plot_2_all(df_os_1,df_os_2,df_os_3, b5), plot_3_all(df_os_1,df_os_2,df_os_3), plot_4(df_os_1, df_os_2, df_os_3))
+    else:
+        idd = 1
+        return (plot_1(df_os_1, b4, '#1f77b4'), plot_2(df_os_1, b5, '#1f77b4'), plot_3(df_os_1, '#1f77b4'), plot_4(df_os_1, df_os_2, df_os_3))
+
+
+@app.callback(
+    Output('output-container-date-picker-single', 'children'),
+    Input('date_picker', 'date'))
+def update_output1(date_value):
+    string_prefix = 'You have selected: '
+    if date_value is not None:
+        date_object = date.fromisoformat(date_value)
+        date_string = date_object.strftime('%B %d, %Y')
+        return string_prefix + date_string
+
+
+# Main
+if __name__ == "__main__":
+    app.run_server(debug=True)
