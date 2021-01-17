@@ -1,0 +1,10 @@
+name: SpotifyTest
+title:
+username:
+account: sinskir
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3479444
+bundleId: 4104060
+url: https://sinskir.shinyapps.io/SpotifyTest/
+when: 1610797816.6992
