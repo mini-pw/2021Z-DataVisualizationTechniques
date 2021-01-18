@@ -5,9 +5,10 @@ library(ggplot2)
 library(shiny)
 library(reshape2)
 library(igraph)
-library(networkD3)
+library(networkD3) # w razie kłopotów załadować biblitokę newtorkD3 ręcznie przez odpaleniem aplikacji
 library(stats)
 library(dplyr)
+options(stringsAsFactors=FALSE)
 ## Dane Bartek
 
 sinskiFeatures <- fromJSON("sinskiFeatures.json")[[1]]
