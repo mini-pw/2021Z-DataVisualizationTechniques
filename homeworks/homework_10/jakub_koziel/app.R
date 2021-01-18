@@ -61,31 +61,38 @@ server <- function(input, output, session) {
     
     fig <- fig %>% add_segments(x = ~th5_Percentile, xend = ~th95_Percentile, y = ~Country, yend = ~Country, line = list(color = '#7f7f7f'), showlegend = F)
     
-    data_score_2 <- data_score %>% filter(Country == input$country)
     
-    
-    
-    fig <- fig %>% add_segments(data = data_score_2, x = ~th5_Percentile, xend = ~th95_Percentile, y = ~Country, yend = ~Country, line = list(color = 'red'), name = 'Highlighted country')
-    
-    fig <- fig %>% add_segments(data = data_score,x = ~a_95Confidence_Interval_1, xend = ~a_95Confidence_Interval_2, y = ~Country, yend = ~Country, line = list(color = 'black'), name = '95% Confidence Interval')
-    
-    
-    fig <- fig %>% add_markers( x = ~th5_Percentile, y = ~Country, name = "5th percentile",  marker = list(color = '#1f77b4') )
+    fig <- fig %>% add_markers(x = ~th5_Percentile, y = ~Country, name = "5th percentile",  marker = list(color = '#1f77b4') )
     fig <- fig %>% add_markers(x = ~th25_Percentile, y = ~Country, name = "25th percentile", marker = list(color = '#ff7f0e'))
     fig <- fig %>% add_markers(x = ~th75_Percentile, y = ~Country, name = "75th percentile", marker = list(color = '#ff7f0e') )
     fig <- fig %>% add_markers(x = ~th95_Percentile, y = ~Country, name = "95th percentile", marker = list(color = '#1f77b4'))
     
     
+    fig <- fig %>% add_segments(x = ~a_95Confidence_Interval_1, xend = ~a_95Confidence_Interval_2, y = ~Country, yend = ~Country, line = list(color = '#17becf'))
     
     fig <- fig %>% layout(height = 1000,
-                          xaxis = list(title = "Score"), yaxis = list(title = "", autoranged = F, autoranged = "reversed"))
+                          xaxis = list(title = "Score"), yaxis = list(autoranged = F, autoranged = "reversed"))
     
     
     
   
+    data_score_2 <- data_score %>% filter(Country == input$country)
     
+  
     
-
+    fig <- fig %>% add_segments(data = data_score_2, x = ~th5_Percentile, xend = ~th95_Percentile, y = ~Country, yend = ~Country, line = list(color = 'red'))
+    
+    # 
+    # fig <- fig %>% add_markers(x = ~th5_Percentile, y = ~Country, name = "5th percentile",  marker = list(color = 'red') )
+    # fig <- fig %>% add_markers(x = ~th25_Percentile, y = ~Country, name = "25th percentile", marker = list(color = 'red'))
+    # fig <- fig %>% add_markers(x = ~th75_Percentile, y = ~Country, name = "75th percentile", marker = list(color = 'red') )
+    # fig <- fig %>% add_markers(x = ~th95_Percentile, y = ~Country, name = "95th percentile", marker = list(color = 'red'))
+    # 
+    # 
+    # fig <- fig %>% add_segments(x = ~a_95Confidence_Interval_1, xend = ~a_95Confidence_Interval_2, y = ~Country, yend = ~Country, line = list(color = 'red'))
+    # 
+    # fig <- fig %>% layout(height = 650,
+    #                       xaxis = list(title = "Score"))
     
     
     fig <- fig %>% layout(yaxis = list(autorange = "reversed"))
@@ -122,7 +129,7 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(x=~year, y=~score, mode = "lines+markers", showlegend = FALSE)
     
     
-    fig<- fig %>% layout(xaxis = list(title = "Year", range = c(1990, 2024)), yaxis = list(title = "Average score",range = c(280, 650)))
+    fig<- fig %>% layout(xaxis = list(range = c(1990, 2024)), yaxis = list(range = c(280, 650)))
     
     fig
     
