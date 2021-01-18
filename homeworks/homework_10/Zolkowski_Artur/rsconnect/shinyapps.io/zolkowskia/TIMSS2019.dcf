@@ -1,0 +1,13 @@
+name: TIMSS2019
+title: TIMSS2019
+username:
+account: zolkowskia
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3482512
+bundleId: 4109178
+url: https://zolkowskia.shinyapps.io/TIMSS2019/
+when: 1610914364.24355
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data_prepare.R
