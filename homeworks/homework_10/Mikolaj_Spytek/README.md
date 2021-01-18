@@ -1,0 +1,1 @@
+[Link do aplikacji](https://spytekm.shinyapps.io/pd10/)
