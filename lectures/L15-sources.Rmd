@@ -1,0 +1,101 @@
+---
+title: "Wizualizacja danych - źródła"
+author: "Michał Burdukiewicz"
+date: "25-01-2021"
+output: 
+  ioslides_presentation:
+    theme: "simplex"
+---
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+slides > slide {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+</style>
+
+## Źródła
+
+ - książki
+ - periodyki naukowe
+ - konferencje
+ - blogi
+ 
+# Książki
+
+## Effective Data Visualization
+
+
+["Effective Data Visualization: The Right Chart for the Right Data", Stephanie Green](https://stephanieevergreen.com/books/)
+
+ - bardzo wstępna, zbiera podstawowe informacje na temat wizualizacji danych.
+ 
+Trailer: https://www.youtube.com/watch?v=AFvHAIqw2jA
+
+## The Functional Art
+
+["The functional art", Alberto Cairo](http://www.thefunctionalart.com/p/about-book.html)
+
+ - zbiorcze opracowanie informacji jak uczynić grafikę czytelniejszą i łatwiejszą w odbiorze.
+
+## Information Dashboard Design
+
+["Information Dashboard Design: Displaying Data for At-a-glance Monitoring", Stephen Few](http://www.perceptualedge.com/library.php#Books)
+
+ - jedna z nielicznych pozycji obejmujących nie tylko zagadnienia projektowania pojedynczych wizualizacji danych, ale ich całych zestawów.
+ 
+## Visualising Information for Advocacy
+
+["Visualising Information for Advocacy, Maya Indira Ganesh, Stephanie Hankey, Tom Longley and Marek Tuszynski"](https://visualisingadvocacy.org/)
+
+ - skupiona na perswazyjnej roli wizualizacji danych,
+ - bardzo mało o wizualizacji danych jako takich.
+ - darmowa
+
+## The Visual Display of Quantitative Information
+
+[The Visual Display of Quantitative Information, Edward Tufte](https://www.edwardtufte.com/tufte/books_vdqi)
+
+ - podręcznik tworzenia ascetycznych i przejrzystych wizualizacji.
+
+# Konferencje
+
+## IEEE VIS
+
+[IEEE VIS](http://ieeevis.org/year/2020/welcome)
+
+Największa, najpopularniejsza konferencja wizualizacji danych.
+
+## EuroVis
+
+Europejska konferencja wizualizacji danych, nie odbyła się w 2020.
+
+[W 2021 odbywa się w formie hybrydowej](https://www.eurovis.org/)
+
+# Blogi
+
+## eagereyes
+
+[Blog Roberta Kosary](https://eagereyes.org/)
+
+Np.: https://eagereyes.org/criticism/chart-junk-considered-useful-after-all
+
+## The functional art
+
+[Blog Alberto Cairo](http://www.thefunctionalart.com/)
+
+## Flowing data
+
+[Blog Nathana Yau](https://flowingdata.com/)
+
+
