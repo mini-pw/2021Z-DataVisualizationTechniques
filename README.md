@@ -17,7 +17,7 @@ Winter Semester 2020/21 [@agosiewska](https://github.com/agosiewska) [@hbaniecki
 - 21.12.2020 - L12: Dashboards
 - 11.01.2021 - L13: [rpivotTable](https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html), [visNetwork](https://datastorm-open.github.io/visNetwork/), [DiagrammeR](https://rich-iannone.github.io/DiagrammeR/)
 - 18.01.2021 - L14: Presentation of project III
-- 25.01.2021 - 
+- 25.01.2021 - Sources
 
 
 ## Labs
@@ -35,8 +35,8 @@ Winter Semester 2020/21 [@agosiewska](https://github.com/agosiewska) [@hbaniecki
 - 14.12.2020 - L11: R: Shiny app on [TIMSS 2019](https://www.iea.nl/sites/default/files/2020-12/TIMSS-2019-International-Results-in-Mathematics-and-Science_0.pdf)
 - 21.12.2020 - L12: [Xmas trees](http://smarterpoland.pl/index.php/tag/choinka/) - [gganimate](https://gganimate.com/articles/gganimate.html), [RBokeh](http://hafen.github.io/rbokeh/#preview), [ggiraph](https://github.com/davidgohel/ggiraph), [vegalite](https://github.com/hrbrmstr/vegalite), [googleVis](http://www.magesblog.com/2016/09/googlevis-061-on-cran.html)
 - 11.01.2021 - L13: R: [shiny - mastering](https://mastering-shiny.org/)
-- 18.01.2021 - L14: 
-- 25.02.2021 - L15:
+- 18.01.2021 - L14: Presentation of project III
+- 25.02.2021 - L15: Consultations
 
 
 ## Projects
