@@ -1,5 +1,5 @@
 # Data Visualization Techniques
-Winter Semester 2020/2021
+Winter Semester 2020/21 [@agosiewska](https://github.com/agosiewska) [@hbaniecki](https://github.com/hbaniecki)
 
 ## Lectures
 
